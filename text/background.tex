@@ -1,0 +1,35 @@
+\section{Background}
+
+\subsection{Causal Block Diagrams}
+Causal block diagrams are typed graphs, where each vertex has input and output ports. Data, such as scalars and vectors passs along data lines between ports. Each block then performs an operation n the inut dta and outputs it.
+
+\subsection{Simulink}
+
+Simulink is fun. I love Simulink.
+
+Simulink is a tool created by Mathworks to aid in the development of software. It provides a visual environment to create causal block diagram-like models, which are then generated into C code. This code is then the implementation of the model.
+
+
+\subsection{Compiler Optimization Techniques}
+
+Code is compiled to a lower level, such as C-code to machine code, or Java code to Java bytecode.
+
+While performing this translation step, code compilers will also do a number of optimizations to remove redundant code.
+
+We aim to identify optimizations that are relevant to the causal block diagram domain and measure their impact.
+
+
+
+
+\subsubsection{Flow Analysis}
+
+An important tool for these optimizations is flow analysis, As code can be represented in control flow blocks, information can be thought of to flow between these blocks.
+
+This allows compilers to identify variables and lines of code that can be removed, for example.
+
+
+
+
+\subsection{Model Transformations}
+
+In order to perform the optimizations on the model itself, we use model transformations. These transformations are composed of a number of rules, which each have a LHS and a RHS. THe LHS matches the elements within with elements in the model. The elements are then replaced with the lements in the RHS of the rule. There are also pivots.
