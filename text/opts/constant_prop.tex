@@ -1,18 +1,30 @@
-\section{Constant Propagation}
+\subsection{Constant Propagation}
 
 Constant propagation is the determination of which blocks in the model can be replaced with a constant block. For example, it is possible to statically compute which blocks can be replaced. This optimization then reduces computation, as those blocks do not need to be computed.
 
-\subsection{Context}
+\subsubsection{Context}
 When is transformation applicable?
 This optimization is applicable when there are constant blocks in the model. The performance benefit obtained relies on the calculations performed, but this optimization will improve performance more when there are more constants in the model, and if they are used in close proximity to each other.
 
 
-\subsection{Level}
+\subsubsection{Level}
+This is a platform-independent optimization, as it will make the model smaller without changing the semantics for any target.
 
-\subsection{Algorithm}
+\subsubsection{Algorithm}
+Based on flow analysis:
+\begin{description}
+\item[Approximation] For each output line, the approximation set will contain a constant value if the output is constant. Otherwise it is empty.
 
-\subsection{Example Cases (synthetic)}
+\item[Precise problem] Which output lines can be replaced with a constant block
 
-\subsection{Complexity of Transformation}
+\item[Forwards/Backwards analysis] Forwards
 
-\subsection{Example Results}
+\item[Merge operation] As output lines cannot be merged, this is not applicable
+
+\item[Flow equations] If the 
+\end{description}
+\subsubsection{Example Cases (synthetic)}
+
+\subsubsection{Complexity of Transformation}
+
+\subsubsection{Example Results}
