@@ -1,12 +1,12 @@
 from CBDsimulator import *
 import numpy as np
-from Models.ExampleCBD import *
+from Models.ConstantFoldingCBD import *
 from Optimizations.ConstantFoldingOptimization import *
 
 class OptimizationExperiment:
 
   def __init__(self):
-    self.model  = ExampleCBD("ExampleCBD")
+    self.model  = ConstantFoldingCBD("ConstantFoldingCBD")
     self.simulator = CBDsimulator(self.model)
  
   def run(self, num_steps=10): # one step = {NOW}

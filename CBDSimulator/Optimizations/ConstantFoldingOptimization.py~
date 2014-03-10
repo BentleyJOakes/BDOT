@@ -5,7 +5,12 @@ from FlowAnalyzer.FlowAnalyzer import *
 
 class ConstantFoldingOptimization(Optimization):
     
+    
+       
     def __init__(self, simulator):
+        self.TOP = "TOP"
+        self.BOTTOM = "BOTTOM"
+        
         Optimization.__init__(self, simulator)
         
         
@@ -20,72 +25,101 @@ class ConstantFoldingOptimization(Optimization):
         
         flowAnalyzer = FlowAnalyzer()
         flowAnalyzer.initFcn = self.initFcn
-        flowAnalyzer.blockFcn = analyzeComponent
+        flowAnalyzer.blockFcn = self.analyzeComponent
+        flowAnalyzer.initialApprox = self.BOTTOM
         
-        flowAnalyzer.analyze(model, self.sortedGraph)
-        #self.foldConstants(self.sortedGraph)
-        #model.foldConstants(self.sortedGraph)
+        analysis = flowAnalyzer.analyze(model, self.sortedGraph)
         
-    def initFcn(self, model):
-        pass
+        #self.transform(model, analysis)
         
-    def transform(self, model):
-        pass
+    #ANALYSIS FUNCTIONS
+    def initFcn(self):
+      self.constantFoldingList = []
+      self.tempConstValues= []
         
-    def analyzeComponent(self, component):
-        print(component)
-    
-    
-    def foldConstants(self, sortedList):
-      #print sortedList
-      constantFoldingList = []
-      tempConstValues= []
-      for component in sortedList:
-        print("Component: " + str(component))
+    def analyzeComponent(self, component, approxSets):
+        #print("Component: " + str(component))
+        
+        #TODO: what is this for?
         if not len(component) == 1:
             print("Component length not one")
-            continue
+            return
             
+        #get the actual block
         block = component[0]
-        print block.getBlockName()
-        if isinstance(block,ConstantBlock):
-            constantFoldingList.append(block)
-        else:
         
-            #count the number of constant influencer blocks
-            numberOfInfluencers = len(block.linksIN)
-            numberOfConstInfluencers = 0
-            for influenceBlock in block.linksIN:
-                if influenceBlock in constantFoldingList:
-                    numberOfConstInfluencers +=1
-                    if not isinstance(influenceBlock, ConstantBlock):
-                        block.linksIN.remove(influenceBlock)
-                        self.addConnection(influenceBlock.getBlockName()+".fold", block)
-                        tempConstValues.append(selmedolysheepf.getBlockByName(influenceBlock.getBlockName()+".fold").getValue())
-                    else:
-                        tempConstValues.append(influenceBlock.getValue())
-                        print tempConstValues
-                        
-                        
-                        
-                        
-            if numberOfConstInfluencers == numberOfInfluencers:
-                for influenceBlock in block.linksIN:
-                    self.__blocks.remove(influenceBlock)
-                    del self.__blocksDict[influenceBlock.getBlockName()]
-                if isinstance(block, AdderBlock):
-                    constBlockValue = sum(tempConstValues)
-                if isinstance(block,ProductBlock):
-                    constBlockValue = 1
-                    for number in tempConstValues:
-                        constBlockValue *= number
-                #add the new constantblock to the model
-                self.addBlock(ConstantBlock(block.getBlockName()+".fold", value=constBlockValue))
-                constantFoldingList.append(self.getBlockByName(block.getBlockName()+".fold"))
-                self.__blocks.remove(block)
-                del self.__blocksDict[block.getBlockName()]
-                del tempConstValues[:]
-                constantFoldingList.append(block)
+        #return the value if the block is a ConstantBlock
+        if isinstance(block,ConstantBlock):
+            #self.constantFoldingList.append(block)
+            return block.getValue()
+            
+        #TODO: More sosphicated analysis of DelayBlocks?
+        elif isinstance(block,DelayBlock):
+            ICBlockName = block.IC.getBlockName()
+            ICapprox = approxSets[ICBlockName]
+            
+            valueBlock = block.linksIN[0]
+            valueApprox = approxSets[valueBlock.getBlockName()]
+            
+            if ICapprox == valueApprox:
+                return valueApprox
             else:
-                pass
-
+                return self.TOP
+            
+        #TODO: Add more special cases    
+            
+        #TODO: Gain block
+               
+        #general case: see if all inputs are constant
+        for influenceBlock in block.linksIN:
+            influenceName = influenceBlock.getBlockName()
+            if influenceApprox in [self.TOP, self.BOTTOM]:
+                return self.TOP
+            
+            
+          
+        #all influence values are constant, so do operations on values
+        #TODO: make this shorter/more general
+        if isinstance(block,AdderBlock):
+            returnValue = 0
+            for influenceBlock in block.linksIN:
+                influenceName = influenceBlock.getBlockName()
+                influenceApprox = approxSets[influenceName]
+                returnValue += influenceApprox
+            return returnValue
+        elif isinstance(block,ProductBlock):
+            returnValue = 1
+            for influenceBlock in block.linksIN:
+                influenceName = influenceBlock.getBlockName()
+                influenceApprox = approxSets[influenceName]
+                returnValue *= influenceApprox
+            return returnValue
+                        
+        return self.TOP                    
+                        
+            
+                
+                
+    #TRANSFORM FUNCTIONS
+    def transform(self):
+        pass
+#        if numberOfConstInfluencers == numberOfInfluencers:
+#                for influenceBlock in block.linksIN:
+#                    self.__blocks.remove(influenceBlock)
+#                    del self.__blocksDict[influenceBlock.getBlockName()]
+#                if isinstance(block, AdderBlock):
+#                    constBlockValue = sum(tempConstValues)
+#                if isinstance(block,ProductBlock):
+#                    constBlockValue = 1
+#                    for number in tempConstValues:
+#                        constBlockValue *= number
+#                #add the new constantblock to the model
+#                self.addBlock(ConstantBlock(block.getBlockName()+".fold", value=constBlockValue))
+#                self.constantFoldingList.append(self.getBlockByName(block.getBlockName()+".fold"))
+#                self.__blocks.remove(block)
+#                del self.__blocksDict[block.getBlockName()]
+#                del self.tempConstValues[:]
+#                self.constantFoldingList.append(block)
+#            else:
+#                pass
+    
