@@ -269,6 +269,11 @@ class CBD(BaseBlock):
 
     self.__outportsDependentsDict = {} # dictionary of the parents of outports and the dependents of the outports. Outport names are keys
 
+    
+  #TODO: make sure that dependents list is consistent
+  def getDependents(self, block):
+    print(self.__outportsDependentsDict)
+    return self.__outportsDependentsDict
 
 
   def setBlocks(self, blocks):

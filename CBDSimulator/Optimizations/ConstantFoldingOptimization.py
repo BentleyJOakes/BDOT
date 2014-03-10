@@ -30,7 +30,11 @@ class ConstantFoldingOptimization(Optimization):
         
         analysis = flowAnalyzer.analyze(model, self.sortedGraph)
         
-        #self.transform(model, analysis)
+        print("Analysis:")
+        print(analysis)
+        new_model = self.transform(model, analysis)
+        
+        return new_model
         
     #ANALYSIS FUNCTIONS
     def initFcn(self):
@@ -102,8 +106,31 @@ class ConstantFoldingOptimization(Optimization):
                 
                 
     #TRANSFORM FUNCTIONS
-    def transform(self):
-        pass
+    def transform(self, model, analysis):
+    
+        for block_name in analysis.keys():
+        
+            #get calculated value for this block
+            block_value = analysis[block_name]
+            
+            #block can't be replaced by constant
+            if block_value in [self.TOP, self.BOTTOM]:
+                continue
+            
+            block = model.getBlockByName(block_name)
+            
+            
+            #block already is constant
+            if isinstance(block, ConstantBlock):
+                continue
+                
+            print(block)
+                            
+            print(block_value)
+            
+            dependents = model.getDependents(block)
+                
+        return model
 #        if numberOfConstInfluencers == numberOfInfluencers:
 #                for influenceBlock in block.linksIN:
 #                    self.__blocks.remove(influenceBlock)

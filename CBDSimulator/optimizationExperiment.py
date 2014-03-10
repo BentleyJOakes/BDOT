@@ -28,7 +28,7 @@ if __name__=="__main__":
   #experiment.dumpModel()
   
   CBDOpt = ConstantFoldingOptimization(experiment.simulator)
-  CBDOpt.optimize(experiment.model)
+  experiment.model = CBDOpt.optimize(experiment.model)
   
   #experiment.dumpModel()
   #experiment.run()
