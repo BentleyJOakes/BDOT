@@ -128,7 +128,15 @@ class ConstantFoldingOptimization(Optimization):
                             
             print(block_value)
             
-            dependents = model.getDependents(block)
+            
+            #STEP 1: create new constant block
+            
+            #STEP 2: dependents should recieve input from constant block
+            
+            #STEP 3: delete this block and ancestors
+            
+            for dependent in block.linksOUT:
+                print(dependent)
                 
         return model
 #        if numberOfConstInfluencers == numberOfInfluencers:

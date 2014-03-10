@@ -19,13 +19,13 @@ class BaseBlock:
     # (1) the block whose output this input is connected to, and 
     # (2) the name (a String) of the signal connecting the input block and self
     self.linksIN = []
-    # Note that to find out which connections are made to the output
-    # of this block, one needs to search through incoming connections
-    # on other blocks. If finding outgoing connections from
-    # a block turns out to be needed frequently, one 
-    # add a linksOUT attribute and keep it consistent.
+    
+    
+    # List of blocks that are linked to this block via indistinguishable inputs.
     # Note that multiple connections may be made from the output of
     # any block. They will all have the same signal[] and the same name (that of the block)
+    self.linksOUT = []
+
 
     self.Trigger = None
 
@@ -47,15 +47,26 @@ class BaseBlock:
 
   def linkInput(self, in_block):
     self.linksIN.insert(0,in_block)
+    
+  def linkOutput(self, out_block):
+    self.linksOUT.insert(0,out_block)
 
 
   def __repr__(self):
     repr = self.getBlockName() + ":" + self.getBlockType() + "\n"
+    
     if len(self.linksIN) == 0:
       repr+= "  No incoming connections to IN port\n"
     else:
       for in_block in self.linksIN:
         repr += "  IN <- " + in_block.getBlockName() + ":" + in_block.getBlockType() + "\n"
+        
+    if len(self.linksOUT) == 0:
+      repr+= "  No outgoing connections from OUT port\n"
+    else:
+      for in_block in self.linksOUT:
+        repr += "  OUT <- " + in_block.getBlockName() + ":" + in_block.getBlockType() + "\n"
+        
     if self.Trigger == None:
         repr += "  No incoming connections to Trigger port\n"
     else:
@@ -263,17 +274,11 @@ class CBD(BaseBlock):
     self.__blocks = []
     self.__blocksDict = {}
 
-
+    #TODO: move to flattening optimization
     self.__subsystems = []
     self.__inportsParentsDict = {} # dictionary of inportsParent with inportnames (== inputblock names) as keys
 
     self.__outportsDependentsDict = {} # dictionary of the parents of outports and the dependents of the outports. Outport names are keys
-
-    
-  #TODO: make sure that dependents list is consistent
-  def getDependents(self, block):
-    print(self.__outportsDependentsDict)
-    return self.__outportsDependentsDict
 
 
   def setBlocks(self, blocks):
@@ -308,6 +313,11 @@ class CBD(BaseBlock):
       from_block = self.getBlockByName(from_block)
     if type(to_block) == str:
       to_block = self.getBlockByName(to_block)
+      
+    #add the block to the output list
+    from_block.linkOutput(to_block)
+      
+      
     if inport_name == None and outport_name == None:
       to_block.linkInput(from_block)
 
