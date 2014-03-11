@@ -30,7 +30,11 @@ class ConstantFoldingOptimization(Optimization):
         
         analysis = flowAnalyzer.analyze(model, self.sortedGraph)
         
-        #self.transform(model, analysis)
+        print("Analysis:")
+        print(analysis)
+        new_model = self.transform(model, analysis)
+        
+        return new_model
         
     #ANALYSIS FUNCTIONS
     def initFcn(self):
@@ -73,6 +77,7 @@ class ConstantFoldingOptimization(Optimization):
         #general case: see if all inputs are constant
         for influenceBlock in block.linksIN:
             influenceName = influenceBlock.getBlockName()
+            influenceApprox = approxSets[influenceName]
             if influenceApprox in [self.TOP, self.BOTTOM]:
                 return self.TOP
             
@@ -101,8 +106,39 @@ class ConstantFoldingOptimization(Optimization):
                 
                 
     #TRANSFORM FUNCTIONS
-    def transform(self):
-        pass
+    def transform(self, model, analysis):
+    
+        for block_name in analysis.keys():
+        
+            #get calculated value for this block
+            block_value = analysis[block_name]
+            
+            #block can't be replaced by constant
+            if block_value in [self.TOP, self.BOTTOM]:
+                continue
+            
+            block = model.getBlockByName(block_name)
+            
+            
+            #block already is constant
+            if isinstance(block, ConstantBlock):
+                continue
+                
+            print(block)
+                            
+            print(block_value)
+            
+            
+            #STEP 1: create new constant block
+            
+            #STEP 2: dependents should recieve input from constant block
+            
+            #STEP 3: delete this block and ancestors
+            
+            for dependent in block.linksOUT:
+                print(dependent)
+                
+        return model
 #        if numberOfConstInfluencers == numberOfInfluencers:
 #                for influenceBlock in block.linksIN:
 #                    self.__blocks.remove(influenceBlock)

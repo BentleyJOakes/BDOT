@@ -69,6 +69,7 @@ class ConstantFoldingOptimization(Optimization):
                 return valueApprox
             else:
                 return self.TOP
+                
             
         #TODO: Add more special cases    
             

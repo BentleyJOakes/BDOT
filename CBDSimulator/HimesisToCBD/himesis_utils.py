@@ -77,27 +77,23 @@ def graph_to_dot(name, g, verbosity = 0):
                 
         fillcolor = "lightblue"
         
-        if node_type in ['MatchModel', 'match_contains', 'ApplyModel', 'apply_contains', 'paired_with']:
+        print(node_type)
+        
+        if '__Contains__' in node_type:
             fillcolor="lightgray"  
             
-        elif node_type in ['directLink_S', 'directLink_T', 'MT_pre__directLink_T', 'MT_pre__directLink_S']:
+        elif 'SubSystem' in node_type:
             
-            vattr += '\\n'     
-            if node_type in ['directLink_S', 'directLink_T']:
-                vattr += "Association Type = " + str(v['associationType'])
-            elif node_type in ['MT_pre__directLink_T', 'MT_pre__directLink_S']:
-                vattr += get_attribute("\\n Association Type = ", v['MT_pre__associationType'])
                 
-                
-            fillcolor="lightyellow"  
+            fillcolor="lightgreen"  
                        
-        elif node_type in ['indirectLink_S', 'indirectLink_T', 'MT_pre__indirectLink_S', 'MT_pre__indirectLink_T']:
-            fillcolor="lightgreen"          
+        elif node_type in ['Port_Output']:
+            fillcolor="coral"          
                  
-        elif node_type == 'backward_link':
-            fillcolor="coral" 
+        elif node_type in ['Port_Input']:
+            fillcolor="lightyellow" 
             
-        elif node_type in ['trace_link', 'MT_pre__trace_link']:
+        elif node_type in ['Inport', 'Outport']:
             fillcolor="lightgoldenrod"
             #if  verbosity == 1:
               #  nodes[v.index] = pydot.Node(vattr, style="filled", fillcolor="chocolate")

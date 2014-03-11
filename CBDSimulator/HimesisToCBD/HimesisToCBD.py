@@ -51,7 +51,7 @@ class HimesisToCBD:
         for i in range(len(h_graph.vs)):
             block = h_graph.vs[i]
             block_name = self.getBlockID(block, i)
-            print(block_name)
+            print(block)
             
             cbd.addBlock(GenericBlock(block_name))
             #print(block)
@@ -61,18 +61,19 @@ class HimesisToCBD:
             source = h_graph.es[edgeId].source
             target = h_graph.es[edgeId].target
             
-            print("Source: " + str(source))
-            print("Target: " + str(target))
+            #print("Source: " + str(source))
+            #print("Target: " + str(target))
             
             source_block = h_graph.vs[source]
             source_block_name = self.getBlockID(source_block, source)
             
             target_block = h_graph.vs[target]
-            target_block_name = self.getBlockID(target_block, source)
+            target_block_name = self.getBlockID(target_block, target)
             
             cbd.addConnection(source_block_name, target_block_name)
     
-        #cbd.dump()
+        cbd.dump()
+        return cbd
 
 if __name__=="__main__":
     hToCBD = HimesisToCBD()

@@ -3,10 +3,15 @@ import numpy as np
 from Models.ConstantFoldingCBD import *
 from Optimizations.ConstantFoldingOptimization import *
 
+from HimesisToCBD.HimesisToCBD import *
+
 class OptimizationExperiment:
 
   def __init__(self):
-    self.model  = ConstantFoldingCBD("ConstantFoldingCBD")
+    #self.model  = ConstantFoldingCBD("ConstantFoldingCBD")
+    hToCBD = HimesisToCBD()
+    self.model = hToCBD.convertFile("HimesisToCBD/HAdapt.py")
+    
     self.simulator = CBDsimulator(self.model)
  
   def run(self, num_steps=10): # one step = {NOW}
