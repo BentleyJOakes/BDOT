@@ -34,7 +34,7 @@ class HimesisToCBD:
         
         
     def getBlockID(self, block, node_num):
-        return block["Name"] + " : " + block["mm__"] + " : " + str(node_num)
+        return str(block["Name"]) + " - " + block["mm__"] + " - " + str(node_num)
         
     def convert(self, h_graph):
     

@@ -12,6 +12,8 @@ class FlowAnalyzer:
         
         self.approxSets = {}
         
+
+        
     def analyze(self, model, depGraph):
     
         self.initFcn()
@@ -25,7 +27,7 @@ class FlowAnalyzer:
             approx = self.blockFcn(component, self.approxSets)
             self.approxSets[component[0].getBlockName()] = approx
         
-        for component in self.approxSets.keys():
-            print(str(component) + " : " + str(self.approxSets[component]))
+        #for component in self.approxSets.keys():
+        #    print(str(component) + " : " + str(self.approxSets[component]))
             
         return self.approxSets

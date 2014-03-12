@@ -1,7 +1,5 @@
 from Optimization import *
-from CBD import *
-from SimulinkCBD import *
-from FlowAnalyzer.FlowAnalyzer import *
+
 
 
 class ConstantFoldingOptimization(Optimization):
@@ -31,9 +29,9 @@ class ConstantFoldingOptimization(Optimization):
         
         analysis = flowAnalyzer.analyze(model, self.sortedGraph)
         
-        #print("Analysis:")
-        #print(analysis)
-        new_model = self.transform(model, analysis)
+        self.print_analysis(analysis, skip_structural = True)
+        
+        #new_model = self.transform(model, analysis)
         
         return new_model
         
@@ -55,7 +53,6 @@ class ConstantFoldingOptimization(Optimization):
         
         #return the value if the block is a ConstantBlock
         if self.isA(block, [ConstantBlock, Simulink_ConstantBlock]):
-            #self.constantFoldingList.append(block)
             return block.getValue()
             
         #TODO: More sosphicated analysis of DelayBlocks?
@@ -72,32 +69,61 @@ class ConstantFoldingOptimization(Optimization):
             else:
                 return self.TOP
                 
+        if self.isA(block, self.SimulinkStructuralBlocks):
+
+            if len(block.linksIN) > 1:
+                print("Error: Structural block has more than one parent!")
+                
+            parentBlock = block.linksIN[0]
+            parentName = parentBlock.getBlockName()
+            
+            return approxSets[parentName]
+            
             
         #TODO: Add more special cases    
             
         #TODO: Gain block
                
+        #TODO: create 'get_influence_blocks()' function to remove contains blocks
+        
+        
         #general case: see if all inputs are constant
         for influenceBlock in block.linksIN:
+            if isinstance(influenceBlock, Simulink___Contains__Block):
+                    continue
             influenceName = influenceBlock.getBlockName()
             influenceApprox = approxSets[influenceName]
             if influenceApprox in [self.TOP, self.BOTTOM]:
                 return self.TOP
-            
-            
           
         #all influence values are constant, so do operations on values
         #TODO: make this shorter/more general
         if isinstance(block,AdderBlock):
             returnValue = 0
             for influenceBlock in block.linksIN:
+                if isinstance(influenceBlock, Simulink___Contains__Block):
+                    continue
                 influenceName = influenceBlock.getBlockName()
                 influenceApprox = approxSets[influenceName]
                 returnValue += influenceApprox
             return returnValue
+            
         elif isinstance(block,ProductBlock):
             returnValue = 1
             for influenceBlock in block.linksIN:
+                if isinstance(influenceBlock, Simulink___Contains__Block):
+                    continue
+                influenceName = influenceBlock.getBlockName()
+                influenceApprox = approxSets[influenceName]
+                print("InfluenceApprox: " + str(influenceApprox))
+                returnValue *= influenceApprox
+            return returnValue
+            
+        elif isinstance(block,GainBlock):
+            returnValue = block.gain
+            for influenceBlock in block.linksIN:
+                if isinstance(influenceBlock, Simulink___Contains__Block):
+                    continue
                 influenceName = influenceBlock.getBlockName()
                 influenceApprox = approxSets[influenceName]
                 returnValue *= influenceApprox

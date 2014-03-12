@@ -93,6 +93,12 @@ def graph_to_dot(name, g, verbosity = 0):
             
         elif node_type in ['Inport', 'Outport']:
             fillcolor="lightgoldenrod"
+            
+        elif node_type in ['__Block_Outport__', '__Block_Inport__']:
+            fillcolor="#b94a62"
+            
+        elif node_type in ['__Relation__']:
+            fillcolor="#f78465"
             #if  verbosity == 1:
               #  nodes[v.index] = pydot.Node(vattr, style="filled", fillcolor="chocolate")
               
@@ -108,15 +114,20 @@ def graph_to_dot(name, g, verbosity = 0):
             except Exception:
                 pass
                 
-            try:
+            if 'MT_pre__classtype' in v.attributes():
                 vattr += get_attribute("\\n Classtype = ", v['MT_pre__classtype'])
-            except Exception:
-                pass
                 
-            try:
+            if 'MT_pre__name' in v.attributes():
                 vattr += get_attribute("\\n Name = ", v['MT_pre__name'])
-            except Exception:
-                pass
+
+                
+            if 'value' in v.attributes() and not v['value'] == None:
+                vattr += get_attribute("\\n Value = ", v['value'])
+
+                
+            if 'gain' in v.attributes() and not v['gain'] == None:
+                vattr += get_attribute("\\n Gain = ", v['gain'])
+
                 
             fillcolor="lightblue"
                 
@@ -129,11 +140,12 @@ def graph_to_dot(name, g, verbosity = 0):
         
         
     for e in g.es:
-        if verbosity == 0:
-            if g.vs[e.source]['mm__'] != 'trace_link' and g.vs[e.target]['mm__'] != 'trace_link':
-                graph.add_edge(pydot.Edge(nodes[e.source],nodes[e.target]))
-        else:
-            graph.add_edge(pydot.Edge(nodes[e.source],nodes[e.target]))
+        
+        #correct the direction of input lines
+        #if ("Input" in g.vs[e.target]['mm__'] or "Inport" in g.vs[e.target]['mm__']) and not "__Relation__" in g.vs[e.source]['mm__']:
+        #    graph.add_edge(pydot.Edge(nodes[e.target],nodes[e.source]))
+        #else:
+        graph.add_edge(pydot.Edge(nodes[e.source],nodes[e.target]))
 
     dot_filename = './dot/' + name + '.dot'
     graph.write(dot_filename)
