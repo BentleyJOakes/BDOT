@@ -1,5 +1,6 @@
 from Optimization import *
 from CBD import *
+from SimulinkCBD import *
 from FlowAnalyzer.FlowAnalyzer import *
 
 
@@ -30,8 +31,8 @@ class ConstantFoldingOptimization(Optimization):
         
         analysis = flowAnalyzer.analyze(model, self.sortedGraph)
         
-        print("Analysis:")
-        print(analysis)
+        #print("Analysis:")
+        #print(analysis)
         new_model = self.transform(model, analysis)
         
         return new_model
@@ -47,17 +48,18 @@ class ConstantFoldingOptimization(Optimization):
         #TODO: what is this for?
         if not len(component) == 1:
             print("Component length not one")
-            return
+            return self.TOP
             
         #get the actual block
         block = component[0]
         
         #return the value if the block is a ConstantBlock
-        if isinstance(block,ConstantBlock):
+        if self.isA(block, [ConstantBlock, Simulink_ConstantBlock]):
             #self.constantFoldingList.append(block)
             return block.getValue()
             
         #TODO: More sosphicated analysis of DelayBlocks?
+        #TODO: handle Simulink_DelayBlocks
         elif isinstance(block,DelayBlock):
             ICBlockName = block.IC.getBlockName()
             ICapprox = approxSets[ICBlockName]
@@ -105,7 +107,7 @@ class ConstantFoldingOptimization(Optimization):
                         
             
                 
-                
+    #============================================================= 
     #TRANSFORM FUNCTIONS
     def transform(self, model, analysis):
     
@@ -136,8 +138,8 @@ class ConstantFoldingOptimization(Optimization):
             
             #STEP 3: delete this block and ancestors
             
-            for dependent in block.linksOUT:
-                print(dependent)
+            #for dependent in block.linksOUT:
+            #    print(dependent)
                 
         return model
 #        if numberOfConstInfluencers == numberOfInfluencers:

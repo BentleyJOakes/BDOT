@@ -1,5 +1,6 @@
 from Server.TCore.core.himesis import Himesis
 from CBD import *
+from SimulinkCBD import *
 from himesis_utils import graph_to_dot
 
 import os
@@ -38,22 +39,28 @@ class HimesisToCBD:
     def convert(self, h_graph):
     
         graph_name = h_graph.name
-        print("Name: " + str(graph_name))
         
         graph_to_dot(graph_name, h_graph)
         
         cbd = CBD(graph_name)
         cbd.delta_t = 0.001
         
-        print(h_graph)
-        
+        module = __import__('SimulinkCBD')
         
         for i in range(len(h_graph.vs)):
             block = h_graph.vs[i]
             block_name = self.getBlockID(block, i)
-            print(block)
             
-            cbd.addBlock(GenericBlock(block_name))
+            block_type = block["mm__"]
+            
+            try:
+                block_class = getattr(module, 'Simulink_' + block_type + "Block")
+                
+            except Exception:
+                print("Error: Unknown Simulink block type '" + block_type + "'!")  
+                block_class = getattr(module, 'Simulink_GenericBlock')
+                
+            cbd.addBlock(block_class(block_name, block))
             #print(block)
             
            
@@ -72,7 +79,7 @@ class HimesisToCBD:
             
             cbd.addConnection(source_block_name, target_block_name)
     
-        cbd.dump()
+        #cbd.dump()
         return cbd
 
 if __name__=="__main__":

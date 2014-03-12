@@ -10,7 +10,7 @@ class OptimizationExperiment:
   def __init__(self):
     #self.model  = ConstantFoldingCBD("ConstantFoldingCBD")
     hToCBD = HimesisToCBD()
-    self.model = hToCBD.convertFile("HimesisToCBD/HAdapt.py")
+    self.model = hToCBD.convertFile("HimesisToCBD/Models/HAdapt.py")
     
     self.simulator = CBDsimulator(self.model)
  

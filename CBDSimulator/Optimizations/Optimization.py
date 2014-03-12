@@ -6,6 +6,12 @@ class Optimization:
         self.simulator = simulator
         
         
+    def isA(self, obj, classes):
+        for c in classes:
+            if isinstance(obj, c):
+                return True
+        return False
+        
     def optimize(self, model):
         pass
         

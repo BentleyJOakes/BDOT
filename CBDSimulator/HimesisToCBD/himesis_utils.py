@@ -77,8 +77,6 @@ def graph_to_dot(name, g, verbosity = 0):
                 
         fillcolor = "lightblue"
         
-        print(node_type)
-        
         if '__Contains__' in node_type:
             fillcolor="lightgray"  
             

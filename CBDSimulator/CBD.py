@@ -184,7 +184,8 @@ class GenericBlock(BaseBlock):
       repr += "  No operator given\n"
     else:
       repr += "  Operator :: " + self.__block_operator + "\n"
-    return repr 
+    return repr
+   
 
 class DelayBlock(BaseBlock):
   def __init__(self, block_name):
