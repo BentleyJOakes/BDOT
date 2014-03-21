@@ -87,6 +87,10 @@ class ConstantFoldingOptimization(Optimization):
         #TODO: create 'get_influence_blocks()' function to remove contains blocks
         
         
+        if len(block.linksIN) == 0 or (len(block.linksIN) == 1 and isinstance(block.linksIN[0], Simulink___Contains__Block)):
+            print("Error: Non-constant block has no parents!")
+            return self.TOP
+        
         #general case: see if all inputs are constant
         for influenceBlock in block.linksIN:
             if isinstance(influenceBlock, Simulink___Contains__Block):

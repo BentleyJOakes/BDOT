@@ -71,13 +71,19 @@ class HimesisToCBD:
             #print("Source: " + str(source))
             #print("Target: " + str(target))
             
+            
+            
             source_block = h_graph.vs[source]
             source_block_name = self.getBlockID(source_block, source)
             
             target_block = h_graph.vs[target]
             target_block_name = self.getBlockID(target_block, target)
             
-            cbd.addConnection(source_block_name, target_block_name)
+            #fix edge direction for inputs
+            if ("Input" in target_block_name or "Inport" in target_block_name) and not "__Relation__" in source_block_name:
+                cbd.addConnection(target_block_name, source_block_name)
+            else:
+                cbd.addConnection(source_block_name, target_block_name)
     
         #cbd.dump()
         return cbd
