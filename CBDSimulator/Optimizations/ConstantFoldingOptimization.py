@@ -33,7 +33,7 @@ class ConstantFoldingOptimization(Optimization):
         
         #new_model = self.transform(model, analysis)
         
-        return new_model
+        return model
         
     #ANALYSIS FUNCTIONS
     def initFcn(self):

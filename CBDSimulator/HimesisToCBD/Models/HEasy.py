@@ -17,7 +17,7 @@ class HEasy(Himesis):
         super(HEasy, self).__init__(name='HEasy', num_nodes=36, edges=[])
         
         # Add the edges
-        self.add_edges([(20, 0), (15, 20), (21, 0), (16, 21), (0, 11), (11, 7), (22, 3), (17, 22), (4, 12), (12, 8), (23, 1), (18, 23), (1, 13), (13, 9), (24, 5), (19, 24), (6, 14), (14, 10), (2, 30), (30, 0), (2, 31), (31, 3), (2, 32), (32, 4), (2, 33), (33, 1), (2, 34), (34, 5), (2, 35), (35, 6), (9, 25), (25, 17), (7, 26), (26, 19), (10, 27), (27, 16), (10, 28), (28, 18), (8, 29), (29, 15)])
+        self.add_edges([(0, 20), (20, 15), (0, 21), (21, 16), (0, 11), (11, 7), (3, 22), (22, 17), (4, 12), (12, 8), (1, 23), (23, 18), (1, 13), (13, 9), (5, 24), (24, 19), (6, 14), (14, 10), (2, 30), (30, 0), (2, 31), (31, 3), (2, 32), (32, 4), (2, 33), (33, 1), (2, 34), (34, 5), (2, 35), (35, 6), (9, 25), (25, 17), (7, 26), (26, 19), (10, 27), (27, 16), (10, 28), (28, 18), (8, 29), (29, 15)])
         # Set the graph attributes
         self["mm__"] = pickle.loads("""(lp1
 S'Simulink'
@@ -40,7 +40,7 @@ a.""")
         self.vs[0]["GUID__"] = UUID('32a87956-76c0-4d4e-8fba-27e97fa18a90')
         self.vs[1]["Name"] = """Gain"""
         self.vs[1]["SampleTime"] = -1.0
-        self.vs[1]["gain"] = 6.0
+        self.vs[1]["gain"] = 1.0
         self.vs[1]["BackgroundColor"] = """yellow"""
         self.vs[1]["mm__"] = """Gain"""
         self.vs[1]["Position"] = pickle.loads("""(lp1
@@ -69,7 +69,7 @@ a.""")
         self.vs[3]["GUID__"] = UUID('3529d78c-dbf9-4426-988c-6a0582447112')
         self.vs[4]["Name"] = """Constant"""
         self.vs[4]["SampleTime"] = inf
-        self.vs[4]["value"] = 2.0
+        self.vs[4]["value"] = 1.0
         self.vs[4]["Tag"] = """1"""
         self.vs[4]["BackgroundColor"] = """white"""
         self.vs[4]["mm__"] = """Constant"""
@@ -94,7 +94,7 @@ a.""")
         self.vs[5]["GUID__"] = UUID('8c05b4a8-25b2-43c2-aeac-4081f65eaf1e')
         self.vs[6]["Name"] = """Constant1"""
         self.vs[6]["SampleTime"] = inf
-        self.vs[6]["value"] = 3.0
+        self.vs[6]["value"] = 1.0
         self.vs[6]["BackgroundColor"] = """white"""
         self.vs[6]["mm__"] = """Constant"""
         self.vs[6]["Position"] = pickle.loads("""(lp1

@@ -4,13 +4,15 @@ from Models.ConstantFoldingCBD import *
 from Optimizations.ConstantFoldingOptimization import *
 
 from HimesisToCBD.HimesisToCBD import *
+from HimesisToCBD.CBDToHimesis import *
+
 
 class OptimizationExperiment:
 
   def __init__(self):
     #self.model  = ConstantFoldingCBD("ConstantFoldingCBD")
     hToCBD = HimesisToCBD()
-    self.model = hToCBD.convertFile("HimesisToCBD/Models/HEasy2.py")
+    self.model = hToCBD.convertFile("HimesisToCBD/Models/HEasy.py")
     
     self.simulator = CBDsimulator(self.model)
  
@@ -30,7 +32,7 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
   experiment = OptimizationExperiment()
-  experiment.dumpModel()
+  #experiment.dumpModel()
   
   CBDOpt = ConstantFoldingOptimization(experiment.simulator)
   experiment.model = CBDOpt.optimize(experiment.model)
