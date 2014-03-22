@@ -48,6 +48,7 @@ class ConstantFoldingOptimization(Optimization):
             
         #get the actual block
         block = component[0]
+        in_blocks = self.get_influence_blocks(block)
         
         #return the value if the block is a ConstantBlock
         if self.isA(block, [ConstantBlock, Simulink_ConstantBlock]):
@@ -59,7 +60,7 @@ class ConstantFoldingOptimization(Optimization):
             ICBlockName = block.IC.getBlockName()
             ICapprox = approxSets[ICBlockName]
             
-            valueBlock = block.linksIN[0]
+            valueBlock = in_blocks[0]
             valueApprox = approxSets[valueBlock.getBlockName()]
             
             if ICapprox == valueApprox:
@@ -67,17 +68,31 @@ class ConstantFoldingOptimization(Optimization):
             else:
                 return self.TOP
                 
-        if self.isA(block, self.SimulinkStructuralBlocks):
-
-            if len(block.linksIN) > 1:
-                print("Error: Structural block has more than one parent!")
-                
-            parentBlock = block.linksIN[0]
+        #pass values through demux block, and separate in structural block input
+        if isinstance(block, Simulink_DemuxBlock):
+            parentBlock = in_blocks[0]
             parentName = parentBlock.getBlockName()
             
             return approxSets[parentName]
+        
+        if self.isA(block, self.SimulinkStructuralBlocks):
+
+            if len(in_blocks) > 1:
+                print("Error: Structural block has more than one parent!")
+                
+            parentBlock = in_blocks[0]
+            parentName = parentBlock.getBlockName()
             
+            if not isinstance(parentBlock, Simulink_DemuxBlock):
+                return approxSets[parentName]
+            else:
+                index = parentBlock.linksOUT.index(block)
+                print("Index: " + str(index))
+                value = approxSets[parentName][index]
+                print("Value: " + str(value))
+                return value
             
+        
         #TODO: Add more special cases    
             
         #TODO: Gain block
@@ -85,7 +100,7 @@ class ConstantFoldingOptimization(Optimization):
         #TODO: create 'get_influence_blocks()' function to remove contains blocks
         
         
-        if len(block.linksIN) == 0 or (len(block.linksIN) == 1 and isinstance(block.linksIN[0], Simulink___Contains__Block)):
+        if len(in_blocks) == 0:
         
             if not isinstance(block, Simulink_SubSystemBlock):
                 print("Error: Non-constant block has no parents!")
@@ -94,7 +109,7 @@ class ConstantFoldingOptimization(Optimization):
             return self.TOP
         
         #general case: see if all inputs are constant
-        for influenceBlock in block.linksIN:
+        for influenceBlock in in_blocks:
             if isinstance(influenceBlock, Simulink___Contains__Block):
                     continue
             influenceName = influenceBlock.getBlockName()
@@ -106,7 +121,7 @@ class ConstantFoldingOptimization(Optimization):
         #TODO: make this shorter/more general
         if isinstance(block,AdderBlock):
             returnValue = 0
-            for influenceBlock in block.linksIN:
+            for influenceBlock in in_blocks:
                 if isinstance(influenceBlock, Simulink___Contains__Block):
                     continue
                 influenceName = influenceBlock.getBlockName()
@@ -116,7 +131,7 @@ class ConstantFoldingOptimization(Optimization):
             
         elif isinstance(block,ProductBlock):
             returnValue = 1
-            for influenceBlock in block.linksIN:
+            for influenceBlock in in_blocks:
                 if isinstance(influenceBlock, Simulink___Contains__Block):
                     continue
                 influenceName = influenceBlock.getBlockName()
@@ -127,12 +142,22 @@ class ConstantFoldingOptimization(Optimization):
             
         elif isinstance(block,GainBlock):
             returnValue = block.gain
-            for influenceBlock in block.linksIN:
+            for influenceBlock in in_blocks:
                 if isinstance(influenceBlock, Simulink___Contains__Block):
                     continue
                 influenceName = influenceBlock.getBlockName()
                 influenceApprox = approxSets[influenceName]
                 returnValue *= influenceApprox
+            return returnValue
+            
+        elif isinstance(block,Simulink_MuxBlock):
+            returnValue = []
+            for influenceBlock in in_blocks:
+                if isinstance(influenceBlock, Simulink___Contains__Block):
+                    continue
+                influenceName = influenceBlock.getBlockName()
+                influenceApprox = approxSets[influenceName]
+                returnValue.append(influenceApprox)
             return returnValue
                         
         return self.TOP                    
@@ -189,7 +214,7 @@ class ConstantFoldingOptimization(Optimization):
         
     def remove_block(self, model, block):
         #print("Removing: " + block.getBlockName())
-        #model.removeBlock(block)
+        model.removeBlock(block)
             
         for parent in block.linksIN:
             #print("Parent: " + str(parent))

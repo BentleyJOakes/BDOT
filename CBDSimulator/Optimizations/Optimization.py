@@ -26,6 +26,13 @@ class Optimization:
     def analyze(self, model):
         pass
         
+    def get_influence_blocks(self, block):
+        influence_blocks = []
+        for parent in block.linksIN:
+            if not isinstance(parent, Simulink___Contains__Block):
+                influence_blocks.append(parent)
+        return influence_blocks
+        
     #TODO: there's probably a fancy way of doing this...
     def print_analysis(self, analysis, skip_structural = False):
         print("Analysis:")
