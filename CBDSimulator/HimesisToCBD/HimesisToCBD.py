@@ -96,7 +96,7 @@ class HimesisToCBD:
             
         graph_to_dot(graph_name, h_graph)
         
-        cbd.dump()
+        #cbd.dump()
         return cbd
 
 if __name__=="__main__":

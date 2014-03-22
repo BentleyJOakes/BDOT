@@ -26,18 +26,11 @@ class CBDToHimesis:
             vertex = h.add_node()
             block_id_dict[block] = vertex
             
-            if block.block:
+            self.get_attribs(h, vertex, block)
             
-                for attrib in block.block.attributes():
-                    if attrib == "GUID__":
-                        continue
-                        
-                    h.vs[vertex][attrib] = block.block[attrib]
-                    print("Attrib: " + attrib)
         
         
         for block in model_blocks:
-            print(block)
             vertex = block_id_dict[block]
             
             for out_port in block.linksOUT:
@@ -51,5 +44,21 @@ class CBDToHimesis:
         graph_to_dot(model_name, h)
         
         return h
+        
+    def get_attribs(self, h, vertex, block):
+        try:
+            #copy details if Simulink block
+            if block.block:
+                for attrib in block.block.attributes():
+                    if attrib == "GUID__":
+                        continue
+                        
+                    h.vs[vertex][attrib] = block.block[attrib]
+        except Exception: #not a Simulink block
+        
+            #TODO: make this more robust
+            if isinstance(block, ConstantBlock):
+                h.vs[vertex]["mm__"] = "Constant"
+                h.vs[vertex]["value"] = block.getValue()
         
     
