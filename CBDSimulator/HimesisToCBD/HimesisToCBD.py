@@ -40,7 +40,7 @@ class HimesisToCBD:
     
         graph_name = h_graph.name
         
-        graph_to_dot(graph_name, h_graph)
+        
         
         cbd = CBD(graph_name)
         cbd.delta_t = 0.001
@@ -63,7 +63,7 @@ class HimesisToCBD:
             cbd.addBlock(block_class(block_name, block))
             #print(block)
             
-           
+        edges_to_delete = []
         for edgeId in range(h_graph.ecount()):
             source = h_graph.es[edgeId].source
             target = h_graph.es[edgeId].target
@@ -81,10 +81,21 @@ class HimesisToCBD:
             
             #fix edge direction for inputs
             if ("Input" in target_block_name or "Inport" in target_block_name) and not "__Relation__" in source_block_name:
+            
                 cbd.addConnection(target_block_name, source_block_name)
+                
+                #remove the incorrect edge
+                edges_to_delete.append(h_graph.es[edgeId])
+                
+                h_graph.add_edge(target, source)
             else:
                 cbd.addConnection(source_block_name, target_block_name)
     
+        #delete the edges that were fixed
+        h_graph.delete_edges(edges_to_delete)
+            
+        graph_to_dot(graph_name, h_graph)
+        
         #cbd.dump()
         return cbd
 

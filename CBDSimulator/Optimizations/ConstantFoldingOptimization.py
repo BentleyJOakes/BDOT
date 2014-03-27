@@ -1,7 +1,5 @@
 from Optimization import *
 
-
-
 class ConstantFoldingOptimization(Optimization):
     
     
@@ -31,7 +29,7 @@ class ConstantFoldingOptimization(Optimization):
         
         self.print_analysis(analysis, skip_structural = True)
         
-        #new_model = self.transform(model, analysis)
+        new_model = self.transform(model, analysis)
         
         return new_model
         
@@ -50,6 +48,7 @@ class ConstantFoldingOptimization(Optimization):
             
         #get the actual block
         block = component[0]
+        in_blocks = self.get_influence_blocks(block)
         
         #return the value if the block is a ConstantBlock
         if self.isA(block, [ConstantBlock, Simulink_ConstantBlock]):
@@ -61,7 +60,7 @@ class ConstantFoldingOptimization(Optimization):
             ICBlockName = block.IC.getBlockName()
             ICapprox = approxSets[ICBlockName]
             
-            valueBlock = block.linksIN[0]
+            valueBlock = in_blocks[0]
             valueApprox = approxSets[valueBlock.getBlockName()]
             
             if ICapprox == valueApprox:
@@ -69,17 +68,31 @@ class ConstantFoldingOptimization(Optimization):
             else:
                 return self.TOP
                 
-        if self.isA(block, self.SimulinkStructuralBlocks):
-
-            if len(block.linksIN) > 1:
-                print("Error: Structural block has more than one parent!")
-                
-            parentBlock = block.linksIN[0]
+        #pass values through demux block, and separate in structural block input
+        if isinstance(block, Simulink_DemuxBlock):
+            parentBlock = in_blocks[0]
             parentName = parentBlock.getBlockName()
             
             return approxSets[parentName]
+        
+        if self.isA(block, self.SimulinkStructuralBlocks):
+
+            if len(in_blocks) > 1:
+                print("Error: Structural block has more than one parent!")
+                
+            parentBlock = in_blocks[0]
+            parentName = parentBlock.getBlockName()
             
+            if not isinstance(parentBlock, Simulink_DemuxBlock):
+                return approxSets[parentName]
+            else:
+                index = parentBlock.linksOUT.index(block)
+                print("Index: " + str(index))
+                value = approxSets[parentName][index]
+                print("Value: " + str(value))
+                return value
             
+        
         #TODO: Add more special cases    
             
         #TODO: Gain block
@@ -87,12 +100,16 @@ class ConstantFoldingOptimization(Optimization):
         #TODO: create 'get_influence_blocks()' function to remove contains blocks
         
         
-        if len(block.linksIN) == 0 or (len(block.linksIN) == 1 and isinstance(block.linksIN[0], Simulink___Contains__Block)):
-            print("Error: Non-constant block has no parents!")
+        if len(in_blocks) == 0:
+        
+            if not isinstance(block, Simulink_SubSystemBlock):
+                print("Error: Non-constant block has no parents!")
+                #print(block)
+                #print(block.__class__.name)
             return self.TOP
         
         #general case: see if all inputs are constant
-        for influenceBlock in block.linksIN:
+        for influenceBlock in in_blocks:
             if isinstance(influenceBlock, Simulink___Contains__Block):
                     continue
             influenceName = influenceBlock.getBlockName()
@@ -104,7 +121,7 @@ class ConstantFoldingOptimization(Optimization):
         #TODO: make this shorter/more general
         if isinstance(block,AdderBlock):
             returnValue = 0
-            for influenceBlock in block.linksIN:
+            for influenceBlock in in_blocks:
                 if isinstance(influenceBlock, Simulink___Contains__Block):
                     continue
                 influenceName = influenceBlock.getBlockName()
@@ -114,23 +131,33 @@ class ConstantFoldingOptimization(Optimization):
             
         elif isinstance(block,ProductBlock):
             returnValue = 1
-            for influenceBlock in block.linksIN:
+            for influenceBlock in in_blocks:
                 if isinstance(influenceBlock, Simulink___Contains__Block):
                     continue
                 influenceName = influenceBlock.getBlockName()
                 influenceApprox = approxSets[influenceName]
-                print("InfluenceApprox: " + str(influenceApprox))
+                #print("InfluenceApprox: " + str(influenceApprox))
                 returnValue *= influenceApprox
             return returnValue
             
         elif isinstance(block,GainBlock):
             returnValue = block.gain
-            for influenceBlock in block.linksIN:
+            for influenceBlock in in_blocks:
                 if isinstance(influenceBlock, Simulink___Contains__Block):
                     continue
                 influenceName = influenceBlock.getBlockName()
                 influenceApprox = approxSets[influenceName]
                 returnValue *= influenceApprox
+            return returnValue
+            
+        elif isinstance(block,Simulink_MuxBlock):
+            returnValue = []
+            for influenceBlock in in_blocks:
+                if isinstance(influenceBlock, Simulink___Contains__Block):
+                    continue
+                influenceName = influenceBlock.getBlockName()
+                influenceApprox = approxSets[influenceName]
+                returnValue.append(influenceApprox)
             return returnValue
                         
         return self.TOP                    
@@ -142,7 +169,7 @@ class ConstantFoldingOptimization(Optimization):
     def transform(self, model, analysis):
     
         for block_name in analysis.keys():
-        
+            
             #get calculated value for this block
             block_value = analysis[block_name]
             
@@ -152,43 +179,45 @@ class ConstantFoldingOptimization(Optimization):
             
             block = model.getBlockByName(block_name)
             
+            #block was already removed
+            if block == None:
+                continue
             
             #block already is constant
             if isinstance(block, ConstantBlock):
                 continue
                 
-            print(block)
+            #don't replace structural blocks
+            if self.isA(block, self.SimulinkStructuralBlocks):
+                continue
+                
+            print("Block to replace: " + block.getBlockName())
                             
             print(block_value)
             
+            new_block = ConstantBlock(block.getBlockName() + "_Constant", value=block_value)
             
-            #STEP 1: create new constant block
+            model.addBlock(new_block)
             
-            #STEP 2: dependents should recieve input from constant block
+            for out_block in block.linksOUT:       
+                model.addConnection(new_block, out_block)
             
-            #STEP 3: delete this block and ancestors
-            
-            #for dependent in block.linksOUT:
-            #    print(dependent)
+            for in_block in block.linksIN:
+                if isinstance(in_block, Simulink___Contains__Block):
+                    model.addConnection(in_block, new_block)
+                    continue
+                    
+            self.remove_block(model, block)
+
                 
-        return model
-#        if numberOfConstInfluencers == numberOfInfluencers:
-#                for influenceBlock in block.linksIN:
-#                    self.__blocks.remove(influenceBlock)
-#                    del self.__blocksDict[influenceBlock.getBlockName()]
-#                if isinstance(block, AdderBlock):
-#                    constBlockValue = sum(tempConstValues)
-#                if isinstance(block,ProductBlock):
-#                    constBlockValue = 1
-#                    for number in tempConstValues:
-#                        constBlockValue *= number
-#                #add the new constantblock to the model
-#                self.addBlock(ConstantBlock(block.getBlockName()+".fold", value=constBlockValue))
-#                self.constantFoldingList.append(self.getBlockByName(block.getBlockName()+".fold"))
-#                self.__blocks.remove(block)
-#                del self.__blocksDict[block.getBlockName()]
-#                del self.tempConstValues[:]
-#                self.constantFoldingList.append(block)
-#            else:
-#                pass
-    
+        return model   
+        
+    def remove_block(self, model, block):
+        #print("Removing: " + block.getBlockName())
+        model.removeBlock(block)
+            
+        for parent in block.linksIN:
+            #print("Parent: " + str(parent))
+            if len(parent.linksOUT) == 0:
+                self.remove_block(model, parent)
+       

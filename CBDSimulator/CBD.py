@@ -108,9 +108,6 @@ class ConstantBlock(BaseBlock):
     
   def setValue(self, value):
     self.__value = value
-    
-  def linkInput(self, in_block):
-    print "Warning: Constant (block %s) does not accept input, ignoring extra connection" % self.getBlockName()
 
   def __repr__(self):    
     return BaseBlock.__repr__(self) + "  Value = " + str(self.getValue()) + "\n"
@@ -295,7 +292,11 @@ class CBD(BaseBlock):
     return self.__blocks
 
   def getBlockByName(self, name):
-    return self.__blocksDict[name]
+    try:
+        return self.__blocksDict[name]
+    except Exception:
+        print("Error: Block with name: " + name + " not found")
+        return None
 
   def addBlock(self, block):
     if not isinstance(block, BaseBlock):
@@ -309,6 +310,18 @@ class CBD(BaseBlock):
     else:
       print "Warning: did not add this block as it has the same name %s as an existing block" % block.getBlockName()
 
+  def removeBlock(self, block):
+  
+    for parent in block.linksIN:
+        parent.linksOUT.remove(block)
+        
+    #TODO: handle other ports
+    for child in block.linksOUT:
+        child.linksIN.remove(block)
+        
+    del self.__blocksDict[block.getBlockName()]
+    self.__blocks.remove(block)
+  
   def addConnection(self, from_block, to_block, inport_name=None, outport_name=None):
     if type(from_block) == str:
       from_block = self.getBlockByName(from_block)

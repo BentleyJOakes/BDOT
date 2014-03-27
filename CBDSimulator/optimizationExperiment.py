@@ -4,6 +4,8 @@ from Models.ConstantFoldingCBD import *
 from Optimizations.ConstantFoldingOptimization import *
 
 from HimesisToCBD.HimesisToCBD import *
+from HimesisToCBD.CBDToHimesis import *
+
 
 
 from Server.Core.MatlabHelper import MatlabHelper
@@ -22,7 +24,7 @@ class OptimizationExperiment:
     self.matlabHelper = MatlabHelper()
     #self.model  = ConstantFoldingCBD("ConstantFoldingCBD")
     hToCBD = HimesisToCBD()
-    self.model = hToCBD.convertFile("HimesisToCBD/Models/HEasy2.py")
+    self.model = hToCBD.convertFile("HimesisToCBD/Models/HConstfolding.py")
     
     self.simulator = CBDsimulator(self.model)
  
@@ -42,7 +44,7 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
   experiment = OptimizationExperiment()
-  experiment.dumpModel()
+  #experiment.dumpModel()
   
   CBDOpt = ConstantFoldingOptimization(experiment.simulator)
   experiment.model = CBDOpt.optimize(experiment.model)
