@@ -5,9 +5,21 @@ from Optimizations.ConstantFoldingOptimization import *
 
 from HimesisToCBD.HimesisToCBD import *
 
+
+from Server.Core.MatlabHelper import MatlabHelper
+from Server.Core.SimulinkExporter import SimulinkExporter
+from Server.Core.SimulinkModelToHimesis import SimulinkModelToHimesis
+from Server.Core.SimulinkTransformationToTCore import SimulinkTransformationToHimesis
+from Server.TCore.core.himesis import Himesis
+from Server.TCore.t_core.messages import Packet
+
+
 class OptimizationExperiment:
 
   def __init__(self):
+  
+  
+    self.matlabHelper = MatlabHelper()
     #self.model  = ConstantFoldingCBD("ConstantFoldingCBD")
     hToCBD = HimesisToCBD()
     self.model = hToCBD.convertFile("HimesisToCBD/Models/HEasy2.py")
