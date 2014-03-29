@@ -35,7 +35,15 @@ class CBDToHimesis:
             
             for out_port in block.linksOUT:
                 out_vertex = block_id_dict[out_port]
-                h.add_edge(vertex, out_vertex)
+                
+                target_block_name = out_port.getBlockName()
+                source_block_name = block.getBlockName()
+                
+                #TODO: Remove switch hack
+                if ("Input" in source_block_name or "Inport" in source_block_name) and not "__Relation__" in target_block_name:
+                    h.add_edge(out_vertex, vertex)
+                else:
+                    h.add_edge(vertex, out_vertex)
             
             #h.vs[vertex][Himesis.Constants.META_MODEL] = block.getBlockName()
                     
@@ -60,5 +68,11 @@ class CBDToHimesis:
             if isinstance(block, ConstantBlock):
                 h.vs[vertex]["mm__"] = "Constant"
                 h.vs[vertex]["value"] = block.getValue()
+                h.vs[vertex]["Name"] = "Constant" + str(vertex)
+                h.vs[vertex]["SampleTime"] = "inf"
+                h.vs[vertex]["BackgroundColor"] = "white"
+                
+        
+        
         
     

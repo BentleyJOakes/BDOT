@@ -295,7 +295,6 @@ class CBD(BaseBlock):
     try:
         return self.__blocksDict[name]
     except Exception:
-        print("Error: Block with name: " + name + " not found")
         return None
 
   def addBlock(self, block):

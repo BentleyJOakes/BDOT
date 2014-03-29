@@ -80,6 +80,7 @@ class HimesisToCBD:
             target_block_name = self.getBlockID(target_block, target)
             
             #fix edge direction for inputs
+            #TODO: Fix for inport and contains blocks
             if ("Input" in target_block_name or "Inport" in target_block_name) and not "__Relation__" in source_block_name:
             
                 cbd.addConnection(target_block_name, source_block_name)
