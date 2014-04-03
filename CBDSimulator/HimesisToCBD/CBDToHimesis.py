@@ -33,14 +33,17 @@ class CBDToHimesis:
         for block in model_blocks:
             vertex = block_id_dict[block]
             
+            
             for out_port in block.linksOUT:
+            
+                
                 out_vertex = block_id_dict[out_port]
                 
                 target_block_name = out_port.getBlockName()
                 source_block_name = block.getBlockName()
                 
                 #TODO: Remove switch hack
-                if ("Input" in source_block_name or "Inport" in source_block_name) and not "__Relation__" in target_block_name:
+                if ("Port_Input" in source_block_name or "Block_Inport" in source_block_name) and not "__Relation__" in target_block_name:
                     h.add_edge(out_vertex, vertex)
                 else:
                     h.add_edge(vertex, out_vertex)

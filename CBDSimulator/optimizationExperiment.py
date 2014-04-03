@@ -17,14 +17,20 @@ from Server.TCore.t_core.messages import Packet
 
 class OptimizationExperiment:
 
-    def __init__(self):
+    def __init__(self, skip_simulink = False):
 
-
-        self.mh = MatlabHelper()
+        self.skip_simulink = skip_simulink
+        
+        if skip_simulink:
+            self.mh = None
+        else:
+            self.mh = MatlabHelper()
         
     
     def run(self, path, model):
-        self.mh.chDir(path)
+    
+        if not self.mh == None:
+            self.mh.chDir(path)
     
         #turn Simulink model into himesis graph
         #modelToHimesis = SimulinkModelToHimesis(self.mh,model,path)
@@ -45,9 +51,9 @@ class OptimizationExperiment:
         h.compile("himesis/")
  
  
-        
-        simulinkExport = SimulinkExporter(model,self.mh,h)
-        simulinkExport.exportSimulink()
+        if not self.mh == None:
+            simulinkExport = SimulinkExporter(model,self.mh,h)
+            simulinkExport.exportSimulink()
  
  
  
@@ -72,9 +78,9 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
     path = "./examples/"
-    model = "HConstfolding"
+    model = "HConstfolding_hier"
     
-    experiment = OptimizationExperiment()
+    experiment = OptimizationExperiment(skip_simulink=False)
     
     experiment.run(path, model)
     

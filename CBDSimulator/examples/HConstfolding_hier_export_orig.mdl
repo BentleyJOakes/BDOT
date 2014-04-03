@@ -1,9 +1,13 @@
 Model {
-  Name			  "HConstfolding_export"
+  Name			  "HConstfolding_hier_export"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
-    NumRootInports	    0
+    NumRootInports	    1
+    Inport {
+      BusObject		      ""
+      Name		      "In1"
+    }
     NumRootOutports	    1
     Outport {
       BusObject		      ""
@@ -26,14 +30,14 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Wed Apr 02 15:51:10 2014"
+  Created		  "Wed Apr 02 15:54:58 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 02 15:51:13 2014"
-  RTWModifiedTimeStamp	  318354673
+  LastModifiedDate	  "Wed Apr 02 15:55:01 2014"
+  RTWModifiedTimeStamp	  318354901
   ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -71,12 +75,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HConstfolding_export"
+    model_		    "HConstfolding_hier_export"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HConstfolding_export"
+      Cell		      "HConstfolding_hier_export"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -685,12 +689,6 @@ Model {
       PreserveConstantTs      off
     }
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
-    }
-    Block {
       BlockType		      Gain
       Gain		      "1"
       Multiplication	      "Element-wise(K.*u)"
@@ -706,12 +704,22 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      Mux
-      Inputs		      "4"
-      DisplayOption	      "none"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      NonVirtualBus	      off
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
     }
     Block {
       BlockType		      Outport
@@ -746,6 +754,29 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
       BlockType		      Sum
       IconShape		      "rectangular"
       Inputs		      "++"
@@ -772,7 +803,7 @@ Model {
     }
   }
   System {
-    Name		    "HConstfolding_export"
+    Name		    "HConstfolding_hier_export"
     Location		    [70, 200, 650, 460]
     Open		    off
     ModelBrowserVisibility  off
@@ -787,183 +818,163 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "16"
+    SIDHighWatermark	    "13"
+    Block {
+      BlockType		      Inport
+      Name		      "In1"
+      SID		      "7"
+      Position		      [170, 28, 200, 42]
+      ZOrder		      5
+      IconDisplay	      "Port number"
+    }
     Block {
       BlockType		      Constant
       Name		      "Constant"
-      SID		      "10"
-      Position		      [65, 60, 95, 90]
-      ZOrder		      10
-      Value		      "25.3"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant1"
-      SID		      "15"
-      Position		      [35, 180, 65, 210]
-      ZOrder		      15
-      Value		      "15.0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "16"
-      Position		      [240, 110, 270, 140]
-      ZOrder		      16
-      Value		      "3.0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant4"
-      SID		      "14"
-      Position		      [400, 15, 430, 45]
-      ZOrder		      14
+      SID		      "1"
+      Position		      [125, 125, 155, 155]
+      ZOrder		      1
       Value		      "1.0"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      SID		      "4"
-      Ports		      [1, 2]
-      Position		      [450, 66, 455, 104]
-      ZOrder		      4
-      ShowName		      off
-      Outputs		      "2"
-      DisplayOption	      "bar"
     }
     Block {
       BlockType		      Gain
       Name		      "Gain"
-      SID		      "13"
-      Position		      [140, 60, 170, 90]
-      ZOrder		      13
+      SID		      "2"
+      Position		      [215, 125, 245, 155]
+      ZOrder		      2
       Gain		      "0.01"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      Gain
-      Name		      "Gain1"
-      SID		      "12"
-      Position		      [490, 80, 520, 110]
-      ZOrder		      12
-      Gain		      "12.2"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain2"
-      SID		      "9"
-      Position		      [775, 55, 805, 85]
-      ZOrder		      9
-      Gain		      "1.0"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain3"
-      SID		      "11"
-      Position		      [865, 55, 895, 85]
-      ZOrder		      11
-      Gain		      "1.0"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux"
+      BlockType		      SubSystem
+      Name		      "Subsystem"
       SID		      "3"
       Ports		      [2, 1]
-      Position		      [310, 66, 315, 104]
+      Position		      [320, 24, 420, 66]
       ZOrder		      3
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Product
-      Name		      "Product"
-      SID		      "2"
-      Ports		      [2, 1]
-      Position		      [685, 47, 715, 78]
-      ZOrder		      2
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "5"
-      Ports		      [2, 1]
-      Position		      [205, 65, 225, 85]
-      ZOrder		      5
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum1"
-      SID		      "7"
-      Ports		      [2, 1]
-      Position		      [495, 20, 515, 40]
-      ZOrder		      7
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay"
-      SID		      "8"
-      Position		      [605, 13, 640, 47]
-      ZOrder		      8
-      X0		      "0.0"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1.0"
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay1"
-      SID		      "6"
-      Position		      [605, 78, 640, 112]
-      ZOrder		      6
-      X0		      "0.0"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1.0"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Subsystem"
+	Location		[433, 403, 931, 703]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "13"
+	  Position		  [110, 103, 140, 117]
+	  ZOrder		  6
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2"
+	  SID			  "12"
+	  Position		  [90, 153, 120, 167]
+	  ZOrder		  5
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "8"
+	  Ports			  [2, 1]
+	  Position		  [210, 92, 240, 123]
+	  ZOrder		  1
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "9"
+	  Ports			  [2, 1]
+	  Position		  [275, 100, 295, 120]
+	  ZOrder		  2
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  SID			  "10"
+	  Position		  [325, 93, 360, 127]
+	  ZOrder		  3
+	  X0			  "0.0"
+	  InputProcessing	  "Elements as channels (sample based)"
+	  SampleTime		  "-1.0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "11"
+	  Position		  [425, 103, 455, 117]
+	  ZOrder		  4
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Unit Delay"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Out1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 25]
+	    DstBlock		    "Sum"
+	    DstPort		    2
+	  }
+	}
+      }
     }
     Block {
       BlockType		      Outport
       Name		      "Out1"
-      SID		      "1"
-      Position		      [920, 63, 950, 77]
-      ZOrder		      1
+      SID		      "6"
+      Position		      [485, 38, 515, 52]
+      ZOrder		      4
       IconDisplay	      "Port number"
     }
     Line {
-      SrcBlock		      "Gain2"
+      SrcBlock		      "Subsystem"
       SrcPort		      1
-      DstBlock		      "Gain3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Product"
-      SrcPort		      1
-      Points		      [20, 0; 0, 5]
-      DstBlock		      "Gain2"
+      DstBlock		      "Out1"
       DstPort		      1
     }
     Line {
@@ -973,86 +984,10 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Gain3"
-      SrcPort		      1
-      DstBlock		      "Out1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Gain1"
-      SrcPort		      1
-      DstBlock		      "Unit Delay1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "Mux"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Unit Delay1"
-      SrcPort		      1
-      Points		      [10, 0; 0, -25]
-      DstBlock		      "Product"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Mux"
-      SrcPort		      1
-      DstBlock		      "Demux"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Sum1"
-      SrcPort		      1
-      DstBlock		      "Unit Delay"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Unit Delay"
-      SrcPort		      1
-      Points		      [10, 0; 0, 25]
-      DstBlock		      "Product"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Gain"
       SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      1
-      Points		      [45, 0]
-      DstBlock		      "Sum1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      2
-      DstBlock		      "Gain1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant4"
-      SrcPort		      1
-      DstBlock		      "Sum1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant1"
-      SrcPort		      1
-      Points		      [145, 0]
-      DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      Points		      [10, 0; 0, -30]
-      DstBlock		      "Mux"
+      Points		      [25, 0; 0, -85]
+      DstBlock		      "Subsystem"
       DstPort		      2
     }
   }

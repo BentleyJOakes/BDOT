@@ -81,7 +81,7 @@ class HimesisToCBD:
             
             #fix edge direction for inputs
             #TODO: Fix for inport and contains blocks
-            if ("Input" in target_block_name or "Inport" in target_block_name) and not "__Relation__" in source_block_name:
+            if ("Port_Input" in target_block_name or "Block_Inport" in target_block_name) and not "__Relation__" in source_block_name:
             
                 cbd.addConnection(target_block_name, source_block_name)
                 
@@ -91,7 +91,7 @@ class HimesisToCBD:
                 h_graph.add_edge(target, source)
             else:
                 cbd.addConnection(source_block_name, target_block_name)
-    
+        
         #delete the edges that were fixed
         h_graph.delete_edges(edges_to_delete)
             

@@ -1,15 +1,14 @@
 Model {
-  Name			  "HConstfolding_export"
+  Name			  "flattening"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
-    NumRootInports	    0
-    NumRootOutports	    1
-    Outport {
+    NumRootInports	    1
+    Inport {
       BusObject		      ""
-      BusOutputAsStruct	      "off"
-      Name		      "Out1"
+      Name		      "start"
     }
+    NumRootOutports	    0
     ParameterArgumentNames  ""
     ComputedModelVersion    "1.1"
     NumModelReferences	    0
@@ -26,14 +25,14 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Wed Apr 02 15:51:10 2014"
+  Created		  "Thu Apr 03 12:45:39 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 02 15:51:13 2014"
-  RTWModifiedTimeStamp	  318354673
+  LastModifiedDate	  "Thu Apr 03 12:47:19 2014"
+  RTWModifiedTimeStamp	  318430004
   ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -71,17 +70,19 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HConstfolding_export"
-    overrideMode_	    [0.0]
+    model_		    "flattening"
+    signals_		    []
+    overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HConstfolding_export"
+      Cell		      "flattening"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
       Type		      "Cell"
-      Dimension		      0
+      Dimension		      1
+      Cell		      []
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
@@ -672,46 +673,22 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      OutDataTypeStr	      "Inherit: auto"
       LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
-    }
-    Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
-    }
-    Block {
-      BlockType		      Gain
-      Gain		      "1"
-      Multiplication	      "Element-wise(K.*u)"
-      ParamMin		      "[]"
-      ParamMax		      "[]"
-      ParamDataTypeStr	      "Inherit: Same as input"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Mux
-      Inputs		      "4"
-      DisplayOption	      "none"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      NonVirtualBus	      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
     }
     Block {
       BlockType		      Outport
@@ -731,50 +708,33 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
-      BlockType		      Product
-      Inputs		      "2"
-      Multiplication	      "Element-wise(.*)"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Zero"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Sum
-      IconShape		      "rectangular"
-      Inputs		      "++"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      UnitDelay
-      X0		      "0"
-      InputProcessing	      "Inherited"
-      SampleTime	      "1"
-      StateMustResolveToSignalObject off
-      RTWStateStorageClass    "Auto"
-      HasFrameUpgradeWarning  on
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
     }
   }
   System {
-    Name		    "HConstfolding_export"
-    Location		    [70, 200, 650, 460]
-    Open		    off
+    Name		    "flattening"
+    Location		    [788, 310, 1647, 570]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -787,273 +747,491 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "16"
+    SIDHighWatermark	    "2"
     Block {
-      BlockType		      Constant
-      Name		      "Constant"
-      SID		      "10"
-      Position		      [65, 60, 95, 90]
-      ZOrder		      10
-      Value		      "25.3"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant1"
-      SID		      "15"
-      Position		      [35, 180, 65, 210]
-      ZOrder		      15
-      Value		      "15.0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "16"
-      Position		      [240, 110, 270, 140]
-      ZOrder		      16
-      Value		      "3.0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant4"
-      SID		      "14"
-      Position		      [400, 15, 430, 45]
-      ZOrder		      14
-      Value		      "1.0"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      SID		      "4"
-      Ports		      [1, 2]
-      Position		      [450, 66, 455, 104]
-      ZOrder		      4
-      ShowName		      off
-      Outputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain"
-      SID		      "13"
-      Position		      [140, 60, 170, 90]
-      ZOrder		      13
-      Gain		      "0.01"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain1"
-      SID		      "12"
-      Position		      [490, 80, 520, 110]
-      ZOrder		      12
-      Gain		      "12.2"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain2"
-      SID		      "9"
-      Position		      [775, 55, 805, 85]
-      ZOrder		      9
-      Gain		      "1.0"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain3"
-      SID		      "11"
-      Position		      [865, 55, 895, 85]
-      ZOrder		      11
-      Gain		      "1.0"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux"
-      SID		      "3"
-      Ports		      [2, 1]
-      Position		      [310, 66, 315, 104]
-      ZOrder		      3
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Product
-      Name		      "Product"
-      SID		      "2"
-      Ports		      [2, 1]
-      Position		      [685, 47, 715, 78]
-      ZOrder		      2
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "5"
-      Ports		      [2, 1]
-      Position		      [205, 65, 225, 85]
-      ZOrder		      5
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum1"
-      SID		      "7"
-      Ports		      [2, 1]
-      Position		      [495, 20, 515, 40]
-      ZOrder		      7
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay"
-      SID		      "8"
-      Position		      [605, 13, 640, 47]
-      ZOrder		      8
-      X0		      "0.0"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1.0"
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay1"
-      SID		      "6"
-      Position		      [605, 78, 640, 112]
-      ZOrder		      6
-      X0		      "0.0"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1.0"
-    }
-    Block {
-      BlockType		      Outport
-      Name		      "Out1"
+      BlockType		      Inport
+      Name		      "start"
       SID		      "1"
-      Position		      [920, 63, 950, 77]
-      ZOrder		      1
+      Position		      [15, 33, 45, 47]
+      ZOrder		      -1
       IconDisplay	      "Port number"
     }
+    Block {
+      BlockType		      SubSystem
+      Name		      "FRULE_Get_OutEdges"
+      SID		      "2"
+      Ports		      [1, 3]
+      Position		      [70, 14, 185, 66]
+      ZOrder		      -17
+      AncestorBlock	      "TransformationLib/ARULE"
+      LibraryVersion	      "*1.8"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"FRULE_Get_OutEdges"
+	Location		[327, 55, 825, 355]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"19"
+	SIDPrevWatermark	"16"
+	Block {
+	  BlockType		  Inport
+	  Name			  "packetIn"
+	  SID			  "2:4"
+	  Position		  [45, 58, 75, 72]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "LHS"
+	  SID			  "2:17"
+	  Ports			  []
+	  Position		  [170, 44, 270, 86]
+	  ZOrder		  -17
+	  AncestorBlock		  "TransformationLib/LHS"
+	  LibraryVersion	  "*1.8"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskPromptString	  "Constraint"
+	  MaskStyleString	  "edit"
+	  MaskVariables		  "Constraint=&1;"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskToolTipString	  "on"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "return True"
+	  System {
+	    Name		    "LHS"
+	    Location		    [1020, 210, 1682, 474]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "20"
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Atomic Subsystem"
+	      SID		      "2:17:20"
+	      Ports		      []
+	      Position		      [170, 109, 270, 151]
+	      ZOrder		      -4
+	      AttributesFormatString  "%<p_label>"
+	      AncestorBlock	      "Pre_CommonlyUsedBlocks/Atomic Subsystem"
+	      LibraryVersion	      "*1.18"
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      MaskPromptString	      "p_label|pre_Name"
+	      MaskStyleString	      "edit,edit"
+	      MaskVariables	      "p_label=&1;pre_Name=&2;"
+	      MaskTunableValueString  "on,on"
+	      MaskCallbackString      "|"
+	      MaskEnableString	      "on,on"
+	      MaskVisibilityString    "on,on"
+	      MaskToolTipString	      "on,on"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskPortRotate	      "default"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "9|return False if 'plant' in attr_value else True"
+	      System {
+		Name			"Atomic Subsystem"
+		Location		[108, 374, 606, 674]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	"22"
+		Block {
+		  BlockType		  Reference
+		  Name			  "Pre_InportOfBlock"
+		  SID			  "2:17:20:20"
+		  Ports			  [0, 1]
+		  Position		  [135, 108, 165, 122]
+		  ZOrder		  -1
+		  AttributesFormatString  "%<pre_label>"
+		  LibraryVersion	  "1.30"
+		  SourceBlock		  "Pre_CommonlyUsedBlocks/Pre_InportOfBlock"
+		  SourceType		  ""
+		  pre_label		  "1"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Pre_OutportOfBlock"
+		  SID			  "2:17:20:22"
+		  Ports			  [1]
+		  Position		  [365, 108, 395, 122]
+		  ZOrder		  -23
+		  AttributesFormatString  "%<pre_label>"
+		  LibraryVersion	  "1.30"
+		  SourceBlock		  "Pre_CommonlyUsedBlocks/Pre_OutportOfBlock"
+		  SourceType		  ""
+		  pre_label		  "3"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Transfer Fcn"
+		  SID			  "2:17:20:21"
+		  Ports			  [1, 1]
+		  Position		  [240, 97, 300, 133]
+		  ZOrder		  -9
+		  AttributesFormatString  "%<pre_label>"
+		  LibraryVersion	  "1.30"
+		  SourceBlock		  "Pre_CommonlyUsedBlocks/Transfer Fcn"
+		  SourceType		  ""
+		  pre_label		  "2"
+		  pre_Name		  "return True"
+		  pre_Position		  "return True"
+		  pre_Numerator		  "return True"
+		  pre_Denominator	  "return True"
+		}
+		Line {
+		  SrcBlock		  "Pre_InportOfBlock"
+		  SrcPort		  1
+		  DstBlock		  "Transfer Fcn"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Transfer Fcn"
+		  SrcPort		  1
+		  DstBlock		  "Pre_OutportOfBlock"
+		  DstPort		  1
+		}
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "RHS"
+	  SID			  "2:18"
+	  Ports			  []
+	  Position		  [170, 149, 270, 191]
+	  ZOrder		  -17
+	  AncestorBlock		  "TransformationLib/RHS"
+	  LibraryVersion	  "*1.8"
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  MaskPromptString	  "Action"
+	  MaskStyleString	  "edit"
+	  MaskVariables		  "Action=&1;"
+	  MaskTunableValueString  "on"
+	  MaskEnableString	  "on"
+	  MaskVisibilityString	  "on"
+	  MaskToolTipString	  "on"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskPortRotate	  "default"
+	  MaskIconUnits		  "autoscale"
+	  MaskValueString	  "[]"
+	  System {
+	    Name		    "RHS"
+	    Location		    [1008, 588, 1507, 804]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "27"
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Atomic Subsystem"
+	      SID		      "2:18:27"
+	      Ports		      []
+	      Position		      [220, 69, 320, 111]
+	      ZOrder		      -4
+	      AttributesFormatString  "%<p_label>"
+	      AncestorBlock	      "Post_CommonlyUsedBlocks/Atomic Subsystem"
+	      LibraryVersion	      "*1.22"
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      MaskPromptString	      "p_label|post_Name"
+	      MaskStyleString	      "edit,edit"
+	      MaskVariables	      "p_label=&1;post_Name=&2;"
+	      MaskTunableValueString  "on,on"
+	      MaskCallbackString      "|"
+	      MaskEnableString	      "on,on"
+	      MaskVisibilityString    "on,on"
+	      MaskToolTipString	      "on,on"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskPortRotate	      "default"
+	      MaskIconUnits	      "autoscale"
+	      MaskValueString	      "9|return attr_value"
+	      System {
+		Name			"Atomic Subsystem"
+		Location		[108, 374, 606, 674]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		SIDHighWatermark	"27"
+		Block {
+		  BlockType		  Reference
+		  Name			  "Add"
+		  SID			  "2:18:27:22"
+		  Ports			  [2, 1]
+		  Position		  [100, 82, 130, 113]
+		  ZOrder		  -2
+		  AttributesFormatString  "%<post_label>"
+		  LibraryVersion	  "1.39"
+		  SourceBlock		  "Post_CommonlyUsedBlocks/Add"
+		  SourceType		  ""
+		  post_label		  "4"
+		  post_Name		  "return PreNode('2')['Name']+'_add1'"
+		  post_Position		  "return PreNode('2')['Position']"
+		  post_Inputs		  "return '|++'"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Gain"
+		  SID			  "2:18:27:23"
+		  Ports			  [1, 1]
+		  Position		  [175, 85, 205, 115]
+		  ZOrder		  -8
+		  AttributesFormatString  "%<post_label>"
+		  LibraryVersion	  "1.39"
+		  SourceBlock		  "Post_CommonlyUsedBlocks/Gain"
+		  SourceType		  ""
+		  post_label		  "5"
+		  post_gain		  "return PreNode('2')['Denominator'][0]"
+		  post_Name		  "return PreNode('2')['Name']+'_Gain_D2'"
+		  post_Position		  "return PreNode('2')['Position']"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Gain1"
+		  SID			  "2:18:27:24"
+		  Ports			  [1, 1]
+		  Position		  [340, 85, 370, 115]
+		  ZOrder		  -8
+		  AttributesFormatString  "%<post_label>"
+		  LibraryVersion	  "1.39"
+		  SourceBlock		  "Post_CommonlyUsedBlocks/Gain"
+		  SourceType		  ""
+		  post_label		  "7"
+		  post_gain		  "return PreNode('2')['Numerator'][0]"
+		  post_Name		  "return PreNode('2')['Name']+'Gain_N_1'"
+		  post_Position		  "return PreNode('2')['Position']"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Gain2"
+		  SID			  "2:18:27:25"
+		  Ports			  [1, 1]
+		  Position		  [195, 185, 225, 215]
+		  ZOrder		  -8
+		  BlockMirror		  on
+		  NamePlacement		  "alternate"
+		  AttributesFormatString  "%<post_label>"
+		  LibraryVersion	  "1.39"
+		  SourceBlock		  "Post_CommonlyUsedBlocks/Gain"
+		  SourceType		  ""
+		  post_label		  "8"
+		  post_gain		  "return -PreNode('2')['Denominator'][1]"
+		  post_Name		  "return PreNode('2')['Name']+'_Gain_D1'"
+		  post_Position		  "return PreNode('2')['Position']"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Integrator"
+		  SID			  "2:18:27:26"
+		  Ports			  [1, 1]
+		  Position		  [255, 85, 285, 115]
+		  ZOrder		  -10
+		  AttributesFormatString  "%<post_label>"
+		  LibraryVersion	  "1.39"
+		  SourceBlock		  "Post_CommonlyUsedBlocks/Integrator"
+		  SourceType		  ""
+		  post_label		  "6"
+		  post_initial		  "return 0"
+		  post_Name		  "return PreNode('2')['Name']+'_int'"
+		  post_Position		  "return PreNode('2')['Position']"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Post_InportOfBlock"
+		  SID			  "2:18:27:21"
+		  Ports			  [0, 1]
+		  Position		  [50, 43, 80, 57]
+		  ZOrder		  -1
+		  AttributesFormatString  "%<post_label>"
+		  LibraryVersion	  "1.39"
+		  SourceBlock		  "Post_CommonlyUsedBlocks/Post_InportOfBlock"
+		  SourceType		  ""
+		  post_label		  "1"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Post_OutportOfBlock"
+		  SID			  "2:18:27:27"
+		  Ports			  [1]
+		  Position		  [435, 93, 465, 107]
+		  ZOrder		  -23
+		  AttributesFormatString  "%<post_label>"
+		  LibraryVersion	  "1.39"
+		  SourceBlock		  "Post_CommonlyUsedBlocks/Post_OutportOfBlock"
+		  SourceType		  ""
+		  post_label		  "3"
+		}
+		Line {
+		  SrcBlock		  "Post_InportOfBlock"
+		  SrcPort		  1
+		  DstBlock		  "Add"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Add"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  DstBlock		  "Integrator"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Integrator"
+		  SrcPort		  1
+		  Points		  [20, 0]
+		  Branch {
+		    Points		    [0, 100]
+		    DstBlock		    "Gain2"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Gain1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Post_OutportOfBlock"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain2"
+		  SrcPort		  1
+		  Points		  [-160, 0; 0, -95]
+		  DstBlock		  "Add"
+		  DstPort		  2
+		}
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "OnSuccess"
+	  SID			  "2:5"
+	  Position		  [360, 33, 390, 47]
+	  ZOrder		  -23
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "OnFailure"
+	  SID			  "2:6"
+	  Position		  [360, 93, 390, 107]
+	  ZOrder		  -23
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "OnNonApplicable"
+	  SID			  "2:7"
+	  Position		  [360, 148, 390, 162]
+	  ZOrder		  -23
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+      }
+    }
     Line {
-      SrcBlock		      "Gain2"
+      SrcBlock		      "start"
       SrcPort		      1
-      DstBlock		      "Gain3"
+      DstBlock		      "FRULE_Get_OutEdges"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Product"
-      SrcPort		      1
-      Points		      [20, 0; 0, 5]
-      DstBlock		      "Gain2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant"
-      SrcPort		      1
-      DstBlock		      "Gain"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Gain3"
-      SrcPort		      1
-      DstBlock		      "Out1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Gain1"
-      SrcPort		      1
-      DstBlock		      "Unit Delay1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "Mux"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Unit Delay1"
-      SrcPort		      1
-      Points		      [10, 0; 0, -25]
-      DstBlock		      "Product"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Mux"
-      SrcPort		      1
-      DstBlock		      "Demux"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Sum1"
-      SrcPort		      1
-      DstBlock		      "Unit Delay"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Unit Delay"
-      SrcPort		      1
-      Points		      [10, 0; 0, 25]
-      DstBlock		      "Product"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Gain"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      1
-      Points		      [45, 0]
-      DstBlock		      "Sum1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      2
-      DstBlock		      "Gain1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant4"
-      SrcPort		      1
-      DstBlock		      "Sum1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant1"
-      SrcPort		      1
-      Points		      [145, 0]
-      DstBlock		      "Sum"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      Points		      [10, 0; 0, -30]
-      DstBlock		      "Mux"
-      DstPort		      2
     }
   }
 }

@@ -29,9 +29,9 @@ class ConstantFoldingOptimization(Optimization):
         
         self.print_analysis(analysis, skip_structural = True)
         
-        new_model = self.transform(model, analysis)
+        #new_model = self.transform(model, analysis)
         
-        return new_model
+        return model
         
     #ANALYSIS FUNCTIONS
     def initFcn(self):
