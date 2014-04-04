@@ -30,14 +30,14 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Thu Apr 03 13:27:48 2014"
+  Created		  "Fri Apr 04 16:20:02 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 03 13:27:51 2014"
-  RTWModifiedTimeStamp	  318432471
+  LastModifiedDate	  "Fri Apr 04 16:20:05 2014"
+  RTWModifiedTimeStamp	  318529205
   ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off

@@ -2,6 +2,7 @@ from CBDsimulator import *
 import numpy as np
 from Models.ConstantFoldingCBD import *
 from Optimizations.ConstantFoldingOptimization import *
+from Optimizations.FlatteningOptimization import *
 
 from HimesisToCBD.HimesisToCBD import *
 from HimesisToCBD.CBDToHimesis import *
@@ -43,8 +44,12 @@ class OptimizationExperiment:
         self.simulator = CBDsimulator(self.model)
         
         
-        CBDOpt = ConstantFoldingOptimization(self.simulator)
+        #CBDOpt = ConstantFoldingOptimization(self.simulator)
         #self.model = CBDOpt.optimize(self.model)
+
+        FlatOpt = FlatteningOptimization(self.simulator, self.mh)
+        self.model = FlatOpt.optimize(self.model)
+
 
         CBDToH = CBDToHimesis()
         h = CBDToH.convert(self.model)
