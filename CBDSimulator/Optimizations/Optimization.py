@@ -1,6 +1,7 @@
 from CBD import *
 from SimulinkCBD import *
 from FlowAnalyzer.FlowAnalyzer import *
+import time
 
 class Optimization:
 

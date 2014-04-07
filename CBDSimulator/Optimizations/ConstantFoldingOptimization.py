@@ -15,6 +15,10 @@ class ConstantFoldingOptimization(Optimization):
     
         print("Start Constant Folding")
         
+        
+        start = time.clock()
+        
+        
         #TODO: depGraph should be created another way
         self.__depGraph = self.simulator.getDepGraph()
         self.sortedGraph = self.__depGraph.getStrongComponents()
@@ -27,9 +31,15 @@ class ConstantFoldingOptimization(Optimization):
         
         analysis = flowAnalyzer.analyze(model, self.sortedGraph)
         
+        end = time.clock()
+        print("Time taken for analysis: " + str(end - start) + " seconds")
+        
         self.print_analysis(analysis, skip_structural = True)
         
-        #new_model = self.transform(model, analysis)
+        start = time.clock()
+        model = self.transform(model, analysis)
+        end = time.clock()
+        print("Time taken for transformation: " + str(end - start) + " seconds")
         
         return model
         
