@@ -44,8 +44,8 @@ class FlatteningOptimization(Optimization):
                     
                 #TODO: Make these pretty
                 self.fix_incoming_edges(model, subsystem)
-                #self.fix_outgoing_edges(model, subsystem)
-                #self.remove_subsystem(model, subsystem)
+                self.fix_outgoing_edges(model, subsystem)
+                self.remove_subsystem(model, subsystem)
                 
         
         
@@ -117,11 +117,19 @@ class FlatteningOptimization(Optimization):
             while not isinstance(curr, Simulink_Port_OutputBlock):
                 curr = curr.linksOUT[0]
   
+            #print ("IN block: " + in_block.getBlockName())
+            to_delete = in_block
+            to_delete2 = in_block.linksOUT[0]
+            
             in_parent = in_block.linksIN[0]
             out_child = curr.linksOUT[0].linksOUT[0]
             
+            #print ("IN PARENT: " + in_parent.getBlockName())
+            #print ("OUT CHILD: " + out_child.getBlockName())
             
-            in_parent.linksOUT = []
+            
+            
+            #in_parent.linksOUT = []
             in_parent.linkOutput(out_child)
             
             out_child.linkInput(in_parent)
@@ -134,6 +142,11 @@ class FlatteningOptimization(Optimization):
             curr = curr.linksOUT[0]
             
             self.remove_blocks(model, curr, Simulink_SubSystemBlock)
+            
+            #print(to_delete, True)
+            #print(to_delete2)
+            model.removeBlock(to_delete)
+            model.removeBlock(to_delete2)
             
             
 
@@ -222,11 +235,14 @@ class FlatteningOptimization(Optimization):
         
     def remove_blocks(self, model, start_block, end_class):
         curr = start_block
+        #print("Start removing: " + curr.getBlockName())
+        
         while not isinstance(curr, end_class):
             
             parent = curr.linksIN[0]
                 
             #print("Removing: " + curr.getBlockName())
+            #print(curr)
             model.removeBlock(curr)
             curr = parent
     
@@ -234,14 +250,15 @@ class FlatteningOptimization(Optimization):
         
         parent_subsystem = subsystem.linksIN[0].linksIN[0]
         
-        print(parent_subsystem.getBlockName())
-        
         for child in subsystem.linksOUT:
             if not isinstance(child, Simulink___Contains__Block):
                 continue
-                
-                
-            child.linksIN = []
+
             parent_subsystem.linkOutput(child)
+            
+        subsystem_contains = subsystem.linksIN[0]
+        
+        model.removeBlock(subsystem_contains)
+        model.removeBlock(subsystem)
         
         

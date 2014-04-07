@@ -309,9 +309,13 @@ class CBD(BaseBlock):
     else:
       print "Warning: did not add this block as it has the same name %s as an existing block" % block.getBlockName()
 
-  def removeBlock(self, block):
+  def removeBlock(self, block, debug=False):
+    if debug:
+        print("Removing: " + block.getBlockName())
   
     for parent in block.linksIN:
+        if debug:
+            print("Removing from parent: " + parent.getBlockName())
         parent.linksOUT.remove(block)
         
     #TODO: handle other ports
