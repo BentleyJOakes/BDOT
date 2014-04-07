@@ -85,7 +85,7 @@ if __name__=="__main__":
     path = "./examples/"
     model = "HConstfolding_hier"
     
-    experiment = OptimizationExperiment(skip_simulink=False)
+    experiment = OptimizationExperiment(skip_simulink=True)
     
     experiment.run(path, model)
     
