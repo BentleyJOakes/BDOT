@@ -30,14 +30,14 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Wed Apr 02 15:54:58 2014"
+  Created		  "Mon Apr 07 21:25:53 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 02 15:55:01 2014"
-  RTWModifiedTimeStamp	  318354901
+  LastModifiedDate	  "Mon Apr 07 21:25:55 2014"
+  RTWModifiedTimeStamp	  318806755
   ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -634,7 +634,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 1480, 285, 2360, 915 ] 
+      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -961,6 +961,20 @@ Model {
 	    DstPort		    2
 	  }
 	}
+	Line {
+	  SrcBlock		  "In2"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -45]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -10]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
       }
     }
     Block {
@@ -981,6 +995,12 @@ Model {
       SrcBlock		      "Constant"
       SrcPort		      1
       DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "In1"
+      SrcPort		      1
+      DstBlock		      "Subsystem"
       DstPort		      1
     }
     Line {

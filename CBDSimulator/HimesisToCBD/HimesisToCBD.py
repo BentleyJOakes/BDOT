@@ -40,7 +40,7 @@ class HimesisToCBD:
     
         graph_name = h_graph.name
         
-        
+        #graph_to_dot(graph_name + "_from_simulink", h_graph)
         
         cbd = CBD(graph_name)
         cbd.delta_t = 0.001
