@@ -3,6 +3,9 @@ import copy
 class FlowAnalyzer:
 
     def __init__(self):
+        self.FORWARD_DIR = "FORWARDS"
+        self.BACKWARD_DIR = "BACKWARDS"
+    
         self.initFcn = None
         self.blockFcn = None
         self.mergeFcn = None
@@ -11,7 +14,7 @@ class FlowAnalyzer:
         self.dirtyBlocks = []
         
         self.approxSets = {}
-        
+        self.analysis_direction = self.FORWARD_DIR
 
         
     def analyze(self, model, depGraph):
@@ -21,6 +24,9 @@ class FlowAnalyzer:
         for component in depGraph:
             self.dirtyBlocks.append(component)
             self.approxSets[component[0].getBlockName()] = copy.copy(self.initialApprox)
+            
+        if self.analysis_direction == self.BACKWARD_DIR:
+            self.dirtyBlocks = self.dirtyBlocks[::-1]
             
         #TODO: handle loops
         for component in self.dirtyBlocks:

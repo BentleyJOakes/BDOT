@@ -1,4 +1,4 @@
-digraph HEasy {
+digraph HDead {
 "0 - Product" [style=filled, fillcolor=lightblue];
 "1 - Gain\n Gain = 1.0" [style=filled, fillcolor=lightblue];
 "2 - SubSystem" [style=filled, fillcolor=lightgreen];

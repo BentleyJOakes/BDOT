@@ -3,6 +3,7 @@ import numpy as np
 from Models.ConstantFoldingCBD import *
 from Optimizations.ConstantFoldingOptimization import *
 from Optimizations.FlatteningOptimization import *
+from Optimizations.DeadBlockRemovalOptimization import *
 
 from HimesisToCBD.HimesisToCBD import *
 from HimesisToCBD.CBDToHimesis import *
@@ -67,7 +68,8 @@ class OptimizationExperiment:
         
         #Opt = ConstantFoldingOptimization(self.simulator)
 
-        Opt = FlatteningOptimization(self.simulator, self.mh)
+        #Opt = FlatteningOptimization(self.simulator, self.mh)
+        Opt = DeadBlockRemovalOptimization(self.simulator)
         
         self.model = Opt.optimize(self.model)
 
@@ -109,9 +111,9 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
     path = "./examples/"
-    model = "HConstfolding_hier"
+    model = "HDead"
     
-    experiment = OptimizationExperiment(skip_simulink=False)
+    experiment = OptimizationExperiment(skip_simulink=True)
     
     experiment.run(path, model)
     
