@@ -1,5 +1,5 @@
 Model {
-  Name			  "HConstfolding_hier_export"
+  Name			  "HConstfolding_hier"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.2"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -36,9 +36,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 07 21:25:55 2014"
-  RTWModifiedTimeStamp	  318806755
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Tue Apr 08 15:25:03 2014"
+  RTWModifiedTimeStamp	  318871498
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -76,6 +76,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "HConstfolding_hier_export"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -803,9 +804,9 @@ Model {
     }
   }
   System {
-    Name		    "HConstfolding_hier_export"
-    Location		    [70, 200, 650, 460]
-    Open		    off
+    Name		    "HConstfolding_hier"
+    Location		    [40, 194, 1589, 1027]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -816,7 +817,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "303"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "13"
     Block {
@@ -831,7 +832,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "1"
-      Position		      [125, 125, 155, 155]
+      Position		      [140, 65, 170, 95]
       ZOrder		      1
       Value		      "1.0"
     }
@@ -839,7 +840,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain"
       SID		      "2"
-      Position		      [215, 125, 245, 155]
+      Position		      [205, 65, 235, 95]
       ZOrder		      2
       Gain		      "0.01"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -851,7 +852,7 @@ Model {
       Name		      "Subsystem"
       SID		      "3"
       Ports		      [2, 1]
-      Position		      [320, 24, 420, 66]
+      Position		      [260, 24, 305, 66]
       ZOrder		      3
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -862,8 +863,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem"
-	Location		[433, 403, 931, 703]
-	Open			off
+	Location		[2252, 336, 3698, 983]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -874,12 +875,12 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"303"
 	Block {
 	  BlockType		  Inport
 	  Name			  "In1"
 	  SID			  "13"
-	  Position		  [110, 103, 140, 117]
+	  Position		  [150, 88, 180, 102]
 	  ZOrder		  6
 	  IconDisplay		  "Port number"
 	}
@@ -887,7 +888,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "In2"
 	  SID			  "12"
-	  Position		  [90, 153, 120, 167]
+	  Position		  [150, 118, 180, 132]
 	  ZOrder		  5
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -908,7 +909,7 @@ Model {
 	  Name			  "Sum"
 	  SID			  "9"
 	  Ports			  [2, 1]
-	  Position		  [275, 100, 295, 120]
+	  Position		  [260, 100, 280, 120]
 	  ZOrder		  2
 	  ShowName		  off
 	  IconShape		  "round"
@@ -921,7 +922,7 @@ Model {
 	  BlockType		  UnitDelay
 	  Name			  "Unit Delay"
 	  SID			  "10"
-	  Position		  [325, 93, 360, 127]
+	  Position		  [290, 93, 325, 127]
 	  ZOrder		  3
 	  X0			  "0.0"
 	  InputProcessing	  "Elements as channels (sample based)"
@@ -931,7 +932,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Out1"
 	  SID			  "11"
-	  Position		  [425, 103, 455, 117]
+	  Position		  [365, 103, 395, 117]
 	  ZOrder		  4
 	  IconDisplay		  "Port number"
 	}
@@ -950,28 +951,30 @@ Model {
 	Line {
 	  SrcBlock		  "Unit Delay"
 	  SrcPort		  1
-	  Points		  [0, 0]
+	  Points		  [0, -10; 20, 0]
+	  Branch {
+	    Labels		    [2, 0]
+	    Points		    [-10, 0; 0, 55; -70, 0]
+	    DstBlock		    "Sum"
+	    DstPort		    2
+	  }
 	  Branch {
 	    DstBlock		    "Out1"
 	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 25]
-	    DstBlock		    "Sum"
-	    DstPort		    2
 	  }
 	}
 	Line {
 	  SrcBlock		  "In2"
 	  SrcPort		  1
-	  Points		  [35, 0; 0, -45]
+	  Points		  [0, -10]
 	  DstBlock		  "Product"
 	  DstPort		  2
 	}
 	Line {
+	  Labels		  [2, 0]
 	  SrcBlock		  "In1"
 	  SrcPort		  1
-	  Points		  [5, 0; 0, -10]
+	  Points		  [5, 0; 0, 5]
 	  DstBlock		  "Product"
 	  DstPort		  1
 	}
@@ -981,7 +984,7 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "6"
-      Position		      [485, 38, 515, 52]
+      Position		      [335, 38, 365, 52]
       ZOrder		      4
       IconDisplay	      "Port number"
     }
@@ -1006,7 +1009,7 @@ Model {
     Line {
       SrcBlock		      "Gain"
       SrcPort		      1
-      Points		      [25, 0; 0, -85]
+      Points		      [0, -25]
       DstBlock		      "Subsystem"
       DstPort		      2
     }

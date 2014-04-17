@@ -35,14 +35,13 @@ class OptimizationExperiment:
             print("Time taken to connect to Simulink: " + str(end - start) + " seconds")
         
     
-    def run(self, path, model):
+    def run(self, path, model, opt_name):
     
         if not self.mh == None:
         
             start = time.time()
             self.mh.chDir(path)
 
-            
             
             #turn Simulink model into himesis graph
             modelToHimesis = SimulinkModelToHimesis(self.mh,model,path)
@@ -66,12 +65,8 @@ class OptimizationExperiment:
         end = time.clock()
         print("Time taken to build simulator: " + str(end - start) + " seconds")
         
-        #Opt = ConstantFoldingOptimization(self.simulator)
-
-        #Opt = FlatteningOptimization(self.simulator, self.mh)
-        Opt = DeadBlockRemovalOptimization(self.simulator)
-        
-        self.model = Opt.optimize(self.model)
+        opt = opt_name(self.simulator, self.mh)
+        self.model = opt.optimize(self.model)
 
         start = time.clock()
         CBDToH = CBDToHimesis()
@@ -111,11 +106,18 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
     path = "./examples/"
-    model = "HDead"
+    model = "adapt"
     
+    
+        
     experiment = OptimizationExperiment(skip_simulink=True)
     
-    experiment.run(path, model)
+    #opt = ConstantFoldingOptimization
+    opt = FlatteningOptimization
+    #opt = DeadBlockRemovalOptimization
+    
+    
+    experiment.run(path, model, opt)
     
     
     

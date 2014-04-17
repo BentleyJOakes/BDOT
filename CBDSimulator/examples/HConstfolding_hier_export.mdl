@@ -30,14 +30,14 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 07 21:28:24 2014"
+  Created		  "Thu Apr 17 15:26:04 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 07 21:28:25 2014"
-  RTWModifiedTimeStamp	  318806905
+  LastModifiedDate	  "Thu Apr 17 15:26:05 2014"
+  RTWModifiedTimeStamp	  319649165
   ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -634,7 +634,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
+      ConfigPrmDlgPosition     [ 1480, 285, 2360, 915 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -808,7 +808,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "1"
-      Position		      [125, 125, 155, 155]
+      Position		      [140, 65, 170, 95]
       ZOrder		      1
       Value		      "1.0"
     }
@@ -816,7 +816,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain"
       SID		      "5"
-      Position		      [215, 125, 245, 155]
+      Position		      [205, 65, 235, 95]
       ZOrder		      5
       Gain		      "0.01"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -839,7 +839,7 @@ Model {
       Name		      "Sum"
       SID		      "3"
       Ports		      [2, 1]
-      Position		      [275, 100, 295, 120]
+      Position		      [260, 100, 280, 120]
       ZOrder		      3
       ShowName		      off
       IconShape		      "round"
@@ -852,7 +852,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay"
       SID		      "4"
-      Position		      [325, 93, 360, 127]
+      Position		      [290, 93, 325, 127]
       ZOrder		      4
       X0		      "0.0"
       InputProcessing	      "Elements as channels (sample based)"
@@ -862,7 +862,7 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "6"
-      Position		      [485, 38, 515, 52]
+      Position		      [335, 38, 365, 52]
       ZOrder		      6
       IconDisplay	      "Port number"
     }
@@ -889,7 +889,7 @@ Model {
       SrcPort		      1
       Points		      [0, 0]
       Branch {
-	Points			[50, 0; 0, -65]
+	Points			[0, -65]
 	DstBlock		"Out1"
 	DstPort			1
       }
@@ -902,14 +902,14 @@ Model {
     Line {
       SrcBlock		      "In1"
       SrcPort		      1
-      Points		      [0, 65]
+      Points		      [0, 25; -20, 0; 0, 40]
       DstBlock		      "Product"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Gain"
       SrcPort		      1
-      Points		      [0, 20; -55, 0]
+      Points		      [0, -20; -55, 0; 0, 55]
       DstBlock		      "Product"
       DstPort		      2
     }

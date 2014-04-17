@@ -22,12 +22,13 @@ class ConstantFoldingOptimization(Optimization):
         #TODO: depGraph should be created another way
         self.__depGraph = self.simulator.getDepGraph()
         self.sortedGraph = self.__depGraph.getStrongComponents()
-        
+        print("SortedGraph:" + str(self.sortedGraph))
         
         flowAnalyzer = FlowAnalyzer()
         flowAnalyzer.initFcn = self.initFcn
         flowAnalyzer.blockFcn = self.analyzeComponent
         flowAnalyzer.initialApprox = self.BOTTOM
+        
         
         analysis = flowAnalyzer.analyze(model, self.sortedGraph)
         
@@ -49,7 +50,7 @@ class ConstantFoldingOptimization(Optimization):
       self.tempConstValues= []
         
     def analyzeComponent(self, component, approxSets):
-        #print("Component: " + str(component))
+        print("Component: " + str(component))
         
         #TODO: what is this for?
         if not len(component) == 1:
@@ -59,6 +60,8 @@ class ConstantFoldingOptimization(Optimization):
         #get the actual block
         block = component[0]
         in_blocks = self.get_influence_blocks(block)
+        
+        print(block.getBlockName())
         
         #return the value if the block is a ConstantBlock
         if self.isA(block, [ConstantBlock, Simulink_ConstantBlock]):
@@ -103,9 +106,7 @@ class ConstantFoldingOptimization(Optimization):
                 return value
             
         
-        #TODO: Add more special cases    
-            
-        #TODO: Gain block
+        #TODO: Add more special cases
                
         #TODO: create 'get_influence_blocks()' function to remove contains blocks
         

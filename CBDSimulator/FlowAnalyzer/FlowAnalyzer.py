@@ -30,6 +30,7 @@ class FlowAnalyzer:
             
         #TODO: handle loops
         for component in self.dirtyBlocks:
+            print(component)
             approx = self.blockFcn(component, self.approxSets)
             self.approxSets[component[0].getBlockName()] = approx
         

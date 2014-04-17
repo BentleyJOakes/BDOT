@@ -4,7 +4,7 @@ digraph HEasy {
 "2 - SubSystem" [style=filled, fillcolor=lightgreen];
 "3 - Scope" [style=filled, fillcolor=lightblue];
 "4 - Constant\n Value = 1.0" [style=filled, fillcolor=lightblue];
-"5 - Gain\n Gain = 1.0" [style=filled, fillcolor=lightblue];
+"5 - Scope" [style=filled, fillcolor=lightblue];
 "6 - Constant\n Value = 1.0" [style=filled, fillcolor=lightblue];
 "7 - Port_Output" [style=filled, fillcolor=coral];
 "8 - Port_Output" [style=filled, fillcolor=coral];
@@ -52,19 +52,19 @@ digraph HEasy {
 "2 - SubSystem" -> "33 - __Contains__";
 "33 - __Contains__" -> "1 - Gain\n Gain = 1.0";
 "2 - SubSystem" -> "34 - __Contains__";
-"34 - __Contains__" -> "5 - Gain\n Gain = 1.0";
+"34 - __Contains__" -> "5 - Scope";
 "2 - SubSystem" -> "35 - __Contains__";
 "35 - __Contains__" -> "6 - Constant\n Value = 1.0";
-"9 - Port_Output" -> "25 - __Relation__";
-"25 - __Relation__" -> "17 - Port_Input";
-"7 - Port_Output" -> "26 - __Relation__";
-"26 - __Relation__" -> "19 - Port_Input";
-"10 - Port_Output" -> "27 - __Relation__";
-"27 - __Relation__" -> "16 - Port_Input";
-"10 - Port_Output" -> "28 - __Relation__";
-"28 - __Relation__" -> "18 - Port_Input";
-"8 - Port_Output" -> "29 - __Relation__";
-"29 - __Relation__" -> "15 - Port_Input";
+"10 - Port_Output" -> "25 - __Relation__";
+"25 - __Relation__" -> "16 - Port_Input";
+"10 - Port_Output" -> "26 - __Relation__";
+"26 - __Relation__" -> "18 - Port_Input";
+"9 - Port_Output" -> "27 - __Relation__";
+"27 - __Relation__" -> "17 - Port_Input";
+"8 - Port_Output" -> "28 - __Relation__";
+"28 - __Relation__" -> "15 - Port_Input";
+"7 - Port_Output" -> "29 - __Relation__";
+"29 - __Relation__" -> "19 - Port_Input";
 "20 - __Block_Inport__" -> "0 - Product";
 "15 - Port_Input" -> "20 - __Block_Inport__";
 "21 - __Block_Inport__" -> "0 - Product";
@@ -73,6 +73,6 @@ digraph HEasy {
 "17 - Port_Input" -> "22 - __Block_Inport__";
 "23 - __Block_Inport__" -> "1 - Gain\n Gain = 1.0";
 "18 - Port_Input" -> "23 - __Block_Inport__";
-"24 - __Block_Inport__" -> "5 - Gain\n Gain = 1.0";
+"24 - __Block_Inport__" -> "5 - Scope";
 "19 - Port_Input" -> "24 - __Block_Inport__";
 }

@@ -13,6 +13,8 @@ class ContainsBlock(object):
         self._id= None
         self.fullPath = 'None/None'
         self.name = 'None'
+        
+        
 
     def getType(self):
         return S2HConstants.CONTAINMENT_RELATION
@@ -26,13 +28,16 @@ class SimulinkModelToHimesis(object):
         self.modelname = modelname
         self.path = path
         self.output = outpath
+        
+        self.debugLevel = 0
 
 
     def SimulinkModelToHimesis(self):
         parser = ParseModel(self.modelname, self.mh)
         blocks = parser.blocks
         connections = parser.c
-        print connections.conTable
+        if self.debugLevel > 0:
+            print connections.conTable
         dividedblocks = {}
         for block in blocks:
             fullname = block.fullPath
@@ -41,11 +46,13 @@ class SimulinkModelToHimesis(object):
                 dividedblocks[fullname[0]].append(block)
             else:
                 dividedblocks[fullname[0]] = [block]
-        print dividedblocks
+        if self.debugLevel > 0:
+            print dividedblocks
         # Go into the hierarchy and add subsystem links: There is one not yet created subsystem for the top node... Create it here as well
         for k,theBlockList in dividedblocks.iteritems():
             the_subSystem = k.rsplit('/',1)
-            print the_subSystem
+            if self.debugLevel > 0:
+                print the_subSystem
             if the_subSystem[0] in dividedblocks and len(the_subSystem) > 1:
                 # it exists, we now find in this one the correct subsystem:
                 blocks_one_above = dividedblocks[the_subSystem[0]]
@@ -142,8 +149,9 @@ class SimulinkModelToHimesis(object):
                     himesis.add_edge(block._id, blockportvertex)
                     himesis.add_edge(blockportvertex, triggerport._id)
             else:
-                print block.subsystem
-                print block.block
+                if self.debugLevel > 0:
+                    print block.subsystem
+                    print block.block
                 himesis.add_edge(block.subsystem._id, block._id)
                 himesis.add_edge(block._id,block.block._id)
         #and from outport to inport
@@ -152,7 +160,8 @@ class SimulinkModelToHimesis(object):
         for linename,connectionsdict in connections.conTable.iteritems():
             if linename is not None:
                 doIdelete = True
-                print linename
+                if self.debugLevel > 0:
+                    print linename
                 theOutports = connectionsdict[OUTPORT]
                 theInports = connectionsdict[INPORT]
                 for outportEndpoint in theOutports:
