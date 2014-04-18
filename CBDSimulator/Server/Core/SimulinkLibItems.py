@@ -63,7 +63,13 @@ SimulinkBlocks = {
     'Post_CommonlyUsedBlocks/Post_OutportOfBlock':[['MT_label__','post_label','string']],
     'Post_CommonlyUsedBlocks/Inport': [['MT_label__','post_label','string'],['MT_post__Port', 'post_Port', 'integer'],['MT_post__Name','post_Name','string'],['MT_post__Position','post_Position','string']],
     'Post_CommonlyUsedBlocks/Outport': [['MT_label__','post_label','string'],['MT_post__Port', 'post_Port', 'integer'],['MT_post__Name','post_Name','string'],['MT_post__Position','post_Position','string'],],
-    'Post_CommonlyUsedBlocks/Post_InportOfBlock':[['MT_label__','post_label','string']]
+    'Post_CommonlyUsedBlocks/Post_InportOfBlock':[['MT_label__','post_label','string']],
+    
+    'Post_CommonlyUsedBlocks/Atomic Subsystem':[['MT_post__Name','post_Name','string'],['MT_label__','p_label','string'],['MT_post__Position','post_Position','string'],['MT_post__BackgroundColor','post_BackgroundColor','string']],
+'Pre_CommonlyUsedBlocks/Atomic Subsystem':[['MT_pre__Name','pre_Name','string'],['MT_label__','p_label','string'],['MT_pre__Position','pre_Position','string'],['MT_pre__BackgroundColor','pre_BackgroundColor','string']],
+
+
+
 }
 
 SimulinkTypes = {

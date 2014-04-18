@@ -24,7 +24,7 @@ S'Simulink'
 p2
 a.""")
         self["name"] = """"""
-        self["GUID__"] = UUID('adfc4d54-4aa0-4b33-a4a0-7e2ee3e88ecf')
+        self["GUID__"] = UUID('38503fce-4ccc-452d-beab-870983ea4fa6')
         
         # Set the node attributes
 

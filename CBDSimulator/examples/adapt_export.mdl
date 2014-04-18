@@ -26,14 +26,14 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Wed Jan 15 13:56:47 2014"
-  Creator		  "jdenil"
+  Created		  "Fri Apr 18 18:50:17 2014"
+  Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "jdenil"
+  LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jan 15 13:57:09 2014"
-  RTWModifiedTimeStamp	  311695029
+  LastModifiedDate	  "Fri Apr 18 18:50:23 2014"
+  RTWModifiedTimeStamp	  319747823
   ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -630,7 +630,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 520, 191, 1400, 821 ] 
+      ConfigPrmDlgPosition     [ 1480, 285, 2360, 915 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -672,19 +672,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
-      LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
-    }
-    Block {
       BlockType		      DiscretePulseGenerator
       PulseType		      "Sample based"
       TimeSource	      "Use simulation time"
@@ -699,21 +686,6 @@ Model {
       BlockType		      From
       IconDisplay	      "Tag"
       TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Gain
-      Gain		      "1"
-      Multiplication	      "Element-wise(K.*u)"
-      ParamMin		      "[]"
-      ParamMax		      "[]"
-      ParamDataTypeStr	      "Inherit: Same as input"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
     }
     Block {
       BlockType		      Goto
@@ -737,6 +709,21 @@ Model {
       LatchByDelayingOutsideSignal off
       LatchInputForFeedbackSignals off
       Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      ContinuousStateAttributes	"''"
     }
     Block {
       BlockType		      Mux
@@ -843,15 +830,6 @@ Model {
       ContinuousStateAttributes	"''"
       Realization	      "auto"
     }
-    Block {
-      BlockType		      UnitDelay
-      X0		      "0"
-      InputProcessing	      "Inherited"
-      SampleTime	      "1"
-      StateMustResolveToSignalObject off
-      RTWStateStorageClass    "Auto"
-      HasFrameUpgradeWarning  on
-    }
   }
   System {
     Name		    "adapt_export"
@@ -869,7 +847,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "96"
+    SIDHighWatermark	    "59"
     Block {
       BlockType		      SubSystem
       Name		      "adaptation"
@@ -902,33 +880,33 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "uc"
-	  SID			  "45"
+	  SID			  "51"
 	  Position		  [25, 218, 55, 232]
-	  ZOrder		  8
+	  ZOrder		  12
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
 	  Name			  "ym"
-	  SID			  "53"
+	  SID			  "59"
 	  Position		  [565, 28, 595, 42]
-	  ZOrder		  10
+	  ZOrder		  14
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
 	  Name			  "y"
-	  SID			  "51"
+	  SID			  "57"
 	  Position		  [565, 63, 595, 77]
-	  ZOrder		  9
+	  ZOrder		  13
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto"
-	  SID			  "33"
+	  SID			  "34"
 	  Position		  [255, 155, 295, 185]
 	  ZOrder		  5
 	  GotoTag		  "th1"
@@ -937,7 +915,7 @@ Model {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto1"
-	  SID			  "29"
+	  SID			  "30"
 	  Position		  [535, 135, 575, 165]
 	  ZOrder		  4
 	  GotoTag		  "th2"
@@ -946,7 +924,7 @@ Model {
 	Block {
 	  BlockType		  Product
 	  Name			  "ProductofElements1"
-	  SID			  "25"
+	  SID			  "26"
 	  Ports			  [2, 1]
 	  Position		  [215, 232, 245, 263]
 	  ZOrder		  2
@@ -957,7 +935,7 @@ Model {
 	Block {
 	  BlockType		  Product
 	  Name			  "ProductofElements3"
-	  SID			  "26"
+	  SID			  "27"
 	  Ports			  [2, 1]
 	  Position		  [475, 242, 505, 273]
 	  ZOrder		  3
@@ -968,7 +946,7 @@ Model {
 	Block {
 	  BlockType		  Sum
 	  Name			  "SumofElements1"
-	  SID			  "21"
+	  SID			  "22"
 	  Ports			  [2, 1]
 	  Position		  [660, 25, 690, 65]
 	  ZOrder		  1
@@ -979,398 +957,136 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn2Gain_N_1"
-	  SID			  "70"
+	  BlockType		  TransferFcn
+	  Name			  "TransferFcn2"
+	  SID			  "46"
 	  Position		  [90, 207, 150, 243]
-	  ZOrder		  23
-	  Gain			  "3.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
+	  ZOrder		  9
+	  Numerator		  "[3.0]"
+	  Denominator		  "[1.0, 3.0]"
 	}
 	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn2_Gain_D1"
-	  SID			  "72"
-	  Position		  [90, 207, 150, 243]
-	  ZOrder		  25
-	  Gain			  "-3.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn2_Gain_D2"
-	  SID			  "71"
-	  Position		  [90, 207, 150, 243]
-	  ZOrder		  24
-	  Gain			  "1.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn2_add1"
-	  SID			  "73"
-	  Ports			  [2, 1]
-	  Position		  [90, 205, 150, 245]
-	  ZOrder		  26
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn2_intAdd"
-	  SID			  "74"
-	  Ports			  [2, 1]
-	  Position		  [90, 205, 150, 245]
-	  ZOrder		  27
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  UnitDelay
-	  Name			  "TransferFcn2_intDelay"
-	  SID			  "75"
-	  Position		  [90, 207, 150, 243]
-	  ZOrder		  28
-	  InputProcessing	  "Elements as channels (sample based)"
-	  SampleTime		  "0.001"
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn2_intgainconstGain"
-	  SID			  "96"
-	  Position		  [90, 207, 150, 243]
-	  ZOrder		  41
-	  Gain			  "0.001"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn3Gain_N_1"
-	  SID			  "62"
+	  BlockType		  TransferFcn
+	  Name			  "TransferFcn3"
+	  SID			  "45"
 	  Position		  [190, 145, 230, 205]
-	  ZOrder		  15
-	  Gain			  "-9.81"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
+	  ZOrder		  8
+	  Numerator		  "[-9.81]"
+	  Denominator		  "[1.0, 0.0]"
 	}
 	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn3_Gain_D1"
-	  SID			  "64"
-	  Position		  [190, 145, 230, 205]
-	  ZOrder		  17
-	  Gain			  "-0.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn3_Gain_D2"
-	  SID			  "63"
-	  Position		  [190, 145, 230, 205]
-	  ZOrder		  16
-	  Gain			  "1.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn3_add1"
-	  SID			  "65"
-	  Ports			  [2, 1]
-	  Position		  [190, 145, 230, 205]
-	  ZOrder		  18
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn3_intAdd"
-	  SID			  "80"
-	  Ports			  [2, 1]
-	  Position		  [190, 145, 230, 205]
-	  ZOrder		  33
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  UnitDelay
-	  Name			  "TransferFcn3_intDelay"
-	  SID			  "82"
-	  Position		  [190, 145, 230, 205]
-	  ZOrder		  35
-	  InputProcessing	  "Elements as channels (sample based)"
-	  SampleTime		  "0.001"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "TransferFcn3_intProduct"
-	  SID			  "81"
-	  Ports			  [2, 1]
-	  Position		  [190, 145, 230, 205]
-	  ZOrder		  34
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "TransferFcn3_intgainconst"
-	  SID			  "83"
-	  Position		  [190, 145, 230, 205]
-	  ZOrder		  36
-	  Value			  "0.001"
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn4Gain_N_1"
-	  SID			  "54"
+	  BlockType		  TransferFcn
+	  Name			  "TransferFcn4"
+	  SID			  "44"
 	  Position		  [470, 160, 510, 220]
-	  ZOrder		  11
-	  Gain			  "9.81"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
+	  ZOrder		  7
+	  Numerator		  "[9.81]"
+	  Denominator		  "[1.0, 0.0]"
 	}
 	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn4_Gain_D1"
-	  SID			  "56"
-	  Position		  [470, 160, 510, 220]
-	  ZOrder		  13
-	  Gain			  "-0.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn4_Gain_D2"
-	  SID			  "55"
-	  Position		  [470, 160, 510, 220]
-	  ZOrder		  12
-	  Gain			  "1.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn4_add1"
-	  SID			  "57"
-	  Ports			  [2, 1]
-	  Position		  [470, 160, 510, 220]
-	  ZOrder		  14
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn4_intAdd"
-	  SID			  "92"
-	  Ports			  [2, 1]
-	  Position		  [470, 160, 510, 220]
-	  ZOrder		  37
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  UnitDelay
-	  Name			  "TransferFcn4_intDelay"
-	  SID			  "94"
-	  Position		  [470, 160, 510, 220]
-	  ZOrder		  39
-	  InputProcessing	  "Elements as channels (sample based)"
-	  SampleTime		  "0.001"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "TransferFcn4_intProduct"
-	  SID			  "93"
-	  Ports			  [2, 1]
-	  Position		  [470, 160, 510, 220]
-	  ZOrder		  38
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "TransferFcn4_intgainconst"
-	  SID			  "95"
-	  Position		  [470, 160, 510, 220]
-	  ZOrder		  40
-	  Value			  "0.001"
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn5Gain_N_1"
-	  SID			  "66"
+	  BlockType		  TransferFcn
+	  Name			  "TransferFcn5"
+	  SID			  "43"
 	  Position		  [570, 222, 630, 258]
-	  ZOrder		  19
-	  Gain			  "3.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn5_Gain_D1"
-	  SID			  "68"
-	  Position		  [570, 222, 630, 258]
-	  ZOrder		  21
-	  Gain			  "-3.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn5_Gain_D2"
-	  SID			  "67"
-	  Position		  [570, 222, 630, 258]
-	  ZOrder		  20
-	  Gain			  "1.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn5_add1"
-	  SID			  "69"
-	  Ports			  [2, 1]
-	  Position		  [570, 220, 630, 260]
-	  ZOrder		  22
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn5_intAdd"
-	  SID			  "76"
-	  Ports			  [2, 1]
-	  Position		  [570, 220, 630, 260]
-	  ZOrder		  29
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  UnitDelay
-	  Name			  "TransferFcn5_intDelay"
-	  SID			  "78"
-	  Position		  [570, 222, 630, 258]
-	  ZOrder		  31
-	  InputProcessing	  "Elements as channels (sample based)"
-	  SampleTime		  "0.001"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "TransferFcn5_intProduct"
-	  SID			  "77"
-	  Ports			  [2, 1]
-	  Position		  [570, 222, 630, 258]
-	  ZOrder		  30
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "TransferFcn5_intgainconst"
-	  SID			  "79"
-	  Position		  [570, 222, 630, 258]
-	  ZOrder		  32
-	  Value			  "0.001"
+	  ZOrder		  6
+	  Numerator		  "[3.0]"
+	  Denominator		  "[1.0, 3.0]"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "th1"
-	  SID			  "43"
+	  SID			  "48"
 	  Position		  [270, 98, 300, 112]
-	  ZOrder		  6
+	  ZOrder		  10
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "th2"
-	  SID			  "44"
+	  SID			  "49"
 	  Position		  [475, 112, 505, 128]
-	  ZOrder		  7
+	  ZOrder		  11
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "TransferFcn3Gain_N_1"
+	  SrcBlock		  "uc"
 	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    Points		    [5, 0]
-	    DstBlock		    "Goto"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -70]
-	    DstBlock		    "th1"
-	    DstPort		    1
-	  }
+	  DstBlock		  "TransferFcn2"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "ProductofElements1"
 	  SrcPort		  1
-	  Points		  [0, -35; -75, 0]
-	  DstBlock		  "TransferFcn3_add1"
+	  Points		  [0, -40; -75, 0]
+	  DstBlock		  "TransferFcn3"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "TransferFcn2Gain_N_1"
+	  SrcBlock		  "ProductofElements3"
 	  SrcPort		  1
-	  Points		  [45, 0]
+	  Points		  [0, -35; -55, 0]
+	  DstBlock		  "TransferFcn4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "TransferFcn5"
+	  SrcPort		  1
+	  Points		  [0, 40; -175, 0]
+	  DstBlock		  "ProductofElements3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "TransferFcn4"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [0, -55; -55, 0]
+	    DstBlock		    "th2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "Goto1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "TransferFcn3"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [10, 0; 0, -70]
+	    DstBlock		    "th1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -5]
+	    DstBlock		    "Goto"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "TransferFcn2"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 15]
 	  DstBlock		  "ProductofElements1"
 	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "y"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [20, 0; 0, -15]
+	    DstBlock		    "SumofElements1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 145; -45, 0]
+	    DstBlock		    "TransferFcn5"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "ym"
@@ -1379,310 +1095,19 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "uc"
-	  SrcPort		  1
-	  DstBlock		  "TransferFcn2_add1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "y"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    Points		    [0, 145; -45, 0]
-	    DstBlock		    "TransferFcn5_add1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [20, 0; 0, -15]
-	    DstBlock		    "SumofElements1"
-	    DstPort		    2
-	  }
-	}
-	Line {
 	  SrcBlock		  "SumofElements1"
 	  SrcPort		  1
 	  Points		  [0, 0]
 	  Branch {
-	    Points		    [0, 235; -495, 0]
-	    DstBlock		    "ProductofElements1"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, 170; -180, 0; 0, 20; -55, 0]
+	    Points		    [0, 170; -180, 0; 0, 20; -60, 0; 0, 30]
 	    DstBlock		    "ProductofElements3"
 	    DstPort		    2
 	  }
-	}
-	Line {
-	  SrcBlock		  "TransferFcn5Gain_N_1"
-	  SrcPort		  1
-	  Points		  [0, -25; -120, 0; 0, 20; -55, 0]
-	  DstBlock		  "ProductofElements3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "ProductofElements3"
-	  SrcPort		  1
-	  Points		  [0, -30; -55, 0]
-	  DstBlock		  "TransferFcn4_add1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn4Gain_N_1"
-	  SrcPort		  1
-	  Points		  [0, 0]
 	  Branch {
-	    Points		    [5, 0]
-	    DstBlock		    "Goto1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -55; -55, 0]
-	    DstBlock		    "th2"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "TransferFcn4_Gain_D1"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, 45]
-	  DstBlock		  "TransferFcn4_add1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn4_add1"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 35]
-	  DstBlock		  "TransferFcn4_Gain_D2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn4_Gain_D2"
-	  SrcPort		  1
-	  Points		  [0, -35; -60, 0]
-	  DstBlock		  "TransferFcn4_intProduct"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn4_intDelay"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    Points		    [0, -35; -65, 0; 0, 35]
-	    DstBlock		    "TransferFcn4Gain_N_1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -35; -65, 0; 0, 35]
-	    DstBlock		    "TransferFcn4_Gain_D1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [-15, 0; 0, 45]
-	    DstBlock		    "TransferFcn4_intAdd"
+	    Points		    [0, 170; -180, 0; 0, 10; -320, 0; 0, 30]
+	    DstBlock		    "ProductofElements1"
 	    DstPort		    2
 	  }
-	}
-	Line {
-	  SrcBlock		  "TransferFcn3_Gain_D1"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 80]
-	  DstBlock		  "TransferFcn3_add1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn3_add1"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 35]
-	  DstBlock		  "TransferFcn3_Gain_D2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn3_Gain_D2"
-	  SrcPort		  1
-	  Points		  [0, -35; -60, 0]
-	  DstBlock		  "TransferFcn3_intProduct"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn3_intDelay"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    Points		    [0, -35; -65, 0; 0, 35]
-	    DstBlock		    "TransferFcn3Gain_N_1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -35; -65, 0; 0, 35]
-	    DstBlock		    "TransferFcn3_Gain_D1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -35; -65, 0; 0, 85; 40, 0]
-	    DstBlock		    "TransferFcn3_intAdd"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "TransferFcn5_Gain_D1"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, 35]
-	  DstBlock		  "TransferFcn5_add1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn5_add1"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn5_Gain_D2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn5_Gain_D2"
-	  SrcPort		  1
-	  Points		  [0, -25; -80, 0]
-	  DstBlock		  "TransferFcn5_intProduct"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn5_intDelay"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    Points		    [0, -25; -85, 0; 0, 25]
-	    DstBlock		    "TransferFcn5Gain_N_1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -25; -85, 0; 0, 25]
-	    DstBlock		    "TransferFcn5_Gain_D1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [5, 0; 0, 40; -40, 0]
-	    DstBlock		    "TransferFcn5_intAdd"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "TransferFcn2_Gain_D1"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, 35]
-	  DstBlock		  "TransferFcn2_add1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn2_add1"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn2_Gain_D2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn2_Gain_D2"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn2_intgainconstGain"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn2_intDelay"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    Points		    [0, -25; -85, 0; 0, 25]
-	    DstBlock		    "TransferFcn2Gain_N_1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -25; -85, 0; 0, 25]
-	    DstBlock		    "TransferFcn2_Gain_D1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [5, 0; 0, 40; -40, 0]
-	    DstBlock		    "TransferFcn2_intAdd"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "TransferFcn2_intgainconstGain"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn2_intAdd"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn2_intAdd"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn2_intDelay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn5_intgainconst"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 35]
-	  DstBlock		  "TransferFcn5_intProduct"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn5_intProduct"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn5_intAdd"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn5_intAdd"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn5_intDelay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn3_intgainconst"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 50]
-	  DstBlock		  "TransferFcn3_intProduct"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn3_intProduct"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 35]
-	  DstBlock		  "TransferFcn3_intAdd"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn3_intAdd"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 35]
-	  DstBlock		  "TransferFcn3_intDelay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn4_intgainconst"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 50]
-	  DstBlock		  "TransferFcn4_intProduct"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn4_intProduct"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 35]
-	  DstBlock		  "TransferFcn4_intAdd"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn4_intAdd"
-	  SrcPort		  1
-	  Points		  [0, -35; -65, 0; 0, 35]
-	  DstBlock		  "TransferFcn4_intDelay"
-	  DstPort		  1
 	}
       }
     }
@@ -1718,97 +1143,63 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "th2"
-	  SID			  "48"
+	  SID			  "54"
 	  Position		  [230, 158, 260, 172]
-	  ZOrder		  8
+	  ZOrder		  9
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
 	  Name			  "th1"
-	  SID			  "49"
+	  SID			  "55"
 	  Position		  [25, 73, 55, 87]
-	  ZOrder		  9
+	  ZOrder		  10
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
 	  Name			  "uc"
-	  SID			  "50"
+	  SID			  "56"
 	  Position		  [25, 28, 55, 42]
-	  ZOrder		  10
+	  ZOrder		  11
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
 	  Name			  "y"
-	  SID			  "46"
+	  SID			  "52"
 	  Position		  [240, 103, 270, 117]
-	  ZOrder		  7
+	  ZOrder		  8
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto"
-	  SID			  "37"
+	  SID			  "38"
 	  Position		  [340, 15, 380, 45]
-	  ZOrder		  5
+	  ZOrder		  6
 	  GotoTag		  "u"
 	  TagVisibility		  "global"
 	}
 	Block {
-	  BlockType		  Sum
-	  Name			  "IntegratorAdd"
-	  SID			  "84"
-	  Ports			  [2, 1]
+	  BlockType		  Integrator
+	  Name			  "Integrator"
+	  SID			  "18"
+	  Ports			  [1, 1]
 	  Position		  [155, 195, 185, 225]
-	  ZOrder		  11
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  UnitDelay
-	  Name			  "IntegratorDelay"
-	  SID			  "86"
-	  Position		  [155, 195, 185, 225]
-	  ZOrder		  13
-	  X0			  "0.0"
-	  InputProcessing	  "Elements as channels (sample based)"
-	  SampleTime		  "0.001"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "IntegratorProduct"
-	  SID			  "85"
-	  Ports			  [2, 1]
-	  Position		  [155, 197, 185, 228]
-	  ZOrder		  12
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Integratorgainconst"
-	  SID			  "87"
-	  Position		  [155, 195, 185, 225]
-	  ZOrder		  14
-	  Value			  "0.001"
+	  ZOrder		  1
+	  InitialCondition	  "0.0"
 	}
 	Block {
 	  BlockType		  Product
 	  Name			  "ProductofElements"
-	  SID			  "28"
+	  SID			  "29"
 	  Ports			  [2, 1]
 	  Position		  [90, 27, 120, 58]
-	  ZOrder		  4
+	  ZOrder		  5
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -1816,10 +1207,10 @@ Model {
 	Block {
 	  BlockType		  Product
 	  Name			  "ProductofElements2"
-	  SID			  "27"
+	  SID			  "28"
 	  Ports			  [2, 1]
 	  Position		  [155, 102, 185, 133]
-	  ZOrder		  3
+	  ZOrder		  4
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
@@ -1827,10 +1218,10 @@ Model {
 	Block {
 	  BlockType		  Scope
 	  Name			  "Scope"
-	  SID			  "24"
+	  SID			  "25"
 	  Ports			  [1]
 	  Position		  [240, 194, 270, 226]
-	  ZOrder		  2
+	  ZOrder		  3
 	  Floating		  off
 	  Location		  [188, 390, 512, 629]
 	  Open			  off
@@ -1847,10 +1238,10 @@ Model {
 	Block {
 	  BlockType		  Sum
 	  Name			  "SumofElements"
-	  SID			  "19"
+	  SID			  "20"
 	  Ports			  [2, 1]
 	  Position		  [275, 35, 305, 75]
-	  ZOrder		  1
+	  ZOrder		  2
 	  ShowName		  off
 	  Inputs		  "+-"
 	  InputSameDT		  off
@@ -1860,52 +1251,39 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "u"
-	  SID			  "39"
+	  SID			  "40"
 	  Position		  [375, 48, 405, 62]
-	  ZOrder		  6
+	  ZOrder		  7
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "IntegratorDelay"
+	  SrcBlock		  "ProductofElements2"
 	  SrcPort		  1
 	  Points		  [0, 0]
 	  Branch {
-	    DstBlock		    "Scope"
+	    Points		    [0, 70; -50, 0]
+	    DstBlock		    "Integrator"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [5, 0; 0, 30]
-	    DstBlock		    "IntegratorAdd"
+	    Points		    [35, 0; 0, -55]
+	    DstBlock		    "SumofElements"
 	    DstPort		    2
 	  }
-	}
-	Line {
-	  SrcBlock		  "th2"
-	  SrcPort		  1
-	  Points		  [0, -25; -125, 0]
-	  DstBlock		  "ProductofElements2"
-	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "SumofElements"
 	  SrcPort		  1
 	  Points		  [0, 0]
 	  Branch {
-	    DstBlock		    "u"
-	    DstPort		    1
-	  }
-	  Branch {
 	    Points		    [5, 0; 0, -25]
 	    DstBlock		    "Goto"
 	    DstPort		    1
 	  }
-	}
-	Line {
-	  SrcBlock		  "th1"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, -30]
-	  DstBlock		  "ProductofElements"
-	  DstPort		  2
+	  Branch {
+	    DstBlock		    "u"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "y"
@@ -1915,51 +1293,35 @@ Model {
 	  DstPort		  1
 	}
 	Line {
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+	Line {
 	  SrcBlock		  "ProductofElements"
 	  SrcPort		  1
 	  DstBlock		  "SumofElements"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "uc"
+	  SrcBlock		  "th2"
 	  SrcPort		  1
-	  DstBlock		  "ProductofElements"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "ProductofElements2"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    Points		    [45, 0; 0, -55]
-	    DstBlock		    "SumofElements"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, 70; -50, 0]
-	    DstBlock		    "IntegratorProduct"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Integratorgainconst"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, 25; -55, 0]
-	  DstBlock		  "IntegratorProduct"
+	  Points		  [0, -25; -125, 0]
+	  DstBlock		  "ProductofElements2"
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "IntegratorProduct"
+	  SrcBlock		  "th1"
 	  SrcPort		  1
-	  Points		  [0, 20; -55, 0; 0, -25]
-	  DstBlock		  "IntegratorAdd"
-	  DstPort		  1
+	  Points		  [5, 0; 0, -30]
+	  DstBlock		  "ProductofElements"
+	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "IntegratorAdd"
+	  SrcBlock		  "uc"
 	  SrcPort		  1
-	  Points		  [0, -20; -55, 0; 0, 20]
-	  DstBlock		  "IntegratorDelay"
+	  DstBlock		  "ProductofElements"
 	  DstPort		  1
 	}
       }
@@ -1996,7 +1358,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "30"
+	  SID			  "31"
 	  Position		  [275, 26, 315, 54]
 	  ZOrder		  5
 	  GotoTag		  "th1"
@@ -2004,7 +1366,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From1"
-	  SID			  "32"
+	  SID			  "33"
 	  Position		  [280, 71, 320, 99]
 	  ZOrder		  6
 	  GotoTag		  "th2"
@@ -2012,7 +1374,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "34"
+	  SID			  "35"
 	  Position		  [30, 26, 70, 54]
 	  ZOrder		  7
 	  GotoTag		  "ym"
@@ -2020,7 +1382,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From3"
-	  SID			  "36"
+	  SID			  "37"
 	  Position		  [25, 71, 65, 99]
 	  ZOrder		  8
 	  GotoTag		  "y"
@@ -2028,7 +1390,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From4"
-	  SID			  "38"
+	  SID			  "39"
 	  Position		  [105, 96, 145, 124]
 	  ZOrder		  9
 	  GotoTag		  "u"
@@ -2036,7 +1398,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "18"
+	  SID			  "19"
 	  Ports			  [2, 1]
 	  Position		  [115, 31, 120, 69]
 	  ZOrder		  1
@@ -2047,7 +1409,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux1"
-	  SID			  "20"
+	  SID			  "21"
 	  Ports			  [2, 1]
 	  Position		  [355, 36, 360, 74]
 	  ZOrder		  2
@@ -2058,7 +1420,7 @@ Model {
 	Block {
 	  BlockType		  Scope
 	  Name			  "Scope"
-	  SID			  "22"
+	  SID			  "23"
 	  Ports			  [2]
 	  Position		  [170, 45, 200, 80]
 	  ZOrder		  3
@@ -2079,7 +1441,7 @@ Model {
 	Block {
 	  BlockType		  Scope
 	  Name			  "Scope1"
-	  SID			  "23"
+	  SID			  "24"
 	  Ports			  [1]
 	  Position		  [395, 39, 425, 71]
 	  ZOrder		  4
@@ -2097,18 +1459,18 @@ Model {
 	  SampleTime		  "0"
 	}
 	Line {
-	  SrcBlock		  "From4"
+	  SrcBlock		  "Mux"
 	  SrcPort		  1
-	  Points		  [0, -40]
+	  Points		  [15, 0; 0, 5]
 	  DstBlock		  "Scope"
-	  DstPort		  2
+	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "From3"
+	  SrcBlock		  "From"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, -25]
-	  DstBlock		  "Mux"
-	  DstPort		  2
+	  Points		  [10, 0; 0, 5]
+	  DstBlock		  "Mux1"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "From1"
@@ -2130,18 +1492,18 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "From"
+	  SrcBlock		  "From3"
 	  SrcPort		  1
-	  Points		  [10, 0; 0, 5]
-	  DstBlock		  "Mux1"
-	  DstPort		  1
+	  Points		  [15, 0; 0, -25]
+	  DstBlock		  "Mux"
+	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Mux"
+	  SrcBlock		  "From4"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, 5]
+	  Points		  [0, -40]
 	  DstBlock		  "Scope"
-	  DstPort		  1
+	  DstPort		  2
 	}
       }
     }
@@ -2177,7 +1539,7 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "u"
-	  SID			  "52"
+	  SID			  "58"
 	  Position		  [25, 38, 55, 52]
 	  ZOrder		  4
 	  IconDisplay		  "Port number"
@@ -2185,7 +1547,7 @@ Model {
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto"
-	  SID			  "35"
+	  SID			  "36"
 	  Position		  [180, 115, 220, 145]
 	  ZOrder		  1
 	  GotoTag		  "y"
@@ -2194,7 +1556,7 @@ Model {
 	Block {
 	  BlockType		  TransferFcn
 	  Name			  "TransferFcn1"
-	  SID			  "40"
+	  SID			  "41"
 	  Position		  [75, 27, 135, 63]
 	  ZOrder		  2
 	  Numerator		  "[0.5]"
@@ -2203,7 +1565,7 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "y"
-	  SID			  "42"
+	  SID			  "47"
 	  Position		  [175, 38, 205, 52]
 	  ZOrder		  3
 	  IconDisplay		  "Port number"
@@ -2213,12 +1575,12 @@ Model {
 	  SrcPort		  1
 	  Points		  [0, 0]
 	  Branch {
-	    DstBlock		    "y"
+	    Points		    [10, 0; 0, 85]
+	    DstBlock		    "Goto"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [10, 0; 0, 85]
-	    DstBlock		    "Goto"
+	    DstBlock		    "y"
 	    DstPort		    1
 	  }
 	}
@@ -2275,198 +1637,56 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "uc"
-	  SID			  "47"
+	  SID			  "53"
 	  Position		  [25, 38, 55, 52]
-	  ZOrder		  3
+	  ZOrder		  4
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Goto
 	  Name			  "Goto"
-	  SID			  "31"
+	  SID			  "32"
 	  Position		  [215, 90, 255, 120]
 	  ZOrder		  1
 	  GotoTag		  "ym"
 	  TagVisibility		  "global"
 	}
 	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcnGain_N_1"
-	  SID			  "58"
+	  BlockType		  TransferFcn
+	  Name			  "TransferFcn"
+	  SID			  "50"
 	  Position		  [90, 27, 150, 63]
-	  ZOrder		  4
-	  Gain			  "2.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn_Gain_D1"
-	  SID			  "60"
-	  Position		  [90, 27, 150, 63]
-	  ZOrder		  6
-	  Gain			  "-3.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Gain
-	  Name			  "TransferFcn_Gain_D2"
-	  SID			  "59"
-	  Position		  [90, 27, 150, 63]
-	  ZOrder		  5
-	  Gain			  "1.0"
-	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn_add1"
-	  SID			  "61"
-	  Ports			  [2, 1]
-	  Position		  [90, 25, 150, 65]
-	  ZOrder		  7
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "TransferFcn_intAdd"
-	  SID			  "88"
-	  Ports			  [2, 1]
-	  Position		  [90, 25, 150, 65]
-	  ZOrder		  8
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  UnitDelay
-	  Name			  "TransferFcn_intDelay"
-	  SID			  "90"
-	  Position		  [90, 27, 150, 63]
-	  ZOrder		  10
-	  InputProcessing	  "Elements as channels (sample based)"
-	  SampleTime		  "0.001"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "TransferFcn_intProduct"
-	  SID			  "89"
-	  Ports			  [2, 1]
-	  Position		  [90, 27, 150, 63]
-	  ZOrder		  9
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "TransferFcn_intgainconst"
-	  SID			  "91"
-	  Position		  [90, 27, 150, 63]
-	  ZOrder		  11
-	  Value			  "0.001"
+	  ZOrder		  3
+	  Numerator		  "[2.0]"
+	  Denominator		  "[1.0, 3.0]"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "ym"
-	  SID			  "41"
+	  SID			  "42"
 	  Position		  [175, 38, 205, 52]
 	  ZOrder		  2
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "TransferFcnGain_N_1"
+	  SrcBlock		  "uc"
+	  SrcPort		  1
+	  DstBlock		  "TransferFcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "TransferFcn"
 	  SrcPort		  1
 	  Points		  [0, 0]
+	  Branch {
+	    Points		    [10, 0; 0, 60]
+	    DstBlock		    "Goto"
+	    DstPort		    1
+	  }
 	  Branch {
 	    DstBlock		    "ym"
 	    DstPort		    1
 	  }
-	  Branch {
-	    Points		    [0, -10; 55, 0; 0, 70]
-	    DstBlock		    "Goto"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "uc"
-	  SrcPort		  1
-	  DstBlock		  "TransferFcn_add1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn_Gain_D1"
-	  SrcPort		  1
-	  Points		  [0, -10; 55, 0; 0, 45]
-	  DstBlock		  "TransferFcn_add1"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn_add1"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn_Gain_D2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn_Gain_D2"
-	  SrcPort		  1
-	  Points		  [0, -25; -80, 0]
-	  DstBlock		  "TransferFcn_intProduct"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn_intDelay"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    Points		    [0, -25; -85, 0; 0, 25]
-	    DstBlock		    "TransferFcnGain_N_1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -25; -85, 0; 0, 25]
-	    DstBlock		    "TransferFcn_Gain_D1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -10; 55, 0; 0, 50; -90, 0]
-	    DstBlock		    "TransferFcn_intAdd"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "TransferFcn_intgainconst"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 35]
-	  DstBlock		  "TransferFcn_intProduct"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "TransferFcn_intProduct"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn_intAdd"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "TransferFcn_intAdd"
-	  SrcPort		  1
-	  Points		  [0, -25; -85, 0; 0, 25]
-	  DstBlock		  "TransferFcn_intDelay"
-	  DstPort		  1
 	}
       }
     }
@@ -2479,6 +1699,20 @@ Model {
       IconDisplay	      "Port number"
     }
     Line {
+      SrcBlock		      "control"
+      SrcPort		      1
+      Points		      [5, 0; 0, -5]
+      DstBlock		      "plant"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "adaptation"
+      SrcPort		      1
+      Points		      [5, 0; 0, 65; -135, 0]
+      DstBlock		      "control"
+      DstPort		      2
+    }
+    Line {
       SrcBlock		      "adaptation"
       SrcPort		      2
       Points		      [0, 35; -130, 0]
@@ -2486,20 +1720,12 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "adaptation"
-      SrcPort		      1
-      Points		      [0, -20; -140, 0; 0, 115]
-      DstBlock		      "control"
-      DstPort		      2
-    }
-    Line {
       SrcBlock		      "plant"
       SrcPort		      1
       Points		      [0, 0]
       Branch {
-	Points			[0, 45; -255, 0]
-	DstBlock		"control"
-	DstPort			4
+	DstBlock		"y"
+	DstPort			1
       }
       Branch {
 	Points			[0, -50; -255, 0]
@@ -2507,8 +1733,9 @@ Model {
 	DstPort			3
       }
       Branch {
-	DstBlock		"y"
-	DstPort			1
+	Points			[0, 45; -255, 0]
+	DstBlock		"control"
+	DstPort			4
       }
     }
     Line {
@@ -2519,20 +1746,13 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "control"
-      SrcPort		      1
-      Points		      [5, 0; 0, -5]
-      DstBlock		      "plant"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "r"
       SrcPort		      1
       Points		      [0, 0]
       Branch {
-	Points			[50, 0; 0, 5]
-	DstBlock		"control"
-	DstPort			3
+	Points			[55, 0; 0, -185]
+	DstBlock		"reference model"
+	DstPort			1
       }
       Branch {
 	Points			[50, 0; 0, -110]
@@ -2540,9 +1760,9 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[55, 0; 0, -185]
-	DstBlock		"reference model"
-	DstPort			1
+	Points			[50, 0; 0, 5]
+	DstBlock		"control"
+	DstPort			3
       }
     }
   }

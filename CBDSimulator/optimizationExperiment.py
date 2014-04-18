@@ -106,7 +106,7 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
     path = "./examples/"
-    model = "adapt"
+    model = "HFlattModel"
     
     
         

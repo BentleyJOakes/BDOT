@@ -2,7 +2,8 @@ from CBD import *
 from SimulinkCBD import *
 from FlowAnalyzer.FlowAnalyzer import *
 import time
-
+import os    
+import sys
 class Optimization:
 
     def __init__(self, simulator):
@@ -52,4 +53,26 @@ class Optimization:
         
     def transform(self, model):
         pass
+        
+    #function to dynamically load a new class
+    import importlib
+
+    def load_class(self, full_class_string):
+        directory, module_name = os.path.split(full_class_string)
+        module_name = os.path.splitext(module_name)[0]
+
+        path = list(sys.path)
+        sys.path.insert(0, directory)
+
+        try:
+            module = __import__(module_name)
+        finally:
+            sys.path[:] = path # restore
+        return {module_name : getattr(module, module_name)}
+        
+    def get_object(self, full_class_string):
+        d = self.load_class(full_class_string)
+        return d.values()[0]()
+    
+    
         

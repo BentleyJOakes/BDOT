@@ -3,6 +3,8 @@ from Server.Core.SimulinkTransformationToTCore import SimulinkTransformationToHi
 from Server.TCore.core.himesis import Himesis, HimesisPreConditionPatternLHS, HimesisPostConditionPattern
 from Server.TCore.t_core.messages import Packet
 
+from HimesisToCBD.himesis_utils import *
+
 class FlatteningOptimization(Optimization):
     
     
@@ -12,6 +14,8 @@ class FlatteningOptimization(Optimization):
         Optimization.__init__(self, simulator)
         self.mh = mh
         
+        self.useModelTransformation = True
+        
     def optimize(self, model):
     
         print("Start Flattening")
@@ -19,7 +23,6 @@ class FlatteningOptimization(Optimization):
         analysis = self.analyze(model)
         model = self.transform(model, analysis)
         
-        #new_model = self.transform(model, analysis)
         
         return model
         
@@ -36,7 +39,33 @@ class FlatteningOptimization(Optimization):
     def transform(self, model, analysis):
     
         #do code transformation
-        if True: #self.mh == None:
+        if self.useModelTransformation:
+            
+            transformation = "flattening"
+            path = "./examples/"
+            
+            model_name = model.getBlockName()
+            model_name = Himesis.standardize_name(model_name)
+            
+            if not self.mh == None:
+                # Transfornation to T-Core
+                transformationToHimesis = SimulinkTransformationToHimesis(transformation, path, self.mh)
+                transformationToHimesis.SimulinkTransformationModelToHimesis()
+            
+            
+            # Execute the Transformation
+            model_graph = self.get_object('./himesis/' + model_name + ".py")
+            
+            packet = Packet()
+            packet.graph = model_graph
+            
+
+            exec("import temp.T_" + transformation)
+            exec('packet = temp.T_'+ transformation +'.packet_in(packet)')
+            
+            print(packet)
+
+        else:
             for subsystem in analysis:
                 
                 if len(subsystem.linksIN) == 0:
@@ -46,28 +75,7 @@ class FlatteningOptimization(Optimization):
                 self.fix_incoming_edges(model, subsystem)
                 self.fix_outgoing_edges(model, subsystem)
                 self.remove_subsystem(model, subsystem)
-                
-        
-        
-        else:
-            transformation = "flattening"
-            path = "./examples/"
-            
-            model_name = model.getBlockName()
-            model_name = Himesis.standardize_name(model_name)
-            
-            # Transfornation to T-Core
-            transformationToHimesis = SimulinkTransformationToHimesis(transformation, path, self.mh)
-            transformationToHimesis.SimulinkTransformationModelToHimesis()
-            
-            
-            
-            # Execute the Transformation
-            exec("from himesis."+ model_name + " import " + model_name)
-            exec("import temp.T_" + transformation)
-            packet = Packet()
-            exec("packet.graph = "+ model_name + "()")
-            exec('packet = temp.T_'+ transformation +'.packet_in(packet)')
+          
             
         return model
     

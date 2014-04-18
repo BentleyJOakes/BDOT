@@ -1,0 +1,13 @@
+Time taken to connect to Simulink: 15.7724940777 seconds
+Time taken to import from Simulink: 9.19270896912 seconds
+
+Time taken for Himesis to CBD: 0.08 seconds
+Time taken to build simulator: 0.0 seconds
+
+Time taken for analysis: 0.03 seconds
+
+Time taken for transformation: 0.0 seconds
+
+Time taken for CBD to Himesis: 0.05 seconds
+
+Time taken to export to Simulink: 0.01 seconds
