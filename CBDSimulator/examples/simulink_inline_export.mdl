@@ -1,5 +1,5 @@
 Model {
-  Name			  "HSimpleConstDead_export"
+  Name			  "simulink_inline_export"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +30,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 19:15:56 2014"
+  Created		  "Mon Apr 21 18:44:04 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 19:16:11 2014"
-  RTWModifiedTimeStamp	  320008568
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Mon Apr 21 18:44:05 2014"
+  RTWModifiedTimeStamp	  320006645
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -75,13 +75,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HSimpleConstDead_export"
-    signals_		    []
+    model_		    "simulink_inline_export"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HSimpleConstDead_export"
+      Cell		      "simulink_inline_export"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -690,6 +689,21 @@ Model {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Inport
       Port		      "1"
       OutputFunctionCall      off
@@ -725,25 +739,49 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
-      BlockType		      Product
-      Inputs		      "2"
-      Multiplication	      "Element-wise(.*)"
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
       CollapseMode	      "All dimensions"
       CollapseDim	      "1"
       InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
       OutMin		      "[]"
       OutMax		      "[]"
       OutDataTypeStr	      "Inherit: Same as first input"
       LockScale		      off
-      RndMeth		      "Zero"
+      RndMeth		      "Floor"
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
   }
   System {
-    Name		    "HSimpleConstDead_export"
-    Location		    [2662, 621, 3242, 881]
-    Open		    on
+    Name		    "simulink_inline_export"
+    Location		    [70, 200, 650, 460]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -756,30 +794,93 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4"
+    SIDHighWatermark	    "10"
     Block {
       BlockType		      Inport
       Name		      "In1"
       SID		      "3"
-      Position		      [170, 178, 200, 192]
+      Position		      [95, 23, 125, 37]
       ZOrder		      3
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Constant
-      Name		      "Constant2"
+      Name		      "Constant"
       SID		      "4"
-      Position		      [155, 122, 210, 158]
+      Position		      [75, 77, 155, 103]
       ZOrder		      4
-      Value		      "433.22"
+      Value		      "MAX_LIFT"
     }
     Block {
-      BlockType		      Product
-      Name		      "Product"
+      BlockType		      Constant
+      Name		      "Constant1"
+      SID		      "9"
+      Position		      [75, 112, 155, 138]
+      ZOrder		      7
+      Value		      "SLIDER_POS"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "G1"
+      SID		      "5"
+      Position		      [290, 16, 335, 44]
+      ZOrder		      5
+      Gain		      "2.0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "G2"
+      SID		      "10"
+      Position		      [400, 95, 440, 125]
+      ZOrder		      8
+      Gain		      "-2.0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Inline Parameter Setting1"
+      SID		      "6"
+      Ports		      []
+      Position		      [473, 315, 601, 376]
+      ZOrder		      6
+      BackgroundColor	      "yellow"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Inline Parameter Setting1"
+	Location		[433, 403, 931, 703]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
       SID		      "2"
       Ports		      [2, 1]
-      Position		      [305, 132, 335, 163]
+      Position		      [485, 55, 515, 95]
       ZOrder		      2
+      ShowName		      off
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -788,29 +889,35 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "1"
-      Position		      [390, 118, 420, 132]
+      Position		      [555, 68, 585, 82]
       ZOrder		      1
       IconDisplay	      "Port number"
     }
     Line {
-      SrcBlock		      "Product"
+      SrcBlock		      "G1"
       SrcPort		      1
-      Points		      [15, 0; 0, -25]
+      Points		      [65, 0; 0, 35]
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
       DstBlock		      "Out1"
       DstPort		      1
     }
     Line {
       SrcBlock		      "In1"
       SrcPort		      1
-      Points		      [40, 0; 0, -30]
-      DstBlock		      "Product"
-      DstPort		      2
+      DstBlock		      "G1"
+      DstPort		      1
     }
     Line {
-      SrcBlock		      "Constant2"
+      SrcBlock		      "G2"
       SrcPort		      1
-      DstBlock		      "Product"
-      DstPort		      1
+      Points		      [10, 0; 0, -25]
+      DstBlock		      "Sum"
+      DstPort		      2
     }
   }
 }

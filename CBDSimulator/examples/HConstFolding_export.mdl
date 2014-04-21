@@ -1,21 +1,12 @@
 Model {
-  Name			  "HSimpleConstDead_export"
+  Name			  "HConstFolding_export"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
-    NumRootInports	    1
-    Inport {
-      BusObject		      ""
-      Name		      "In1"
-    }
-    NumRootOutports	    1
-    Outport {
-      BusObject		      ""
-      BusOutputAsStruct	      "off"
-      Name		      "Out1"
-    }
+    NumRootInports	    0
+    NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.0"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +21,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 19:15:56 2014"
+  Created		  "Mon Apr 21 19:13:07 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 19:16:11 2014"
-  RTWModifiedTimeStamp	  320008568
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Mon Apr 21 19:13:07 2014"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement: 0 >"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -75,13 +66,13 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HSimpleConstDead_export"
+    model_		    "HConstFolding_export"
     signals_		    []
-    overrideMode_	    [0.0]
+    overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HSimpleConstDead_export"
+      Cell		      "HConstFolding_export"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -676,74 +667,11 @@ Model {
     FontAngle		    "normal"
   }
   BlockParameterDefaults {
-    Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
-      LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
-    }
-    Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
-    }
-    Block {
-      BlockType		      Outport
-      Port		      "1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      SourceOfInitialOutputValue "Dialog"
-      OutputWhenDisabled      "held"
-      InitialOutput	      "[]"
-    }
-    Block {
-      BlockType		      Product
-      Inputs		      "2"
-      Multiplication	      "Element-wise(.*)"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Zero"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
   }
   System {
-    Name		    "HSimpleConstDead_export"
-    Location		    [2662, 621, 3242, 881]
-    Open		    on
+    Name		    "HConstFolding_export"
+    Location		    [70, 200, 650, 460]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -756,61 +684,5 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4"
-    Block {
-      BlockType		      Inport
-      Name		      "In1"
-      SID		      "3"
-      Position		      [170, 178, 200, 192]
-      ZOrder		      3
-      IconDisplay	      "Port number"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "4"
-      Position		      [155, 122, 210, 158]
-      ZOrder		      4
-      Value		      "433.22"
-    }
-    Block {
-      BlockType		      Product
-      Name		      "Product"
-      SID		      "2"
-      Ports		      [2, 1]
-      Position		      [305, 132, 335, 163]
-      ZOrder		      2
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Outport
-      Name		      "Out1"
-      SID		      "1"
-      Position		      [390, 118, 420, 132]
-      ZOrder		      1
-      IconDisplay	      "Port number"
-    }
-    Line {
-      SrcBlock		      "Product"
-      SrcPort		      1
-      Points		      [15, 0; 0, -25]
-      DstBlock		      "Out1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "In1"
-      SrcPort		      1
-      Points		      [40, 0; 0, -30]
-      DstBlock		      "Product"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      DstBlock		      "Product"
-      DstPort		      1
-    }
   }
 }

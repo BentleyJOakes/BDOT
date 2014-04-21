@@ -1,5 +1,5 @@
 Model {
-  Name			  "HSimpleConstDead_export"
+  Name			  "Const1_export"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
@@ -30,14 +30,14 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 19:15:56 2014"
+  Created		  "Mon Apr 21 16:19:36 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 19:16:11 2014"
-  RTWModifiedTimeStamp	  320008568
+  LastModifiedDate	  "Mon Apr 21 17:02:54 2014"
+  RTWModifiedTimeStamp	  320000492
   ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -75,13 +75,13 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HSimpleConstDead_export"
+    model_		    "Const1_export"
     signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HSimpleConstDead_export"
+      Cell		      "Const1_export"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -725,24 +725,25 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
-      BlockType		      Product
-      Inputs		      "2"
-      Multiplication	      "Element-wise(.*)"
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
       CollapseMode	      "All dimensions"
       CollapseDim	      "1"
       InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
       OutMin		      "[]"
       OutMax		      "[]"
       OutDataTypeStr	      "Inherit: Same as first input"
       LockScale		      off
-      RndMeth		      "Zero"
+      RndMeth		      "Floor"
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
   }
   System {
-    Name		    "HSimpleConstDead_export"
-    Location		    [2662, 621, 3242, 881]
+    Name		    "Const1_export"
+    Location		    [2657, 745, 3237, 1005]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -761,25 +762,28 @@ Model {
       BlockType		      Inport
       Name		      "In1"
       SID		      "3"
-      Position		      [170, 178, 200, 192]
+      Position		      [150, 58, 180, 72]
       ZOrder		      3
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Constant
-      Name		      "Constant2"
+      Name		      "Constant23"
       SID		      "4"
-      Position		      [155, 122, 210, 158]
+      Position		      [140, 118, 190, 152]
       ZOrder		      4
-      Value		      "433.22"
+      Value		      "439.304"
     }
     Block {
-      BlockType		      Product
-      Name		      "Product"
+      BlockType		      Sum
+      Name		      "Sum"
       SID		      "2"
       Ports		      [2, 1]
-      Position		      [305, 132, 335, 163]
+      Position		      [300, 95, 320, 115]
       ZOrder		      2
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -788,28 +792,29 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "1"
-      Position		      [390, 118, 420, 132]
+      Position		      [415, 138, 445, 152]
       ZOrder		      1
       IconDisplay	      "Port number"
     }
     Line {
-      SrcBlock		      "Product"
+      SrcBlock		      "Constant23"
       SrcPort		      1
-      Points		      [15, 0; 0, -25]
+      Points		      [0, -5]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [35, 0; 0, 40]
       DstBlock		      "Out1"
       DstPort		      1
     }
     Line {
       SrcBlock		      "In1"
       SrcPort		      1
-      Points		      [40, 0; 0, -30]
-      DstBlock		      "Product"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      DstBlock		      "Product"
+      Points		      [20, 0; 0, 40]
+      DstBlock		      "Sum"
       DstPort		      1
     }
   }

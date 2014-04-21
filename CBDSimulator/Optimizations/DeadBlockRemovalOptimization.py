@@ -4,11 +4,11 @@ class DeadBlockRemovalOptimization(Optimization):
     
     
        
-    def __init__(self, simulator):
+    def __init__(self, simulator, mh):
         self.KEEP = "KEEP"
         self.REMOVE = "REMOVE"
         
-        Optimization.__init__(self, simulator)
+        Optimization.__init__(self, simulator, mh)
         
         
     def optimize(self, model):

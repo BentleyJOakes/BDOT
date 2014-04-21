@@ -37,6 +37,15 @@ class MatlabHelper:
 
     def loadSystem(self,name):
         self.mat.evaluate('load_system {0}', name)
+        
+    def drawSystem(self,name, outpath):
+        print(self.getCurrentDir())
+        self.loadSystem(name)
+        #saveas(gcf,'logo', 'pdf')
+        self.mat.evaluate("draw_handle = get_param('{0}', 'Handle')", name)
+        self.mat.evaluate("saveas(draw_handle,'{0}','pdf')", name)
+        print(self.mat.getString("ans"))
+        self.closeWithoutSave(name)
 
     def chDir(self,fullPath):
         self.mat.evaluate("chdir '{0}'", fullPath)
@@ -51,7 +60,9 @@ class MatlabHelper:
         self.mat.evaluate("close_system '{0}'", name)
 
     def closeWithoutSave(self,name):
+        #self.mat.evaluate('print -s{0} -dsvg {1}', name, name)
         self.mat.evaluate("bdclose '{0}'", name)
+        
 
     def createSystem(self, name):
         self.mat.evaluate("new_system '{0}'", name)
@@ -143,11 +154,11 @@ class MatlabHelper:
         self.mat.evaluate("lines_h = active.find('Type', 'line', 'Name', '{0}')", lineName)
         self.mat.evaluate("seg_nrs = size(lines_h)")
         size = self.mat.getMatrix("seg_nrs").asMatrix()[0][0]
-        print size
+        #print size
         self.mat.evaluate("get(lines_h,'Points')")
         points =  self.mat.getMatrix("ans").asVector()
-        for e in points:
-            print e
+        #for e in points:
+        #    print e
 
     def renameAllLines(self, system):
         self.openSystem(system)
@@ -156,7 +167,7 @@ class MatlabHelper:
         self.mat.evaluate("lines = active.find('Type', 'line')")
         self.mat.evaluate("cnt = size(lines)")
         cnt = int(self.mat.getMatrix("cnt").asMatrix()[0][0])
-        print cnt
+        #print cnt
         for i in range(1,cnt+1):
             self.mat.evaluate("line = lines({0})", i)
             self.mat.evaluate("line.Name")
@@ -171,10 +182,10 @@ class MatlabHelper:
         self.mat.evaluate("Simulink.SubSystem.deleteContents('{0}');", subsys)
 
     def findElementAndStoreIntoBlk(self, system, blockPath):
-        print "blockpath: " + blockPath
+        #print "blockpath: " + blockPath
         parts = blockPath.split('/')
         blockName = parts[len(parts) - 1]
-        print "blockname: " + blockName
+        #print "blockname: " + blockName
         c = ""
         if len(parts) < 2 :
             c = ""
@@ -184,7 +195,7 @@ class MatlabHelper:
                 c += p + '/'
             c = c[:-1]
         expectedFullName = "{0}{1}/{2}".format(system, c, blockName)
-        print "expectedFullName: "+expectedFullName
+        #print "expectedFullName: "+expectedFullName
 
         self.mat.evaluate("r = sfroot")
         self.mat.evaluate("active = r.find('-depth', 1, 'Name', '{0}')", system)
@@ -239,9 +250,9 @@ class MatlabHelper:
                 type = type.strip()
             self.mat.evaluate("blks({0}).getFullName", i)
             fullname = self.mat.getString("ans")
-            print fullname
+            #print fullname
             name = fullname[len(system) + 1:]
-            print name
+            #print name
             ret[name] = (type.replace(".", "/"),fullname)
         return ret
 
@@ -270,7 +281,7 @@ class MatlabHelper:
         varName = varName.format(*args)
         parentName = self.mat.evaluate("{0}.getParent", varName)
         parentName = self.mat.getString("ans")
-        print "parentName: " + str(parentName)
+        #print "parentName: " + str(parentName)
         if parentName is None or "Simulink.BlockDiagram" in parentName :
             return ""
         self.mat.evaluate("{0}.getParent().ReferenceBlock", varName)
@@ -287,7 +298,7 @@ class MatlabHelper:
         self.mat.evaluate("cnt = size(level{0}); cnt = cnt(1);", level)
         cnt = self.mat.getMatrix("cnt")
         cnt = int(cnt.asVector()[0])
-        print "cnt " + str(cnt)
+        #print "cnt " + str(cnt)
         for i in range(1,cnt+1):
             self.mat.evaluate("act = level{0}{{{1}}}", level, i)
             if self.mat.getValueType("act") == InvokeSo.CHAR:
@@ -308,7 +319,7 @@ class MatlabHelper:
             fieldName = self.mat.getString("ans")
             self.mat.evaluate("fields." + fieldName + ".Type")
             type = self.mat.getString("ans")
-            print type
+            #print type
             #self.mat.evaluate("fields." + fieldName + ".Attributes")
             #attributes = self.mat.getString("ans")
             #print attributes

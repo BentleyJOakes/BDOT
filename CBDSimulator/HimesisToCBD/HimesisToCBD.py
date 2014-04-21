@@ -57,7 +57,7 @@ class HimesisToCBD:
                 block_class = getattr(module, 'Simulink_' + block_type + "Block")
                 
             except Exception:
-                print("Error: Unknown Simulink block type '" + block_type + "'!")  
+                print("HimesisToCBD Error: Unknown Simulink block type '" + block_type + "'!")  
                 block_class = getattr(module, 'Simulink_GenericBlock')
                 
             cbd.addBlock(block_class(block_name, block))

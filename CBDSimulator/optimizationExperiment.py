@@ -46,9 +46,14 @@ class OptimizationExperiment:
             #turn Simulink model into himesis graph
             modelToHimesis = SimulinkModelToHimesis(self.mh,model,path)
             modelToHimesis.SimulinkModelToHimesis()
-            
+         
             end = time.time()
             print("Time taken to import from Simulink: " + str(end - start) + " seconds")
+            
+            #draw model
+            #print("Start drawing")
+            #self.mh.drawSystem(model, "~/")
+            #print("End drawing")
         
         
         start = time.clock()
@@ -84,9 +89,7 @@ class OptimizationExperiment:
             end = time.clock()
             print("Time taken to export to Simulink: " + str(end - start) + " seconds")
  
- 
- 
- 
+
  
  
     #CBD functions
@@ -106,15 +109,15 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
     path = "./examples/"
-    model = "HFlattModel"
+    model = "HSimpleConstDead"
     
     
         
-    experiment = OptimizationExperiment(skip_simulink=True)
+    experiment = OptimizationExperiment(skip_simulink=False)
     
     #opt = ConstantFoldingOptimization
-    opt = FlatteningOptimization
-    #opt = DeadBlockRemovalOptimization
+    #opt = FlatteningOptimization
+    opt = DeadBlockRemovalOptimization
     
     
     experiment.run(path, model, opt)

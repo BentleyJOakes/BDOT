@@ -1,13 +1,9 @@
 Model {
-  Name			  "HSimpleConstDead_export"
+  Name			  "Const2"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
-    NumRootInports	    1
-    Inport {
-      BusObject		      ""
-      Name		      "In1"
-    }
+    NumRootInports	    0
     NumRootOutports	    1
     Outport {
       BusObject		      ""
@@ -15,7 +11,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +26,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 19:15:56 2014"
+  Created		  "Mon Apr 21 14:35:37 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 19:16:11 2014"
-  RTWModifiedTimeStamp	  320008568
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Mon Apr 21 18:24:45 2014"
+  RTWModifiedTimeStamp	  320005480
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -75,18 +71,19 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HSimpleConstDead_export"
+    model_		    "Const1"
     signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HSimpleConstDead_export"
+      Cell		      "Const1"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
       Type		      "Cell"
-      Dimension		      0
+      Dimension		      1
+      Cell		      []
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
@@ -635,7 +632,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
+      ConfigPrmDlgPosition     [ 1480, 285, 2360, 915 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -690,22 +687,19 @@ Model {
       PreserveConstantTs      off
     }
     Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
+      OutDataTypeStr	      "Inherit: Same as input"
       LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
     }
     Block {
       BlockType		      Outport
@@ -739,10 +733,25 @@ Model {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
+    }
   }
   System {
-    Name		    "HSimpleConstDead_export"
-    Location		    [2662, 621, 3242, 881]
+    Name		    "Const2"
+    Location		    [2919, 338, 3499, 598]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -756,60 +765,149 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4"
+    SIDHighWatermark	    "11"
     Block {
-      BlockType		      Inport
-      Name		      "In1"
-      SID		      "3"
-      Position		      [170, 178, 200, 192]
-      ZOrder		      3
-      IconDisplay	      "Port number"
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "2"
+      Position		      [140, 197, 185, 233]
+      ZOrder		      -4
+      Value		      "12.34"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      SID		      "5"
+      Position		      [145, 150, 175, 180]
+      ZOrder		      -4
+      Value		      "7.12"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant2"
-      SID		      "4"
-      Position		      [155, 122, 210, 158]
-      ZOrder		      4
-      Value		      "433.22"
+      SID		      "9"
+      Position		      [120, 35, 150, 65]
+      ZOrder		      -4
+      Value		      "2"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      SID		      "10"
+      Position		      [210, 35, 240, 65]
+      ZOrder		      -4
+      Value		      "124.5"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain"
+      SID		      "3"
+      Position		      [235, 195, 265, 225]
+      ZOrder		      -8
+      Gain		      "5"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Product
       Name		      "Product"
-      SID		      "2"
+      SID		      "4"
       Ports		      [2, 1]
-      Position		      [305, 132, 335, 163]
-      ZOrder		      2
+      Position		      [285, 157, 315, 188]
+      ZOrder		      -13
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      Product
+      Name		      "Product1"
+      SID		      "11"
+      Ports		      [2, 1]
+      Position		      [285, 62, 315, 93]
+      ZOrder		      -13
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch"
+      SID		      "8"
+      Position		      [355, 125, 405, 165]
+      ZOrder		      -19
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Outport
       Name		      "Out1"
-      SID		      "1"
-      Position		      [390, 118, 420, 132]
-      ZOrder		      1
+      SID		      "6"
+      Position		      [450, 128, 480, 142]
+      ZOrder		      -23
       IconDisplay	      "Port number"
     }
     Line {
-      SrcBlock		      "Product"
+      SrcBlock		      "Constant1"
       SrcPort		      1
-      Points		      [15, 0; 0, -25]
-      DstBlock		      "Out1"
+      DstBlock		      "Product"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "In1"
+      SrcBlock		      "Constant"
       SrcPort		      1
-      Points		      [40, 0; 0, -30]
+      Points		      [0, -5]
+      DstBlock		      "Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain"
+      SrcPort		      1
       DstBlock		      "Product"
       DstPort		      2
     }
     Line {
+      SrcBlock		      "Switch"
+      SrcPort		      1
+      Points		      [25, 0]
+      DstBlock		      "Out1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Product"
+      SrcPort		      1
+      Points		      [0, -15]
+      DstBlock		      "Switch"
+      DstPort		      3
+    }
+    Line {
       SrcBlock		      "Constant2"
       SrcPort		      1
-      DstBlock		      "Product"
+      Points		      [25, 0; 0, 40]
+      Branch {
+	Points			[0, 35; 135, 0; 0, 20]
+	DstBlock		"Switch"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -5]
+	DstBlock		"Product1"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      Points		      [15, 0; 0, 20]
+      DstBlock		      "Product1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Product1"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Switch"
       DstPort		      1
     }
   }

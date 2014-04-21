@@ -11,8 +11,7 @@ class FlatteningOptimization(Optimization):
        
     def __init__(self, simulator, mh):
         
-        Optimization.__init__(self, simulator)
-        self.mh = mh
+        Optimization.__init__(self, simulator, mh)
         
         self.useModelTransformation = True
         

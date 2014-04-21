@@ -73,6 +73,7 @@ class Simulink_ConstantBlock(ConstantBlock):
         ConstantBlock.__init__(self, block_name, value=block["value"])
         self.block = block
         
+    #in Simulink, constants have parents
     def linkInput(self, in_block):
         BaseBlock.linkInput(self, in_block)
         
@@ -81,6 +82,33 @@ class Simulink_SumBlock(AdderBlock):
     def __init__(self, block_name, block):
         BaseBlock.__init__(self, block_name)
         self.block = block
+        
+        
+class Simulink_SwitchBlock(BaseBlock):
+    def __init__(self, block_name, block):
+        BaseBlock.__init__(self, block_name)
+        self.block = block
+        
+        self.GREATER_THAN_EQUAL = "GTE"
+        self.GREATER_THAN = "GT"
+        self.NOT_EQUAL = "NE"
+        
+        
+        for k in block.attributes():
+            print(k)
+            print(block[k])
+            
+        if ">=" in block['Criteria']:
+            self.criteria = self.GREATER_THAN_EQUAL 
+        elif ">" in block['Criteria']:
+            self.criteria = self.GREATER_THAN
+        else:
+            self.criteria = self.NOT_EQUAL
+            
+        self.threshold = block['Threshold']
+        
+        
+        
         
         
 class Simulink_IntegratorBlock(BaseBlock):
@@ -113,6 +141,8 @@ class Simulink_UnitDelayBlock(BaseBlock):
     def __init__(self, block_name, block):
         BaseBlock.__init__(self, block_name)
         self.block = block
+        
+
 
 class Simulink_GotoBlock(BaseBlock):
     def __init__(self, block_name, block):

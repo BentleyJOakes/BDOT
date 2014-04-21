@@ -1,12 +1,16 @@
 Model {
-  Name			  "HSimpleConstDead_export"
+  Name			  "DeadBlock1"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
-    NumRootInports	    1
+    NumRootInports	    2
     Inport {
       BusObject		      ""
       Name		      "In1"
+    }
+    Inport {
+      BusObject		      ""
+      Name		      "In2"
     }
     NumRootOutports	    1
     Outport {
@@ -15,7 +19,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +34,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 19:15:56 2014"
+  Created		  "Mon Apr 21 15:37:48 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 19:16:11 2014"
-  RTWModifiedTimeStamp	  320008568
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Mon Apr 21 15:45:05 2014"
+  RTWModifiedTimeStamp	  319995854
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -75,18 +79,19 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HSimpleConstDead_export"
+    model_		    "DeadBlock1"
     signals_		    []
-    overrideMode_	    [0.0]
+    overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HSimpleConstDead_export"
+      Cell		      "DeadBlock1"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
       Type		      "Cell"
-      Dimension		      0
+      Dimension		      1
+      Cell		      []
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
@@ -635,7 +640,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
+      ConfigPrmDlgPosition     [ 1480, 285, 2360, 915 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -739,10 +744,43 @@ Model {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Array"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
+    }
   }
   System {
-    Name		    "HSimpleConstDead_export"
-    Location		    [2662, 621, 3242, 881]
+    Name		    "DeadBlock1"
+    Location		    [2934, 554, 3514, 814]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -756,61 +794,137 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4"
+    SIDHighWatermark	    "8"
     Block {
       BlockType		      Inport
       Name		      "In1"
-      SID		      "3"
-      Position		      [170, 178, 200, 192]
-      ZOrder		      3
+      SID		      "5"
+      Position		      [175, 198, 205, 212]
+      ZOrder		      -1
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "In2"
+      SID		      "7"
+      Position		      [45, 23, 75, 37]
+      ZOrder		      -1
+      Port		      "2"
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "4"
-      Position		      [155, 122, 210, 158]
-      ZOrder		      4
-      Value		      "433.22"
+      Name		      "Constant"
+      SID		      "6"
+      Position		      [45, 70, 75, 100]
+      ZOrder		      -4
+      Value		      "10"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      SID		      "8"
+      Position		      [25, 140, 55, 170]
+      ZOrder		      -4
+      Value		      "123.7"
     }
     Block {
       BlockType		      Product
       Name		      "Product"
-      SID		      "2"
+      SID		      "4"
       Ports		      [2, 1]
-      Position		      [305, 132, 335, 163]
-      ZOrder		      2
+      Position		      [315, 157, 345, 188]
+      ZOrder		      -13
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "1"
+      Ports		      [1]
+      Position		      [430, 154, 460, 186]
+      ZOrder		      -16
+      Floating		      off
+      Location		      [188, 390, 512, 629]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      ShowLegends	      off
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch"
+      SID		      "3"
+      Position		      [185, 90, 235, 130]
+      ZOrder		      -19
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Outport
       Name		      "Out1"
-      SID		      "1"
-      Position		      [390, 118, 420, 132]
-      ZOrder		      1
+      SID		      "2"
+      Position		      [430, 88, 460, 102]
+      ZOrder		      -23
       IconDisplay	      "Port number"
-    }
-    Line {
-      SrcBlock		      "Product"
-      SrcPort		      1
-      Points		      [15, 0; 0, -25]
-      DstBlock		      "Out1"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "In1"
       SrcPort		      1
-      Points		      [40, 0; 0, -30]
+      Points		      [45, 0; 0, -25]
       DstBlock		      "Product"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Constant2"
+      SrcBlock		      "Product"
       SrcPort		      1
+      Points		      [30, 0; 0, -45]
+      Branch {
+	Points			[0, -35]
+	DstBlock		"Out1"
+	DstPort			1
+      }
+      Branch {
+	Points			[20, 0; 0, 25; 15, 0]
+	DstBlock		"Scope"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Switch"
+      SrcPort		      1
+      Points		      [30, 0; 0, 55]
       DstBlock		      "Product"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [45, 0; 0, 25]
+      DstBlock		      "Switch"
+      DstPort		      2
+    }
+    Line {
+      Labels		      [2, 0]
+      SrcBlock		      "In2"
+      SrcPort		      1
+      Points		      [70, 0; 0, 65]
+      DstBlock		      "Switch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      Points		      [110, 0; 0, -20]
+      DstBlock		      "Switch"
+      DstPort		      3
     }
   }
 }

@@ -11,7 +11,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.2"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -32,9 +32,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 08 18:11:10 2014"
-  RTWModifiedTimeStamp	  318881470
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Mon Apr 21 19:14:11 2014"
+  RTWModifiedTimeStamp	  320008449
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -743,8 +743,8 @@ Model {
   }
   System {
     Name		    "HConstfolding_export"
-    Location		    [70, 200, 650, 460]
-    Open		    off
+    Location		    [70, 200, 1008, 473]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -762,7 +762,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant50"
       SID		      "7"
-      Position		      [255, 50, 285, 80]
+      Position		      [445, 80, 475, 110]
       ZOrder		      7
       Value		      "36.6"
     }
@@ -770,7 +770,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant51"
       SID		      "8"
-      Position		      [255, 50, 285, 80]
+      Position		      [445, 15, 490, 45]
       ZOrder		      8
       Value		      "16.253"
     }
@@ -778,7 +778,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain2"
       SID		      "5"
-      Position		      [715, 50, 745, 80]
+      Position		      [715, 49, 755, 81]
       ZOrder		      5
       Gain		      "1.0"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -789,7 +789,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain3"
       SID		      "6"
-      Position		      [765, 50, 795, 80]
+      Position		      [785, 49, 825, 81]
       ZOrder		      6
       Gain		      "1.0"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -831,7 +831,7 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "1"
-      Position		      [825, 58, 855, 72]
+      Position		      [845, 58, 875, 72]
       ZOrder		      1
       IconDisplay	      "Port number"
     }
@@ -856,7 +856,6 @@ Model {
     Line {
       SrcBlock		      "Constant50"
       SrcPort		      1
-      Points		      [255, 0]
       DstBlock		      "Unit Delay1"
       DstPort		      1
     }
@@ -870,7 +869,6 @@ Model {
     Line {
       SrcBlock		      "Constant51"
       SrcPort		      1
-      Points		      [0, -35]
       DstBlock		      "Unit Delay"
       DstPort		      1
     }

@@ -4,11 +4,11 @@ class ConstantFoldingOptimization(Optimization):
     
     
        
-    def __init__(self, simulator):
+    def __init__(self, simulator, mh):
         self.TOP = "TOP"
         self.BOTTOM = "BOTTOM"
         
-        Optimization.__init__(self, simulator)
+        Optimization.__init__(self, simulator, mh)
         
         
     def optimize(self, model):
@@ -22,7 +22,7 @@ class ConstantFoldingOptimization(Optimization):
         #TODO: depGraph should be created another way
         self.__depGraph = self.simulator.getDepGraph()
         self.sortedGraph = self.__depGraph.getStrongComponents()
-        print("SortedGraph:" + str(self.sortedGraph))
+        #print("SortedGraph:" + str(self.sortedGraph))
         
         flowAnalyzer = FlowAnalyzer()
         flowAnalyzer.initFcn = self.initFcn
@@ -50,7 +50,7 @@ class ConstantFoldingOptimization(Optimization):
       self.tempConstValues= []
         
     def analyzeComponent(self, component, approxSets):
-        print("Component: " + str(component))
+        #print("Component: " + str(component))
         
         #TODO: what is this for?
         if not len(component) == 1:
@@ -61,7 +61,7 @@ class ConstantFoldingOptimization(Optimization):
         block = component[0]
         in_blocks = self.get_influence_blocks(block)
         
-        print(block.getBlockName())
+        #print(block.getBlockName())
         
         #return the value if the block is a ConstantBlock
         if self.isA(block, [ConstantBlock, Simulink_ConstantBlock]):
@@ -80,6 +80,42 @@ class ConstantFoldingOptimization(Optimization):
                 return valueApprox
             else:
                 return self.TOP
+                
+                
+        elif isinstance(block,Simulink_SwitchBlock):
+            #for parent in in_blocks:
+            #    print(parent.getBlockName())
+                
+            #print("criteria: " + block.criteria)
+            #print("threshold: " + str(block.threshold))
+                
+            ports = self.get_ports(block)
+            
+            firstName = ports['1'].getBlockName()
+            secondName = ports['2'].getBlockName()
+            thirdName = ports['3'].getBlockName()
+            
+            firstValue = approxSets[firstName]
+            secondValue = approxSets[secondName]
+            thirdValue = approxSets[thirdName]
+            
+            if secondValue == self.TOP:
+                return self.TOP
+                
+            try:
+            
+                if (block.criteria == "GTE" and secondValue >= block.threshold) or  \
+                   (block.criteria == "GT" and secondValue > block.threshold) or  \
+                   (block.criteria == "NE" and not secondValue == block.threshold):
+                    return firstValue
+                    
+                else:
+                    return thirdValue
+            
+            
+            except Exception:
+                return self.TOP
+                
                 
         #pass values through demux block, and separate in structural block input
         if isinstance(block, Simulink_DemuxBlock):
@@ -100,9 +136,9 @@ class ConstantFoldingOptimization(Optimization):
                 return approxSets[parentName]
             else:
                 index = parentBlock.linksOUT.index(block)
-                print("Index: " + str(index))
+                #print("Index: " + str(index))
                 value = approxSets[parentName][index]
-                print("Value: " + str(value))
+                #print("Value: " + str(value))
                 return value
             
         

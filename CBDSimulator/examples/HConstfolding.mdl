@@ -11,7 +11,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.6"
+    ComputedModelVersion    "1.7"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -43,9 +43,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 17 14:33:32 2014"
-  RTWModifiedTimeStamp	  318958024
-  ModelVersionFormat	  "1.%<AutoIncrement:6>"
+  LastModifiedDate	  "Mon Apr 21 19:12:04 2014"
+  RTWModifiedTimeStamp	  320008322
+  ModelVersionFormat	  "1.%<AutoIncrement:7>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -83,6 +83,7 @@ Model {
     $ObjectID		    2
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "HConstfolding"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -786,8 +787,8 @@ Model {
   }
   System {
     Name		    "HConstfolding"
-    Location		    [525, 444, 1470, 800]
-    Open		    off
+    Location		    [702, 436, 1647, 792]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -813,7 +814,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "2"
-      Position		      [60, 110, 90, 140]
+      Position		      [30, 115, 60, 145]
       ZOrder		      15
       Value		      "15.0"
     }
@@ -821,7 +822,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "3"
-      Position		      [125, 110, 155, 140]
+      Position		      [125, 125, 155, 155]
       ZOrder		      16
       Value		      "3.0"
     }
@@ -1056,14 +1057,14 @@ Model {
     Line {
       SrcBlock		      "Constant1"
       SrcPort		      1
-      Points		      [0, -25]
+      Points		      [0, -20; 75, 0]
       DstBlock		      "Sum"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Constant2"
       SrcPort		      1
-      Points		      [10, 0; 0, -30]
+      Points		      [10, 0; 0, -45]
       DstBlock		      "Mux"
       DstPort		      2
     }

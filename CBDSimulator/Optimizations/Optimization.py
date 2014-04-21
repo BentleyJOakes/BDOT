@@ -6,8 +6,9 @@ import os
 import sys
 class Optimization:
 
-    def __init__(self, simulator):
+    def __init__(self, simulator, mh):
         self.simulator = simulator
+        self.mh = mh
         
         self.SimulinkStructuralBlocks = [Simulink___Block_Outport__Block, Simulink___Block_Inport__Block, Simulink_Port_OutputBlock, Simulink_Port_InputBlock, Simulink___Relation__Block, Simulink___Contains__Block]
         self.SimulinkStructuralNames = []
@@ -34,6 +35,22 @@ class Optimization:
             if not isinstance(parent, Simulink___Contains__Block):
                 influence_blocks.append(parent)
         return influence_blocks
+        
+        
+    def get_ports(self, block):
+    
+        ports = {}
+        for parent in block.linksIN:
+            if isinstance(parent, Simulink___Contains__Block):
+                continue
+            print(parent.getBlockName())
+            
+            port_input = parent.linksIN[0]
+            port_num = port_input.block["Name"]
+            
+            ports[port_num] = parent
+            
+        return ports
         
     #TODO: there's probably a fancy way of doing this...
     def print_analysis(self, analysis, skip_structural = False):

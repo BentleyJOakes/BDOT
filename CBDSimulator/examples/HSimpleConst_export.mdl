@@ -1,5 +1,5 @@
 Model {
-  Name			  "HSimpleConstDead_export"
+  Name			  "HSimpleConst_export"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
@@ -30,14 +30,14 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 19:15:56 2014"
+  Created		  "Mon Apr 21 16:06:05 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 19:16:11 2014"
-  RTWModifiedTimeStamp	  320008568
+  LastModifiedDate	  "Mon Apr 21 16:06:42 2014"
+  RTWModifiedTimeStamp	  319997196
   ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -75,13 +75,13 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HSimpleConstDead_export"
+    model_		    "HSimpleConst_export"
     signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HSimpleConstDead_export"
+      Cell		      "HSimpleConst_export"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -741,8 +741,8 @@ Model {
     }
   }
   System {
-    Name		    "HSimpleConstDead_export"
-    Location		    [2662, 621, 3242, 881]
+    Name		    "HSimpleConst_export"
+    Location		    [2527, 414, 3107, 674]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -767,11 +767,11 @@ Model {
     }
     Block {
       BlockType		      Constant
-      Name		      "Constant2"
+      Name		      "Constant23"
       SID		      "4"
-      Position		      [155, 122, 210, 158]
+      Position		      [185, 93, 230, 127]
       ZOrder		      4
-      Value		      "433.22"
+      Value		      "545.54"
     }
     Block {
       BlockType		      Product
@@ -800,17 +800,18 @@ Model {
       DstPort		      1
     }
     Line {
+      SrcBlock		      "Constant23"
+      SrcPort		      1
+      Points		      [50, 0; 0, 30]
+      DstBlock		      "Product"
+      DstPort		      1
+    }
+    Line {
       SrcBlock		      "In1"
       SrcPort		      1
       Points		      [40, 0; 0, -30]
       DstBlock		      "Product"
       DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      DstBlock		      "Product"
-      DstPort		      1
     }
   }
 }
