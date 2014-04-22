@@ -19,7 +19,9 @@ class Optimization:
             
     def isA(self, obj, classes):
         for c in classes:
+            print(str(c))
             if isinstance(obj, c):
+                print("Class: " + str(c))
                 return True
         return False
         

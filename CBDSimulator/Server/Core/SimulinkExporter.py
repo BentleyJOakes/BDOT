@@ -15,7 +15,6 @@ class SimulinkExporter(object):
 
     def getBlock(self,port):
         # watch out inports have multiple in connections:
-
         incoming = port.predecessors()
         for innode in incoming:
         
@@ -73,7 +72,7 @@ class SimulinkExporter(object):
                     theStringPath+="/"+p
                 vs['SimulinkFullName'] = theStringPath[1:]+'/'+vs['Name']
                 vs['SimulinkFullName'] = vs['SimulinkFullName'][1:]
-                print vs['SimulinkFullName']
+                print("Simulink Full Name: " + vs['SimulinkFullName'])
                 
                 
         creator = SimulinkCreator(self.name,self.mh)
@@ -93,11 +92,12 @@ class SimulinkExporter(object):
                         for parameter in CommonParameters:
                             if node[parameter[0]] is not None:
                                 creator.addParameterToNewBlock(parameter[0], node[parameter[0]])
-
+     
+        
         for es in himesisgraph.es:
+        
             source = self.himesis.vs[es.source]
             target = self.himesis.vs[es.target]
-
             
             if source[Himesis.Constants.META_MODEL] == 'Port_Output' and target[Himesis.Constants.META_MODEL] == '__Relation__' :
                 thesuccessors = target.successors()
@@ -105,24 +105,24 @@ class SimulinkExporter(object):
                 target=thesuccessors[0]
                 if source[Himesis.Constants.META_MODEL] == 'Port_Output' and target[Himesis.Constants.META_MODEL] == 'Port_Input':
                     sourceBlock = self.getBlock(source)
-                    targetBlock = self.getBlock(target)
+                    targetBlock = self.getBlock(target)                    
                     if sourceBlock is not None and targetBlock is not None:
-                        print sourceBlock['SimulinkFullName']+'/'+str(source['Name'])
-                        print targetBlock['SimulinkFullName']+ '/'+str(target['Name'])
+                        print '1' + sourceBlock['SimulinkFullName']+'/'+str(source['Name'])
+                        print '1' + targetBlock['SimulinkFullName']+ '/'+str(target['Name'])
                         creator.addConnection(sourceBlock['SimulinkFullName'], source['Name'], targetBlock['SimulinkFullName'], target['Name'])
                 elif source[Himesis.Constants.META_MODEL] == 'Port_Output' and target[Himesis.Constants.META_MODEL] == 'Port_4':
                     sourceBlock = self.getBlock(source)
                     targetBlock = self.getBlock(target)
                     if sourceBlock is not None and targetBlock is not None:
-                        print sourceBlock['SimulinkFullName']+'/'+str(source['Name'])
-                        print targetBlock['SimulinkFullName']+ '/'+str(target['Name'])
+                        print '2' + sourceBlock['SimulinkFullName']+'/'+str(source['Name'])
+                        print '2' + targetBlock['SimulinkFullName']+ '/'+str(target['Name'])
                         creator.addConnection(sourceBlock['SimulinkFullName'], source['Name'], targetBlock['SimulinkFullName'], 'Trigger')
                 elif source[Himesis.Constants.META_MODEL] == 'Port_Output' and target[Himesis.Constants.META_MODEL] == 'Port_3':
                     sourceBlock = self.getBlock(source)
                     targetBlock = self.getBlock(target)
                     if sourceBlock is not None and targetBlock is not None:
-                        print sourceBlock['SimulinkFullName']+'/'+str(source['Name'])
-                        print targetBlock['SimulinkFullName']+ '/'+str(target['Name'])
+                        print '3' + sourceBlock['SimulinkFullName']+'/'+str(source['Name'])
+                        print '3' + targetBlock['SimulinkFullName']+ '/'+str(target['Name'])
                         creator.addConnection(sourceBlock['SimulinkFullName'], source['Name'], targetBlock['SimulinkFullName'], 'Enable')
 
         creator.saveAndClose()

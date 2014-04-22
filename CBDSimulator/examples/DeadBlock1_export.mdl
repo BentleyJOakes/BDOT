@@ -1,12 +1,16 @@
 Model {
-  Name			  "Flatten1"
+  Name			  "DeadBlock1_export"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
-    NumRootInports	    1
+    NumRootInports	    2
     Inport {
       BusObject		      ""
       Name		      "In1"
+    }
+    Inport {
+      BusObject		      ""
+      Name		      "In2"
     }
     NumRootOutports	    1
     Outport {
@@ -15,7 +19,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.9"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +34,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 14:35:37 2014"
+  Created		  "Mon Apr 21 19:23:05 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 21:27:31 2014"
-  RTWModifiedTimeStamp	  320016440
-  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  LastModifiedDate	  "Mon Apr 21 19:23:06 2014"
+  RTWModifiedTimeStamp	  320008986
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -75,19 +79,17 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Const1"
-    signals_		    []
+    model_		    "DeadBlock1_export"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Const1"
+      Cell		      "DeadBlock1_export"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
       Type		      "Cell"
-      Dimension		      1
-      Cell		      []
+      Dimension		      0
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
@@ -636,7 +638,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 1480, 285, 2360, 915 ] 
+      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -741,49 +743,43 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      SubSystem
-      ShowPortLabels	      "FromPortIcon"
-      Permissions	      "ReadWrite"
-      PermitHierarchicalResolution "All"
-      TreatAsAtomicUnit	      off
-      CheckFcnCallInpInsideContextMsg off
-      SystemSampleTime	      "-1"
-      RTWFcnNameOpts	      "Auto"
-      RTWFileNameOpts	      "Auto"
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      SimViewingDevice	      off
-      DataTypeOverride	      "UseLocalSettings"
-      DataTypeOverrideAppliesTo	"AllNumericTypes"
-      MinMaxOverflowLogging   "UseLocalSettings"
-      SFBlockType	      "NONE"
-      Variant		      off
-      GeneratePreprocessorConditionals off
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Array"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
     }
     Block {
-      BlockType		      Sum
-      IconShape		      "rectangular"
-      Inputs		      "++"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
       InputSameDT	      on
-      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
       LockScale		      off
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	on
+      ZeroCross		      on
       SampleTime	      "-1"
+      AllowDiffInputSizes     off
     }
   }
   System {
-    Name		    "Flatten1"
-    Location		    [2972, 218, 3688, 641]
-    Open		    on
+    Name		    "DeadBlock1_export"
+    Location		    [70, 200, 650, 460]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -796,225 +792,138 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "25"
+    SIDHighWatermark	    "8"
     Block {
       BlockType		      Inport
       Name		      "In1"
-      SID		      "22"
-      Position		      [15, 183, 45, 197]
-      ZOrder		      -1
+      SID		      "6"
+      Position		      [175, 198, 205, 212]
+      ZOrder		      6
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "In2"
+      SID		      "7"
+      Position		      [45, 23, 75, 37]
+      ZOrder		      7
+      Port		      "2"
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant"
-      SID		      "2"
-      Position		      [25, 102, 70, 138]
-      ZOrder		      -4
-      Value		      "12.34"
+      SID		      "5"
+      Position		      [45, 70, 75, 100]
+      ZOrder		      5
+      Value		      "10.0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      SID		      "8"
+      Position		      [25, 140, 55, 170]
+      ZOrder		      8
+      Value		      "123.7"
     }
     Block {
       BlockType		      Product
       Name		      "Product"
-      SID		      "12"
+      SID		      "2"
       Ports		      [2, 1]
-      Position		      [155, 147, 185, 178]
-      ZOrder		      -13
+      Position		      [315, 157, 345, 188]
+      ZOrder		      2
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem"
-      SID		      "13"
-      Ports		      [2, 1]
-      Position		      [255, 109, 355, 151]
-      ZOrder		      -17
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Subsystem"
-	Location		[2917, 702, 3415, 1002]
-	Open			on
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "In1"
-	  SID			  "14"
-	  Position		  [110, 103, 140, 117]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "In2"
-	  SID			  "16"
-	  Position		  [115, 178, 145, 192]
-	  ZOrder		  -1
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Constant2"
-	  SID			  "17"
-	  Position		  [125, 235, 155, 265]
-	  ZOrder		  -4
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product2"
-	  SID			  "19"
-	  Ports			  [2, 1]
-	  Position		  [215, 167, 245, 198]
-	  ZOrder		  -13
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum2"
-	  SID			  "18"
-	  Ports			  [2, 1]
-	  Position		  [275, 125, 295, 145]
-	  ZOrder		  -18
-	  IconShape		  "round"
-	  Inputs		  "++|"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out1"
-	  SID			  "15"
-	  Position		  [360, 103, 390, 117]
-	  ZOrder		  -2
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "In2"
-	  SrcPort		  1
-	  Points		  [25, 0; 0, -10]
-	  DstBlock		  "Product2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant2"
-	  SrcPort		  1
-	  Points		  [0, -30; 40, 0]
-	  DstBlock		  "Product2"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "In1"
-	  SrcPort		  1
-	  DstBlock		  "Sum2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Product2"
-	  SrcPort		  1
-	  Points		  [10, 0]
-	  DstBlock		  "Sum2"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Sum2"
-	  SrcPort		  1
-	  Points		  [20, 0; 0, -25]
-	  DstBlock		  "Out1"
-	  DstPort		  1
-	}
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "4"
+      Ports		      [1]
+      Position		      [430, 154, 460, 186]
+      ZOrder		      4
+      Floating		      off
+      Location		      [188, 390, 512, 629]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
       }
+      ShowLegends	      off
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
     }
     Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "24"
-      Ports		      [2, 1]
-      Position		      [410, 120, 430, 140]
-      ZOrder		      -18
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
+      BlockType		      Switch
+      Name		      "Switch"
+      SID		      "3"
+      Position		      [185, 90, 235, 130]
+      ZOrder		      3
+      Threshold		      "0.0"
       InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Outport
       Name		      "Out1"
-      SID		      "23"
-      Position		      [470, 123, 500, 137]
-      ZOrder		      -23
+      SID		      "1"
+      Position		      [430, 88, 460, 102]
+      ZOrder		      1
       IconDisplay	      "Port number"
-    }
-    Line {
-      SrcBlock		      "Constant"
-      SrcPort		      1
-      Points		      [40, 0; 0, 15]
-      Branch {
-	Points			[0, 20]
-	DstBlock		"Product"
-	DstPort			1
-      }
-      Branch {
-	Points			[20, 0; 0, -15]
-	DstBlock		"Subsystem"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "In1"
-      SrcPort		      1
-      Points		      [0, -5; 85, 0; 0, -15]
-      DstBlock		      "Product"
-      DstPort		      2
     }
     Line {
       SrcBlock		      "Product"
       SrcPort		      1
-      Points		      [25, 0; 0, -25; 15, 0]
+      Points		      [0, 0]
       Branch {
-	DstBlock		"Subsystem"
-	DstPort			2
+	Points			[30, 0; 0, -5]
+	DstBlock		"Scope"
+	DstPort			1
       }
       Branch {
-	Labels			[2, 0]
-	Points			[0, 35; 190, 0]
-	DstBlock		"Sum"
-	DstPort			2
+	Points			[30, 0; 0, -80]
+	DstBlock		"Out1"
+	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "Subsystem"
+      SrcBlock		      "Constant"
       SrcPort		      1
-      DstBlock		      "Sum"
+      Points		      [45, 0; 0, 25]
+      DstBlock		      "Switch"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "In1"
+      SrcPort		      1
+      Points		      [45, 0; 0, -25]
+      DstBlock		      "Product"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "In2"
+      SrcPort		      1
+      Points		      [90, 0]
+      DstBlock		      "Switch"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Sum"
+      SrcBlock		      "Switch"
       SrcPort		      1
-      DstBlock		      "Out1"
+      Points		      [30, 0; 0, 55]
+      DstBlock		      "Product"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      Points		      [55, 0; 0, -30]
+      DstBlock		      "Switch"
+      DstPort		      3
     }
   }
 }

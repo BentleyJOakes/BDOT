@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.2"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +30,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Fri Apr 18 18:04:11 2014"
+  Created		  "Mon Apr 21 19:37:50 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Apr 18 18:04:13 2014"
-  RTWModifiedTimeStamp	  319745053
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Mon Apr 21 19:41:17 2014"
+  RTWModifiedTimeStamp	  320010070
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -76,6 +76,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "HConstfolding_hier_export"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -634,7 +635,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 1480, 285, 2360, 915 ] 
+      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -754,29 +755,6 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      SubSystem
-      ShowPortLabels	      "FromPortIcon"
-      Permissions	      "ReadWrite"
-      PermitHierarchicalResolution "All"
-      TreatAsAtomicUnit	      off
-      CheckFcnCallInpInsideContextMsg off
-      SystemSampleTime	      "-1"
-      RTWFcnNameOpts	      "Auto"
-      RTWFileNameOpts	      "Auto"
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      SimViewingDevice	      off
-      DataTypeOverride	      "UseLocalSettings"
-      DataTypeOverrideAppliesTo	"AllNumericTypes"
-      MinMaxOverflowLogging   "UseLocalSettings"
-      SFBlockType	      "NONE"
-      Variant		      off
-      GeneratePreprocessorConditionals off
-    }
-    Block {
       BlockType		      Sum
       IconShape		      "rectangular"
       Inputs		      "++"
@@ -804,8 +782,8 @@ Model {
   }
   System {
     Name		    "HConstfolding_hier_export"
-    Location		    [70, 200, 650, 460]
-    Open		    off
+    Location		    [2583, 496, 3163, 756]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -818,178 +796,76 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "13"
+    SIDHighWatermark	    "7"
     Block {
       BlockType		      Inport
       Name		      "In1"
       SID		      "7"
-      Position		      [170, 28, 200, 42]
-      ZOrder		      5
+      Position		      [120, 93, 150, 107]
+      ZOrder		      7
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "1"
-      Position		      [140, 65, 170, 95]
+      Position		      [80, 140, 110, 170]
       ZOrder		      1
       Value		      "1.0"
     }
     Block {
       BlockType		      Gain
       Name		      "Gain"
-      SID		      "2"
-      Position		      [205, 65, 235, 95]
-      ZOrder		      2
+      SID		      "5"
+      Position		      [135, 140, 165, 170]
+      ZOrder		      5
       Gain		      "0.01"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem"
+      BlockType		      Product
+      Name		      "Product"
+      SID		      "2"
+      Ports		      [2, 1]
+      Position		      [195, 92, 225, 123]
+      ZOrder		      2
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
       SID		      "3"
       Ports		      [2, 1]
-      Position		      [260, 24, 305, 66]
+      Position		      [260, 100, 280, 120]
       ZOrder		      3
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Subsystem"
-	Location		[433, 403, 931, 703]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "In1"
-	  SID			  "13"
-	  Position		  [150, 88, 180, 102]
-	  ZOrder		  6
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "In2"
-	  SID			  "12"
-	  Position		  [150, 118, 180, 132]
-	  ZOrder		  5
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "8"
-	  Ports			  [2, 1]
-	  Position		  [210, 92, 240, 123]
-	  ZOrder		  1
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum"
-	  SID			  "9"
-	  Ports			  [2, 1]
-	  Position		  [260, 100, 280, 120]
-	  ZOrder		  2
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  UnitDelay
-	  Name			  "Unit Delay"
-	  SID			  "10"
-	  Position		  [290, 93, 325, 127]
-	  ZOrder		  3
-	  X0			  "0.0"
-	  InputProcessing	  "Elements as channels (sample based)"
-	  SampleTime		  "-1.0"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out1"
-	  SID			  "11"
-	  Position		  [365, 103, 395, 117]
-	  ZOrder		  4
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  DstBlock		  "Sum"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sum"
-	  SrcPort		  1
-	  DstBlock		  "Unit Delay"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Unit Delay"
-	  SrcPort		  1
-	  Points		  [0, 0]
-	  Branch {
-	    DstBlock		    "Out1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 25]
-	    DstBlock		    "Sum"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "In2"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, -10]
-	  DstBlock		  "Product"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "In1"
-	  SrcPort		  1
-	  Points		  [5, 0; 0, 5]
-	  DstBlock		  "Product"
-	  DstPort		  1
-	}
-      }
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay"
+      SID		      "4"
+      Position		      [315, 93, 350, 127]
+      ZOrder		      4
+      X0		      "0.0"
+      InputProcessing	      "Elements as channels (sample based)"
+      SampleTime	      "-1.0"
     }
     Block {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "6"
-      Position		      [335, 38, 365, 52]
-      ZOrder		      4
+      Position		      [400, 103, 430, 117]
+      ZOrder		      6
       IconDisplay	      "Port number"
-    }
-    Line {
-      SrcBlock		      "Subsystem"
-      SrcPort		      1
-      DstBlock		      "Out1"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "Constant"
@@ -998,16 +874,43 @@ Model {
       DstPort		      1
     }
     Line {
+      SrcBlock		      "Product"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Unit Delay"
+      DstPort		      1
+    }
+    Line {
+      Labels		      [1, 0]
+      SrcBlock		      "Unit Delay"
+      SrcPort		      1
+      Points		      [0, 0]
+      Branch {
+	DstBlock		"Out1"
+	DstPort			1
+      }
+      Branch {
+	Points			[10, 0; 0, 45; -95, 0]
+	DstBlock		"Sum"
+	DstPort			2
+      }
+    }
+    Line {
       SrcBlock		      "In1"
       SrcPort		      1
-      DstBlock		      "Subsystem"
+      DstBlock		      "Product"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Gain"
       SrcPort		      1
-      Points		      [0, -25]
-      DstBlock		      "Subsystem"
+      Points		      [0, -40]
+      DstBlock		      "Product"
       DstPort		      2
     }
   }

@@ -24,7 +24,7 @@ S'Simulink'
 p2
 a.""")
         self["name"] = """"""
-        self["GUID__"] = UUID('f76024aa-ec31-4b0b-a741-7d55656e18bc')
+        self["GUID__"] = UUID('454906ae-79a9-4b8a-8c02-92a177c0510f')
         
         # Set the node attributes
         self.vs[0]["BackgroundColor"] = """white"""
@@ -33,29 +33,29 @@ a.""")
         self.vs[0]["MT_post__gain"] = """return PreNode('1')['value']"""
         self.vs[0]["MT_post__Name"] = """return PreNode('1')['Name']+'Gain'"""
         self.vs[0]["mm__"] = """MT_post__Gain"""
-        self.vs[0]["GUID__"] = UUID('7a5643ff-1ab8-466c-9937-9533ba61d40d')
+        self.vs[0]["GUID__"] = UUID('e1f4f049-33c6-4551-bdb6-a2e87dfb8546')
         self.vs[1]["MT_label__"] = """0"""
         self.vs[1]["MT_post__Name"] = """return 1"""
         self.vs[1]["mm__"] = """MT_post__Port_Input"""
-        self.vs[1]["GUID__"] = UUID('2e013e0e-3d65-4112-9a8e-117f7ad31746')
+        self.vs[1]["GUID__"] = UUID('32364107-a231-4441-b66a-b7256a9ee831')
         self.vs[2]["MT_label__"] = """4"""
         self.vs[2]["MT_post__Name"] = """return 1"""
         self.vs[2]["mm__"] = """MT_post__Port_Output"""
-        self.vs[2]["GUID__"] = UUID('96c36997-dd48-4717-9143-dc307692eac1')
+        self.vs[2]["GUID__"] = UUID('6da1eb11-ddad-4cfe-83d2-f500fbc3cede')
         self.vs[3]["MT_label__"] = """99"""
         self.vs[3]["MT_post__Name"] = """return attr_value"""
         self.vs[3]["mm__"] = """MT_post__SubSystem"""
-        self.vs[3]["GUID__"] = UUID('ba288fcd-7eb5-4d62-894c-a7ca61d29a6a')
+        self.vs[3]["GUID__"] = UUID('779013ba-4e95-4458-b085-b745eca82c4f')
         self.vs[4]["MT_label__"] = """9900000005"""
         self.vs[4]["MT_post__Name"] = """return attr_value"""
         self.vs[4]["mm__"] = """MT_post____Contains__"""
-        self.vs[4]["GUID__"] = UUID('6635c7f3-c36c-4726-8caf-023ad2a61313')
+        self.vs[4]["GUID__"] = UUID('ab008e63-29d6-4238-8bf6-495c887bf4e9')
         self.vs[5]["MT_label__"] = """50000000000"""
         self.vs[5]["mm__"] = """MT_post____Block_Inport__"""
-        self.vs[5]["GUID__"] = UUID('62ebaf25-9148-436c-b964-ccf7e2ce39f6')
+        self.vs[5]["GUID__"] = UUID('430267a6-cb3c-4980-969a-468f99275ad8')
         self.vs[6]["MT_label__"] = """50000000004"""
         self.vs[6]["mm__"] = """MT_post____Block_Outport__"""
-        self.vs[6]["GUID__"] = UUID('bd6c52ed-b9d9-43ec-95a4-b1bd45ffc073')
+        self.vs[6]["GUID__"] = UUID('86bf73f0-7ebe-4b8e-a58a-f7b562ccb8fc')
 
         from HFlattening_SRULE_Product_ConstantLHS import HFlattening_SRULE_Product_ConstantLHS
         self.pre = HFlattening_SRULE_Product_ConstantLHS()

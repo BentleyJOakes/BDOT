@@ -9,7 +9,15 @@ import sys
 class CBDToHimesis:
 
     def __init__(self):
-        pass
+        self.SimulinkStructuralBlocks = [Simulink___Block_Outport__Block, Simulink___Block_Inport__Block, Simulink_Port_OutputBlock, Simulink_Port_InputBlock, Simulink___Relation__Block, Simulink___Contains__Block]
+        
+    def isA(self, obj, classes):
+        for c in classes:
+            #print(str(c))
+            if isinstance(obj, c):
+                #print("Class: " + str(c))
+                return True
+        return False
         
     def convert(self, model):
         model_name = model.getBlockName() + "_opt"
@@ -22,14 +30,17 @@ class CBDToHimesis:
         model_blocks = model.getBlocks()
         block_id_dict = {}
         
+        #need to avoid block name conflicts
+        self.block_names = []
+       
+        
+        
         for block in model_blocks:
             vertex = h.add_node()
             block_id_dict[block] = vertex
             
             self.get_attribs(h, vertex, block)
-            
-        
-        
+
         for block in model_blocks:
             vertex = block_id_dict[block]
             
@@ -57,12 +68,51 @@ class CBDToHimesis:
         return h
         
     def get_attribs(self, h, vertex, block):
+
         try:
-            #copy details if Simulink block
+            #copy details of Simulink block
             if block.block:
                 for attrib in block.block.attributes():
                     if attrib == "GUID__":
                         continue
+                        
+                        
+                    #rename blocks with conflicting names
+                    if attrib == "Name":
+                    
+                        #print("Block blockName: " + block.getBlockName())
+                        if self.isA(block, self.SimulinkStructuralBlocks):
+                            continue
+                            
+                        #print("Block blockName2: " + block.getBlockName())
+                            
+                        block_name = block.block[attrib]
+                        
+                        #print("Block name1: " + block_name)
+                        if block_name in self.block_names:
+                            #print("Conflict with: " + block_name)
+                            
+                            old_block_name = block_name
+                            block_name = block_name + str(vertex)
+                            block.block[attrib] = block_name
+                            
+                            
+#                            for es in h.es:
+#                                print("Source: " + es.source)
+#                                print("Target: " + es.target)
+#                            
+#                            
+#                                if es.source == old_block_name:
+#                                    print("Changing edge name source")
+#                                    es.source = block_name
+#                                if es.target == old_block_name:
+#                                    print("Changing edge name target")
+#                                    es.target = block_name
+                            
+                            
+                        #print("Block name2: " + block_name)
+                        self.block_names.append(block_name)
+                    
                         
                     h.vs[vertex][attrib] = block.block[attrib]
         except Exception: #not a Simulink block

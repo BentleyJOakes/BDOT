@@ -13,7 +13,7 @@ class FlatteningOptimization(Optimization):
         
         Optimization.__init__(self, simulator, mh)
         
-        self.useModelTransformation = True
+        self.useModelTransformation = False
         
     def optimize(self, model):
     
@@ -75,7 +75,6 @@ class FlatteningOptimization(Optimization):
                 self.fix_outgoing_edges(model, subsystem)
                 self.remove_subsystem(model, subsystem)
           
-            
         return model
     
     

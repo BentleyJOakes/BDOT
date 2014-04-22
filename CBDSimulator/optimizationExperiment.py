@@ -109,15 +109,15 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
     path = "./examples/"
-    model = "HSimpleConstDead"
+    model = "Flatten1"
     
     
         
     experiment = OptimizationExperiment(skip_simulink=False)
     
     #opt = ConstantFoldingOptimization
-    #opt = FlatteningOptimization
-    opt = DeadBlockRemovalOptimization
+    opt = FlatteningOptimization
+    #opt = DeadBlockRemovalOptimization
     
     
     experiment.run(path, model, opt)
