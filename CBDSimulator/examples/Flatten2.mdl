@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.11"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -36,9 +36,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 15:34:28 2014"
-  RTWModifiedTimeStamp	  319994152
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Tue Apr 22 22:14:26 2014"
+  RTWModifiedTimeStamp	  320105191
+  ModelVersionFormat	  "1.%<AutoIncrement:11>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -76,8 +76,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Flatten2"
-    signals_		    []
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -815,7 +814,7 @@ Model {
   }
   System {
     Name		    "Flatten2"
-    Location		    [2972, 460, 3552, 720]
+    Location		    [2941, 238, 3521, 498]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -829,7 +828,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "20"
+    SIDHighWatermark	    "23"
     Block {
       BlockType		      Inport
       Name		      "In1"
@@ -872,6 +871,7 @@ Model {
       Ports		      [2, 2]
       Position		      [145, 89, 245, 131]
       ZOrder		      -17
+      BackgroundColor	      "yellow"
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -881,7 +881,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem"
-	Location		[2758, 391, 3256, 691]
+	Location		[2048, 376, 2862, 858]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -893,13 +893,14 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"156"
 	Block {
 	  BlockType		  Inport
 	  Name			  "In1"
 	  SID			  "4"
-	  Position		  [40, 83, 70, 97]
+	  Position		  [40, 133, 70, 147]
 	  ZOrder		  -1
+	  BackgroundColor	  "yellow"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -908,23 +909,26 @@ Model {
 	  SID			  "9"
 	  Position		  [40, 193, 70, 207]
 	  ZOrder		  -1
+	  BackgroundColor	  "yellow"
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Constant
-	  Name			  "Constant"
+	  Name			  "Constant2"
 	  SID			  "12"
-	  Position		  [135, 125, 180, 155]
+	  Position		  [175, 120, 220, 150]
 	  ZOrder		  -4
+	  BackgroundColor	  "yellow"
 	  Value			  "12.34"
 	}
 	Block {
 	  BlockType		  Gain
-	  Name			  "Gain"
+	  Name			  "Gain2"
 	  SID			  "16"
-	  Position		  [410, 99, 450, 131]
+	  Position		  [405, 99, 445, 131]
 	  ZOrder		  -8
+	  BackgroundColor	  "yellow"
 	  Gain			  "5.4"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -932,22 +936,24 @@ Model {
 	}
 	Block {
 	  BlockType		  Product
-	  Name			  "Product"
+	  Name			  "Product2"
 	  SID			  "10"
 	  Ports			  [2, 1]
 	  Position		  [185, 177, 215, 208]
 	  ZOrder		  -13
+	  BackgroundColor	  "yellow"
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Subsystem"
+	  Name			  "Subsystem2"
 	  SID			  "13"
 	  Ports			  [2, 1]
 	  Position		  [270, 134, 370, 176]
 	  ZOrder		  -17
+	  BackgroundColor	  "lightBlue"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -956,8 +962,8 @@ Model {
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
 	  System {
-	    Name		    "Subsystem"
-	    Location		    [2840, 778, 3338, 1078]
+	    Name		    "Subsystem2"
+	    Location		    [2807, 426, 3439, 860]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -976,6 +982,7 @@ Model {
 	      SID		      "14"
 	      Position		      [110, 103, 140, 117]
 	      ZOrder		      -1
+	      BackgroundColor	      "lightBlue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -984,16 +991,27 @@ Model {
 	      SID		      "18"
 	      Position		      [115, 158, 145, 172]
 	      ZOrder		      -1
+	      BackgroundColor	      "lightBlue"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "23"
+	      Position		      [205, 69, 250, 101]
+	      ZOrder		      -4
+	      BackgroundColor	      "lightBlue"
+	      Value		      "66598"
+	    }
+	    Block {
 	      BlockType		      Product
-	      Name		      "Product"
+	      Name		      "Product3"
 	      SID		      "19"
 	      Ports		      [2, 1]
 	      Position		      [225, 127, 255, 158]
 	      ZOrder		      -13
+	      BackgroundColor	      "lightBlue"
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
@@ -1005,6 +1023,7 @@ Model {
 	      Ports		      [2, 1]
 	      Position		      [280, 90, 300, 110]
 	      ZOrder		      -18
+	      BackgroundColor	      "lightBlue"
 	      ShowName		      off
 	      IconShape		      "round"
 	      Inputs		      "|++"
@@ -1018,32 +1037,25 @@ Model {
 	      SID		      "15"
 	      Position		      [355, 108, 385, 122]
 	      ZOrder		      -2
+	      BackgroundColor	      "lightBlue"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
 	      SrcBlock		      "In1"
 	      SrcPort		      1
-	      Points		      [25, 0]
-	      Branch {
-		Points			[5, 0; 0, 25]
-		DstBlock		"Product"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, -10]
-		DstBlock		"Sum"
-		DstPort			1
-	      }
+	      Points		      [30, 0; 0, 25]
+	      DstBlock		      "Product3"
+	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "In2"
 	      SrcPort		      1
 	      Points		      [25, 0; 0, -15]
-	      DstBlock		      "Product"
+	      DstBlock		      "Product3"
 	      DstPort		      2
 	    }
 	    Line {
-	      SrcBlock		      "Product"
+	      SrcBlock		      "Product3"
 	      SrcPort		      1
 	      Points		      [15, 0; 0, -20]
 	      DstBlock		      "Sum"
@@ -1056,21 +1068,14 @@ Model {
 	      DstBlock		      "Out1"
 	      DstPort		      1
 	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, 15]
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
 	  }
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum"
-	  SID			  "11"
-	  Ports			  [2, 1]
-	  Position		  [190, 80, 210, 100]
-	  ZOrder		  -18
-	  ShowName		  off
-	  IconShape		  "round"
-	  Inputs		  "|++"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
 	}
 	Block {
 	  BlockType		  Outport
@@ -1078,78 +1083,65 @@ Model {
 	  SID			  "5"
 	  Position		  [475, 108, 505, 122]
 	  ZOrder		  -2
+	  BackgroundColor	  "yellow"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Out2"
 	  SID			  "6"
-	  Position		  [430, 188, 460, 202]
+	  Position		  [465, 188, 495, 202]
 	  ZOrder		  -23
+	  BackgroundColor	  "yellow"
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Line {
 	  SrcBlock		  "In1"
 	  SrcPort		  1
-	  Points		  [20, 0; 0, -10; 40, 0; 0, 10]
-	  Branch {
-	    Points		    [0, -10; 40, 0]
-	    DstBlock		    "Sum"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 5; -20, 0; 0, 90]
-	    DstBlock		    "Product"
-	    DstPort		    1
-	  }
+	  Points		  [40, 0; 0, 45]
+	  DstBlock		  "Product2"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "In2"
 	  SrcPort		  1
-	  DstBlock		  "Product"
+	  DstBlock		  "Product2"
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  Points		  [15, 0]
-	  DstBlock		  "Sum"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Gain"
-	  SrcPort		  1
-	  DstBlock		  "Out1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Subsystem"
+	  SrcBlock		  "Gain2"
 	  SrcPort		  1
 	  Points		  [10, 0]
 	  Branch {
-	    Points		    [0, -40]
-	    DstBlock		    "Gain"
+	    DstBlock		    "Out1"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 40]
+	    Points		    [-10, 0]
 	    DstBlock		    "Out2"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  SrcBlock		  "Product"
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -40]
+	  DstBlock		  "Gain2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product2"
 	  SrcPort		  1
 	  Points		  [15, 0; 0, -30]
-	  DstBlock		  "Subsystem"
+	  DstBlock		  "Subsystem2"
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Sum"
+	  SrcBlock		  "Constant2"
 	  SrcPort		  1
-	  Points		  [20, 0; 0, 55]
-	  DstBlock		  "Subsystem"
+	  Points		  [15, 0; 0, 10]
+	  DstBlock		  "Subsystem2"
 	  DstPort		  1
 	}
       }

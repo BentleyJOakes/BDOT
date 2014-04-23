@@ -320,6 +320,8 @@ class CBD(BaseBlock):
         
     #TODO: handle other ports
     for child in block.linksOUT:
+        if debug:
+            print("Removing from child: " + child.getBlockName())
         child.linksIN.remove(block)
         
     del self.__blocksDict[block.getBlockName()]

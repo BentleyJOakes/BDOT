@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.9"
+    ComputedModelVersion    "1.12"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -36,9 +36,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 21:27:31 2014"
-  RTWModifiedTimeStamp	  320016440
-  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  LastModifiedDate	  "Tue Apr 22 14:48:56 2014"
+  RTWModifiedTimeStamp	  320078772
+  ModelVersionFormat	  "1.%<AutoIncrement:12>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -76,7 +76,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Const1"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -782,7 +781,7 @@ Model {
   }
   System {
     Name		    "Flatten1"
-    Location		    [2972, 218, 3688, 641]
+    Location		    [446, 680, 1162, 1103]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -796,7 +795,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "25"
+    SIDHighWatermark	    "28"
     Block {
       BlockType		      Inport
       Name		      "In1"
@@ -840,7 +839,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem"
-	Location		[2917, 702, 3415, 1002]
+	Location		[1055, 256, 1553, 556]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -857,7 +856,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "In1"
 	  SID			  "14"
-	  Position		  [110, 103, 140, 117]
+	  Position		  [115, 93, 145, 107]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
@@ -865,7 +864,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "In2"
 	  SID			  "16"
-	  Position		  [115, 178, 145, 192]
+	  Position		  [110, 133, 140, 147]
 	  ZOrder		  -1
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -874,7 +873,7 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Constant2"
 	  SID			  "17"
-	  Position		  [125, 235, 155, 265]
+	  Position		  [110, 170, 140, 200]
 	  ZOrder		  -4
 	}
 	Block {
@@ -882,7 +881,7 @@ Model {
 	  Name			  "Product2"
 	  SID			  "19"
 	  Ports			  [2, 1]
-	  Position		  [215, 167, 245, 198]
+	  Position		  [210, 117, 240, 148]
 	  ZOrder		  -13
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -912,27 +911,27 @@ Model {
 	Line {
 	  SrcBlock		  "In2"
 	  SrcPort		  1
-	  Points		  [25, 0; 0, -10]
+	  Points		  [30, 0; 0, -15]
 	  DstBlock		  "Product2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Constant2"
 	  SrcPort		  1
-	  Points		  [0, -30; 40, 0]
+	  Points		  [45, 0; 0, -45]
 	  DstBlock		  "Product2"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "In1"
 	  SrcPort		  1
+	  Points		  [0, 10]
 	  DstBlock		  "Sum2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Product2"
 	  SrcPort		  1
-	  Points		  [10, 0]
 	  DstBlock		  "Sum2"
 	  DstPort		  2
 	}
@@ -970,14 +969,14 @@ Model {
     Line {
       SrcBlock		      "Constant"
       SrcPort		      1
-      Points		      [40, 0; 0, 15]
+      Points		      [30, 0]
       Branch {
-	Points			[0, 20]
+	Points			[10, 0; 0, 35]
 	DstBlock		"Product"
 	DstPort			1
       }
       Branch {
-	Points			[20, 0; 0, -15]
+	Points			[0, -20; 125, 0; 0, 20]
 	DstBlock		"Subsystem"
 	DstPort			1
       }
@@ -992,14 +991,14 @@ Model {
     Line {
       SrcBlock		      "Product"
       SrcPort		      1
-      Points		      [25, 0; 0, -25; 15, 0]
+      Points		      [20, 0]
       Branch {
+	Points			[5, 0; 0, -25]
 	DstBlock		"Subsystem"
 	DstPort			2
       }
       Branch {
-	Labels			[2, 0]
-	Points			[0, 35; 190, 0]
+	Points			[0, 30; 190, 0; 0, -40]
 	DstBlock		"Sum"
 	DstPort			2
       }

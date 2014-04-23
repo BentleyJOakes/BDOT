@@ -27,13 +27,25 @@ class FlatteningOptimization(Optimization):
         
     #ANALYSIS FUNCTIONS
     def analyze(self, model):
-        subsystems = []
+        subsystems = {}
         
         for block in model.getBlocks():
             if isinstance(block, Simulink_SubSystemBlock):
-                subsystems.append(block)
+                subsystems[self.get_block_depth(block)] = block
+                     
         return subsystems
     
+    def get_block_depth(self, block):
+        if len(block.linksIN) == 0:
+            return 0
+    
+        max_depth = 0
+        for parent in block.linksIN:
+            temp = self.get_block_depth(parent)
+            if temp > max_depth:
+                max_depth = temp
+    
+        return max_depth + 1
     
     def transform(self, model, analysis):
     
@@ -65,7 +77,11 @@ class FlatteningOptimization(Optimization):
             print(packet)
 
         else:
-            for subsystem in analysis:
+        
+            for depth in sorted(analysis.keys()):
+            
+                subsystem = analysis[depth]
+                print("Subsystem Name: " + subsystem.getBlockName() + " at depth: " + str(depth))
                 
                 if len(subsystem.linksIN) == 0:
                     continue
@@ -74,7 +90,9 @@ class FlatteningOptimization(Optimization):
                 self.fix_incoming_edges(model, subsystem)
                 self.fix_outgoing_edges(model, subsystem)
                 self.remove_subsystem(model, subsystem)
-          
+
+                break
+                
         return model
     
     
@@ -111,7 +129,6 @@ class FlatteningOptimization(Optimization):
             
             out_ports[port_num] = out_child
             
-        print("Hello")
         
         #now connect the ports
         for key in in_ports.keys():
@@ -133,31 +150,61 @@ class FlatteningOptimization(Optimization):
             to_delete = in_block
             to_delete2 = in_block.linksOUT[0]
             
+            to_delete_arr = []
+            
             print ("IN block: " + in_block.getBlockName())
+            print ("CURR block: " + curr.getBlockName())
             
             in_parent = in_block.linksIN[0]
-            out_child = curr.linksOUT[0].linksOUT[0]
             
-            #print ("IN PARENT: " + in_parent.getBlockName())
-            #print ("OUT CHILD: " + out_child.getBlockName())
+            linksOUT = curr.linksOUT
             
+            for relation_block in linksOUT:
             
-            
-            #in_parent.linksOUT = []
-            in_parent.linkOutput(out_child)
-            
-            out_child.linkInput(in_parent)
+                print ("Relation block: " + relation_block.getBlockName())
+                
+                out_child = relation_block.linksOUT[0]
+                #model.removeBlock(relation_block, debug=True)
+                #out_child = [0]
+                
+                print ("IN PARENT: " + in_parent.getBlockName())
+                print ("OUT CHILD: " + out_child.getBlockName())
+                
+                
+                
+                #in_parent.linksOUT = []
+                
+                if len(curr.linksOUT) > 1:
+                    out_child = in_parent
+                    in_parent = in_parent.linksIN[0]
+                    print ("IN PARENT2: " + in_parent.getBlockName())
+                    print ("OUT CHILD2: " + out_child.getBlockName())
+                    
+                else:
+                    to_delete_arr.append(relation_block)
+                
+                in_parent.linkOutput(out_child)
+                
+                out_child.linkInput(in_parent)
+                
+                #
+                
+                #relation_block.linksOUT = []
+                #relation_block.linksIN = []
+                #model.removeBlock(relation_block, debug=True)
             
             
             #delete dead edges
             #TODO: Make general dead-code transformation
             
             
-            curr = curr.linksOUT[0]
+            #curr = curr.linksOUT[0]
             
             
             self.remove_blocks(model, curr, Simulink_SubSystemBlock)
             
+            for block in to_delete_arr:
+                model.removeBlock(block, True)
             #print(to_delete, True)
             #print(to_delete2)
             
@@ -265,6 +312,10 @@ class FlatteningOptimization(Optimization):
     
     def remove_subsystem(self, model, subsystem):
         
+        #TODO: Remove hack
+        #if len(subsystem.linksIN) == 0 or subsystem.linksIN[0] == None or len(subsystem.linksIN[0].linksIN) == 0:
+        #    return
+        
         parent_subsystem = subsystem.linksIN[0].linksIN[0]
         
         for child in subsystem.linksOUT:
@@ -274,7 +325,7 @@ class FlatteningOptimization(Optimization):
             parent_subsystem.linkOutput(child)
             
         subsystem_contains = subsystem.linksIN[0]
-        
+    
         model.removeBlock(subsystem_contains)
         model.removeBlock(subsystem)
         

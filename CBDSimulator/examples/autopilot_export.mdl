@@ -1,21 +1,12 @@
 Model {
-  Name			  "HConstfolding_hier_export"
+  Name			  "autopilot_export"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
-    NumRootInports	    1
-    Inport {
-      BusObject		      ""
-      Name		      "In1"
-    }
-    NumRootOutports	    1
-    Outport {
-      BusObject		      ""
-      BusOutputAsStruct	      "off"
-      Name		      "Out1"
-    }
+    NumRootInports	    0
+    NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.0"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +21,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Tue Apr 22 18:23:21 2014"
+  Created		  "Tue Apr 22 22:30:59 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 22 18:23:21 2014"
-  RTWModifiedTimeStamp	  320091801
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Tue Apr 22 22:30:59 2014"
+  RTWModifiedTimeStamp	  0
+  ModelVersionFormat	  "1.%<AutoIncrement: 0 >"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -75,12 +66,13 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HConstfolding_hier_export"
-    overrideMode_	    [0.0]
+    model_		    "autopilot_export"
+    signals_		    []
+    overrideMode_	    [0U]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HConstfolding_hier_export"
+      Cell		      "autopilot_export"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -675,112 +667,9 @@ Model {
     FontAngle		    "normal"
   }
   BlockParameterDefaults {
-    Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
-      LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
-    }
-    Block {
-      BlockType		      Gain
-      Gain		      "1"
-      Multiplication	      "Element-wise(K.*u)"
-      ParamMin		      "[]"
-      ParamMax		      "[]"
-      ParamDataTypeStr	      "Inherit: Same as input"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
-    }
-    Block {
-      BlockType		      Outport
-      Port		      "1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      SourceOfInitialOutputValue "Dialog"
-      OutputWhenDisabled      "held"
-      InitialOutput	      "[]"
-    }
-    Block {
-      BlockType		      Product
-      Inputs		      "2"
-      Multiplication	      "Element-wise(.*)"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Zero"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Sum
-      IconShape		      "rectangular"
-      Inputs		      "++"
-      CollapseMode	      "All dimensions"
-      CollapseDim	      "1"
-      InputSameDT	      on
-      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      UnitDelay
-      X0		      "0"
-      InputProcessing	      "Inherited"
-      SampleTime	      "1"
-      StateMustResolveToSignalObject off
-      RTWStateStorageClass    "Auto"
-      HasFrameUpgradeWarning  on
-    }
   }
   System {
-    Name		    "HConstfolding_hier_export"
+    Name		    "autopilot_export"
     Location		    [70, 200, 650, 460]
     Open		    off
     ModelBrowserVisibility  off
@@ -795,126 +684,5 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "7"
-    Block {
-      BlockType		      Inport
-      Name		      "In1"
-      SID		      "7"
-      Position		      [170, 28, 200, 42]
-      ZOrder		      7
-      IconDisplay	      "Port number"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant"
-      SID		      "1"
-      Position		      [135, 65, 165, 95]
-      ZOrder		      1
-      Value		      "1.0"
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain"
-      SID		      "5"
-      Position		      [200, 64, 240, 96]
-      ZOrder		      5
-      Gain		      "0.01"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Product
-      Name		      "Product"
-      SID		      "2"
-      Ports		      [2, 1]
-      Position		      [210, 92, 240, 123]
-      ZOrder		      2
-      BackgroundColor	      "yellow"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Sum
-      Name		      "Sum"
-      SID		      "3"
-      Ports		      [2, 1]
-      Position		      [260, 100, 280, 120]
-      ZOrder		      3
-      BackgroundColor	      "yellow"
-      ShowName		      off
-      IconShape		      "round"
-      Inputs		      "|++"
-      InputSameDT	      off
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay"
-      SID		      "4"
-      Position		      [290, 93, 325, 127]
-      ZOrder		      4
-      BackgroundColor	      "yellow"
-      X0		      "0.0"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1.0"
-    }
-    Block {
-      BlockType		      Outport
-      Name		      "Out1"
-      SID		      "6"
-      Position		      [335, 38, 365, 52]
-      ZOrder		      6
-      IconDisplay	      "Port number"
-    }
-    Line {
-      SrcBlock		      "Constant"
-      SrcPort		      1
-      DstBlock		      "Gain"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Product"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "Unit Delay"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Unit Delay"
-      SrcPort		      1
-      Points		      [0, 0]
-      Branch {
-	Points			[0, -65]
-	DstBlock		"Out1"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 25]
-	DstBlock		"Sum"
-	DstPort			2
-      }
-    }
-    Line {
-      SrcBlock		      "In1"
-      SrcPort		      1
-      Points		      [0, 25; -25, 0; 0, 40]
-      DstBlock		      "Product"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Gain"
-      SrcPort		      1
-      Points		      [0, -20; -65, 0; 0, 55]
-      DstBlock		      "Product"
-      DstPort		      2
-    }
   }
 }

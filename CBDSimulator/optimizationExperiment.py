@@ -76,6 +76,7 @@ class OptimizationExperiment:
         start = time.clock()
         CBDToH = CBDToHimesis()
         h = CBDToH.convert(self.model)
+        h2 = CBDToH.convert(self.model, False)
         h.compile("himesis/")
         end = time.clock()
         print("Time taken for CBD to Himesis: " + str(end - start) + " seconds")
@@ -109,7 +110,7 @@ class OptimizationExperiment:
 if __name__=="__main__":
 
     path = "./examples/"
-    model = "Flatten1"
+    model = "autopilot"
     
     
         

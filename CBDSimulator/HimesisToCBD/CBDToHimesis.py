@@ -19,7 +19,7 @@ class CBDToHimesis:
                 return True
         return False
         
-    def convert(self, model):
+    def convert(self, model, do_switch_hack = True):
         model_name = model.getBlockName() + "_opt"
         
         h = Himesis(name=model_name)
@@ -53,8 +53,9 @@ class CBDToHimesis:
                 target_block_name = out_port.getBlockName()
                 source_block_name = block.getBlockName()
                 
+                
                 #TODO: Remove switch hack
-                if ("Port_Input" in source_block_name or "Block_Inport" in source_block_name) and not "__Relation__" in target_block_name:
+                if do_switch_hack and ("Port_Input" in source_block_name or "Block_Inport" in source_block_name) and not "__Relation__" in target_block_name:
                     h.add_edge(out_vertex, vertex)
                 else:
                     h.add_edge(vertex, out_vertex)
@@ -62,6 +63,9 @@ class CBDToHimesis:
             #h.vs[vertex][Himesis.Constants.META_MODEL] = block.getBlockName()
                     
             #print(vertex)
+        
+        if not do_switch_hack:
+            model_name = model_name + "_real"
         
         graph_to_dot(model_name, h)
         
@@ -78,40 +82,40 @@ class CBDToHimesis:
                         
                         
                     #rename blocks with conflicting names
-                    if attrib == "Name":
-                    
-                        #print("Block blockName: " + block.getBlockName())
-                        if self.isA(block, self.SimulinkStructuralBlocks):
-                            continue
-                            
-                        #print("Block blockName2: " + block.getBlockName())
-                            
-                        block_name = block.block[attrib]
-                        
-                        #print("Block name1: " + block_name)
-                        if block_name in self.block_names:
-                            #print("Conflict with: " + block_name)
-                            
-                            old_block_name = block_name
-                            block_name = block_name + str(vertex)
-                            block.block[attrib] = block_name
-                            
-                            
-#                            for es in h.es:
-#                                print("Source: " + es.source)
-#                                print("Target: " + es.target)
+#                    if attrib == "Name":
+#                    
+#                        #print("Block blockName: " + block.getBlockName())
+#                        if self.isA(block, self.SimulinkStructuralBlocks):
+#                            continue
+#                            
+#                        #print("Block blockName2: " + block.getBlockName())
+#                            
+#                        block_name = block.block[attrib]
+#                        
+#                        #print("Block name1: " + block_name)
+#                        if block_name in self.block_names:
+#                            #print("Conflict with: " + block_name)
+#                            
+#                            old_block_name = block_name
+#                            #block_name = block_name + str(vertex)
+#                            block.block[attrib] = block_name
 #                            
 #                            
-#                                if es.source == old_block_name:
-#                                    print("Changing edge name source")
-#                                    es.source = block_name
-#                                if es.target == old_block_name:
-#                                    print("Changing edge name target")
-#                                    es.target = block_name
-                            
-                            
-                        #print("Block name2: " + block_name)
-                        self.block_names.append(block_name)
+##                            for es in h.es:
+##                                print("Source: " + es.source)
+##                                print("Target: " + es.target)
+##                            
+##                            
+##                                if es.source == old_block_name:
+##                                    print("Changing edge name source")
+##                                    es.source = block_name
+##                                if es.target == old_block_name:
+##                                    print("Changing edge name target")
+##                                    es.target = block_name
+#                            
+#                            
+#                        #print("Block name2: " + block_name)
+#                        self.block_names.append(block_name)
                     
                         
                     h.vs[vertex][attrib] = block.block[attrib]

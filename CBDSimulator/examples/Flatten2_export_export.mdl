@@ -1,5 +1,5 @@
 Model {
-  Name			  "HConstfolding_hier_export"
+  Name			  "Flatten2_export_export"
   Version		  7.9
   MdlSubVersion		  0
   GraphicalInterface {
@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.2"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +30,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Tue Apr 22 18:23:21 2014"
+  Created		  "Tue Apr 22 22:23:52 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 22 18:23:21 2014"
-  RTWModifiedTimeStamp	  320091801
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Tue Apr 22 22:28:39 2014"
+  RTWModifiedTimeStamp	  320106515
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -75,12 +75,13 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "HConstfolding_hier_export"
+    model_		    "Flatten2_export_export"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "HConstfolding_hier_export"
+      Cell		      "Flatten2_export_export"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -754,6 +755,24 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Array"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Sum
       IconShape		      "rectangular"
       Inputs		      "++"
@@ -769,20 +788,11 @@ Model {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
-    Block {
-      BlockType		      UnitDelay
-      X0		      "0"
-      InputProcessing	      "Inherited"
-      SampleTime	      "1"
-      StateMustResolveToSignalObject off
-      RTWStateStorageClass    "Auto"
-      HasFrameUpgradeWarning  on
-    }
   }
   System {
-    Name		    "HConstfolding_hier_export"
-    Location		    [70, 200, 650, 460]
-    Open		    off
+    Name		    "Flatten2_export_export"
+    Location		    [70, 200, 1293, 729]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -795,54 +805,97 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "7"
+    SIDHighWatermark	    "9"
     Block {
       BlockType		      Inport
       Name		      "In1"
-      SID		      "7"
-      Position		      [170, 28, 200, 42]
-      ZOrder		      7
+      SID		      "8"
+      Position		      [30, 127, 80, 163]
+      ZOrder		      8
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant"
-      SID		      "1"
-      Position		      [135, 65, 165, 95]
-      ZOrder		      1
-      Value		      "1.0"
+      SID		      "7"
+      Position		      [175, 54, 220, 86]
+      ZOrder		      7
+      BackgroundColor	      "lightBlue"
+      Value		      "66598.0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      SID		      "9"
+      Position		      [190, 130, 235, 160]
+      ZOrder		      9
+      BackgroundColor	      "yellow"
+      Value		      "12.34"
     }
     Block {
       BlockType		      Gain
-      Name		      "Gain"
-      SID		      "5"
-      Position		      [200, 64, 240, 96]
-      ZOrder		      5
-      Gain		      "0.01"
+      Name		      "Gain2"
+      SID		      "1"
+      Position		      [415, 139, 455, 171]
+      ZOrder		      1
+      BackgroundColor	      "yellow"
+      Gain		      "5.4"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Product
-      Name		      "Product"
-      SID		      "2"
+      Name		      "Product2"
+      SID		      "6"
       Ports		      [2, 1]
-      Position		      [210, 92, 240, 123]
-      ZOrder		      2
+      Position		      [205, 192, 235, 223]
+      ZOrder		      6
       BackgroundColor	      "yellow"
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      Product
+      Name		      "Product3"
+      SID		      "5"
+      Ports		      [2, 1]
+      Position		      [290, 172, 320, 203]
+      ZOrder		      5
+      BackgroundColor	      "lightBlue"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "2"
+      Ports		      [1]
+      Position		      [535, 204, 565, 236]
+      ZOrder		      2
+      Floating		      off
+      Location		      [188, 390, 512, 629]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      ShowLegends	      off
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
       BlockType		      Sum
       Name		      "Sum"
       SID		      "3"
       Ports		      [2, 1]
-      Position		      [260, 100, 280, 120]
+      Position		      [330, 110, 350, 130]
       ZOrder		      3
-      BackgroundColor	      "yellow"
+      BackgroundColor	      "lightBlue"
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|++"
@@ -851,70 +904,76 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      UnitDelay
-      Name		      "Unit Delay"
-      SID		      "4"
-      Position		      [290, 93, 325, 127]
-      ZOrder		      4
-      BackgroundColor	      "yellow"
-      X0		      "0.0"
-      InputProcessing	      "Elements as channels (sample based)"
-      SampleTime	      "-1.0"
-    }
-    Block {
       BlockType		      Outport
       Name		      "Out1"
-      SID		      "6"
-      Position		      [335, 38, 365, 52]
-      ZOrder		      6
+      SID		      "4"
+      Position		      [535, 148, 565, 162]
+      ZOrder		      4
       IconDisplay	      "Port number"
+    }
+    Line {
+      SrcBlock		      "Gain2"
+      SrcPort		      1
+      Points		      [-5, 0]
+      Branch {
+	Points			[30, 0; 0, 65]
+	DstBlock		"Scope"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Out1"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Constant"
       SrcPort		      1
-      DstBlock		      "Gain"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Product"
-      SrcPort		      1
-      DstBlock		      "Sum"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Sum"
-      SrcPort		      1
-      DstBlock		      "Unit Delay"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Unit Delay"
-      SrcPort		      1
-      Points		      [0, 0]
+      Points		      [0, 15; 30, 0]
       Branch {
-	Points			[0, -65]
-	DstBlock		"Out1"
+	Points			[5, 0; 0, 35]
+	DstBlock		"Sum"
 	DstPort			1
       }
       Branch {
-	Points			[0, 25]
-	DstBlock		"Sum"
+	Points			[0, 30; -90, 0; 0, 100]
+	DstBlock		"Product2"
 	DstPort			2
       }
     }
     Line {
       SrcBlock		      "In1"
       SrcPort		      1
-      Points		      [0, 25; -25, 0; 0, 40]
-      DstBlock		      "Product"
+      Points		      [40, 0; 0, 55]
+      DstBlock		      "Product2"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Gain"
+      SrcBlock		      "Product3"
       SrcPort		      1
-      Points		      [0, -20; -65, 0; 0, 55]
-      DstBlock		      "Product"
+      Points		      [0, -45]
+      DstBlock		      "Sum"
       DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Product2"
+      SrcPort		      1
+      Points		      [0, -15]
+      DstBlock		      "Product3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [0, 35]
+      DstBlock		      "Gain2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      Points		      [35, 0]
+      DstBlock		      "Product3"
+      DstPort		      1
     }
   }
 }

@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.2"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +30,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 21:28:17 2014"
+  Created		  "Tue Apr 22 14:49:20 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 21:28:18 2014"
-  RTWModifiedTimeStamp	  320016498
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Tue Apr 22 14:51:41 2014"
+  RTWModifiedTimeStamp	  320079091
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -76,6 +76,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Flatten1_export"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -757,8 +758,8 @@ Model {
   }
   System {
     Name		    "Flatten1_export"
-    Location		    [70, 200, 650, 460]
-    Open		    off
+    Location		    [195, 202, 1023, 509]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -776,7 +777,7 @@ Model {
       BlockType		      Inport
       Name		      "In1"
       SID		      "8"
-      Position		      [15, 183, 45, 197]
+      Position		      [30, 183, 60, 197]
       ZOrder		      8
       IconDisplay	      "Port number"
     }
@@ -784,7 +785,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "3"
-      Position		      [25, 102, 70, 138]
+      Position		      [30, 107, 75, 143]
       ZOrder		      3
       Value		      "12.34"
     }
@@ -792,7 +793,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "4"
-      Position		      [125, 235, 155, 265]
+      Position		      [210, 190, 240, 220]
       ZOrder		      4
       Value		      "1.0"
     }
@@ -801,7 +802,7 @@ Model {
       Name		      "Product"
       SID		      "2"
       Ports		      [2, 1]
-      Position		      [155, 147, 185, 178]
+      Position		      [120, 167, 150, 198]
       ZOrder		      2
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -812,7 +813,7 @@ Model {
       Name		      "Product2"
       SID		      "6"
       Ports		      [2, 1]
-      Position		      [215, 167, 245, 198]
+      Position		      [280, 147, 310, 178]
       ZOrder		      6
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -823,7 +824,7 @@ Model {
       Name		      "Sum"
       SID		      "5"
       Ports		      [2, 1]
-      Position		      [410, 120, 430, 140]
+      Position		      [455, 120, 475, 140]
       ZOrder		      5
       ShowName		      off
       IconShape		      "round"
@@ -837,7 +838,7 @@ Model {
       Name		      "Sum2"
       SID		      "7"
       Ports		      [2, 1]
-      Position		      [275, 125, 295, 145]
+      Position		      [360, 135, 380, 155]
       ZOrder		      7
       ShowName		      off
       IconShape		      "round"
@@ -850,9 +851,72 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "1"
-      Position		      [470, 123, 500, 137]
+      Position		      [515, 123, 545, 137]
       ZOrder		      1
       IconDisplay	      "Port number"
+    }
+    Line {
+      SrcBlock		      "Product"
+      SrcPort		      1
+      Points		      [35, -20]
+      Branch {
+	Points			[0, 85; 270, 0; 0, -95]
+	DstBlock		"Sum"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -10]
+	DstBlock		"Product2"
+	DstPort			1
+      }
+    }
+    Line {
+      Labels		      [1, 0]
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [10, -5]
+      Branch {
+	Points			[15, 0]
+	DstBlock		"Product"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Sum2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      Points		      [0, -35]
+      DstBlock		      "Product2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Out1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "In1"
+      SrcPort		      1
+      DstBlock		      "Product"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Product2"
+      SrcPort		      1
+      Points		      [30, 0]
+      DstBlock		      "Sum2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sum2"
+      SrcPort		      1
+      Points		      [55, 0]
+      DstBlock		      "Sum"
+      DstPort		      1
     }
   }
 }
