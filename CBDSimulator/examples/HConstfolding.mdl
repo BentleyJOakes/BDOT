@@ -11,7 +11,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.7"
+    ComputedModelVersion    "1.11"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -43,9 +43,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 21 19:12:04 2014"
-  RTWModifiedTimeStamp	  320008322
-  ModelVersionFormat	  "1.%<AutoIncrement:7>"
+  LastModifiedDate	  "Thu Apr 24 13:18:49 2014"
+  RTWModifiedTimeStamp	  320246328
+  ModelVersionFormat	  "1.%<AutoIncrement:11>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -83,7 +83,6 @@ Model {
     $ObjectID		    2
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "HConstfolding"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -138,7 +137,7 @@ Model {
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
-    Dimension		    1
+    Dimension		    2
     Simulink.ConfigSet {
       $ObjectID		      3
       Version		      "1.12.0"
@@ -160,7 +159,7 @@ Model {
 	  MaxConsecutiveZCs	  "1000"
 	  ExtrapolationOrder	  4
 	  NumberNewtonIterations  1
-	  MaxStep		  "1"
+	  MaxStep		  "auto"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
@@ -238,7 +237,7 @@ Model {
 	  InlineInvariantSignals  on
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
-	  EnhancedBackFolding	  off
+	  EnhancedBackFolding	  on
 	  StrengthReduction	  off
 	  ExpressionFolding	  on
 	  BooleansAsBitfields	  off
@@ -445,7 +444,7 @@ Model {
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  TemplateMakefile	  "grt_default_tmf"
-	  GenerateReport	  on
+	  GenerateReport	  off
 	  SaveLog		  off
 	  RTWVerbose		  on
 	  RetainRTWFile		  off
@@ -459,7 +458,7 @@ Model {
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
 	  IncludeHyperlinkInReport off
-	  LaunchReport		  on
+	  LaunchReport		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -515,7 +514,7 @@ Model {
 	      MaxIdLength	      31
 	      PreserveName	      off
 	      PreserveNameWithParent  off
-	      ShowEliminatedStatement on
+	      ShowEliminatedStatement off
 	      IncAutoGenComments      off
 	      SimulinkDataObjDesc     off
 	      SFDataObjDesc	      off
@@ -643,8 +642,16 @@ Model {
       }
       Name		      "Configuration"
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
-      CurrentDlgPage	      "Optimization/Signals and Parameters"
-      ConfigPrmDlgPosition     [ 354, 130, 1414, 1174 ] 
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 469, 164, 1451, 1010 ] 
+    }
+    Simulink.ConfigSetRef {
+      $ObjectID		      15
+      Version		      "1.12.0"
+      Name		      "Reference"
+      WSVarName		      "configSetObj"
+      SourceName	      ""
+      SourceLocation	      "Base Workspace"
     }
     PropName		    "ConfigurationSets"
   }
@@ -849,7 +856,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain"
       SID		      "6"
-      Position		      [70, 60, 100, 90]
+      Position		      [70, 58, 115, 92]
       ZOrder		      13
       Gain		      "0.01"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -860,7 +867,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain1"
       SID		      "7"
-      Position		      [285, 80, 315, 110]
+      Position		      [285, 79, 330, 111]
       ZOrder		      12
       Gain		      "12.2"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -871,7 +878,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain2"
       SID		      "8"
-      Position		      [510, 50, 540, 80]
+      Position		      [510, 50, 545, 80]
       ZOrder		      9
       Gain		      "1.0"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -882,7 +889,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain3"
       SID		      "9"
-      Position		      [560, 50, 590, 80]
+      Position		      [560, 50, 605, 80]
       ZOrder		      11
       Gain		      "1.0"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"

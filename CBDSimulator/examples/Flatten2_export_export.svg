@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='208' height='549' viewBox='0 0 208 549' >
+<rect x='0' y='0' width='208' height='549' fill='rgb(100%,100%,100%) ' />
+<g clip-path='url(#clip_rect_0)' >
+<g transform='translate(-48,571)' >
+<g transform='scale(1,1)' >
+<rect x='535' y='148' width='30' height='14' rx='6.77419' ry='6.77419' stroke='none' fill='rgb(100%,100%,100%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='535' y='148' width='30' height='14' rx='6.77419' ry='6.77419' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<text stroke='none' x='538.5' y='174' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Out1</text>
+<text stroke='none' x='547' y='159.5' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_1)' font-family='Helvetica'>1</text>
+<ellipse cx='340' cy='120' rx='10' ry='10' stroke='none' fill='rgb(38.0392%,74.1176%,98.8235%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<ellipse cx='340' cy='120' rx='10' ry='10' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<line x1='333' y1='120' x2='337' y2='120' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_2)' />
+<line x1='335' y1='118' x2='335' y2='122' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_2)' />
+<line x1='338' y1='125' x2='342' y2='125' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_2)' />
+<line x1='340' y1='123' x2='340' y2='127' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_2)' />
+<rect x='535' y='204' width='30' height='32' stroke='none' fill='rgb(100%,100%,100%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<text stroke='none' x='535' y='248' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Scope</text>
+<rect x='539' y='208' width='22' height='12' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_3)' />
+<rect x='535' y='204' width='30' height='32' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='290' y='172' width='30' height='31' stroke='none' fill='rgb(38.0392%,74.1176%,98.8235%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<text stroke='none' x='284' y='215' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Product3</text>
+<line x1='308' y1='190' x2='302' y2='184' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_4)' />
+<line x1='308' y1='184' x2='302' y2='190' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_4)' />
+<rect x='290' y='172' width='30' height='31' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='205' y='192' width='30' height='31' stroke='none' fill='rgb(90.9804%,81.9608%,32.1569%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<text stroke='none' x='199' y='235' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Product2</text>
+<line x1='223' y1='210' x2='217' y2='204' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_5)' />
+<line x1='223' y1='204' x2='217' y2='210' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_5)' />
+<rect x='205' y='192' width='30' height='31' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='415,139 455,155 455,155 415,171 415,139 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(90.9804%,81.9608%,32.1569%)' />
+<polyline points='415,139 455,155 455,155 415,171 415,139 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<text stroke='none' x='421' y='183' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Gain2</text>
+<text stroke='none' x='418.5' y='159.5' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_6)' font-family='Helvetica'>5.4</text>
+<rect x='190' y='130' width='45' height='30' stroke='none' fill='rgb(90.9804%,81.9608%,32.1569%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<text stroke='none' x='188' y='172' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Constant2</text>
+<text stroke='none' x='198.5' y='149.5' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_7)' font-family='Helvetica'>12.34</text>
+<rect x='190' y='130' width='45' height='30' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='175' y='54' width='45' height='32' stroke='none' fill='rgb(38.0392%,74.1176%,98.8235%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<text stroke='none' x='176' y='98' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Constant</text>
+<text stroke='none' x='177.5' y='74.5' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_8)' font-family='Helvetica'>66598.0</text>
+<rect x='175' y='54' width='45' height='32' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='30' y='127' width='50' height='36' rx='23.0769' ry='23.0769' stroke='none' fill='rgb(100%,100%,100%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='30' y='127' width='50' height='36' rx='23.0769' ry='23.0769' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<text stroke='none' x='47.5' y='175' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>In1</text>
+<text stroke='none' x='52' y='149.5' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_9)' font-family='Helvetica'>1</text>
+<line x1='530' y1='155' x2='520' y2='155' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='525,150 525,160 535,155 525,150 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='455,155 520,155 522,155 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<line x1='530' y1='220' x2='520' y2='220' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='525,215 525,225 535,220 525,215 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='455,155 485,155 485,220 520,220 522,220 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<line x1='455' y1='155' x2='460' y2='155' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polyline points='458,155 460,155 455,155 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<rect x='454' y='154' width='2' height='2' stroke='none' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='454' y='154' width='2' height='2' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<line x1='200' y1='215' x2='190' y2='215' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='195,210 195,220 205,215 195,210 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='255,85 255,115 165,115 165,215 190,215 192,215 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<line x1='325' y1='120' x2='315' y2='120' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='320,115 320,125 330,120 320,115 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='255,85 260,85 260,120 315,120 317,120 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<line x1='220' y1='70' x2='225' y2='70' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polyline points='223,70 225,70 225,85 255,85 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<rect x='254' y='84' width='2' height='2' stroke='none' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='254' y='84' width='2' height='2' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<line x1='80' y1='145' x2='85' y2='145' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<line x1='200' y1='200' x2='190' y2='200' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='195,195 195,205 205,200 195,195 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='83,145 85,145 125,145 125,200 190,200 192,200 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<line x1='320' y1='190' x2='325' y2='190' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<line x1='340' y1='135' x2='340' y2='145' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='335,140 345,140 340,130 335,140 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='323,190 325,190 325,145 340,145 340,143 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<line x1='235' y1='210' x2='240' y2='210' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<line x1='285' y1='195' x2='275' y2='195' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='280,190 280,200 290,195 280,190 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='238,210 240,210 240,195 275,195 277,195 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<line x1='350' y1='120' x2='355' y2='120' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<line x1='410' y1='155' x2='400' y2='155' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='405,150 405,160 415,155 405,150 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='353,120 355,120 355,155 400,155 402,155 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+<line x1='235' y1='145' x2='240' y2='145' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<line x1='285' y1='180' x2='275' y2='180' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<polygon points='280,175 280,185 290,180 280,175 ' stroke='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill='rgb(0%,0%,0%)' />
+<polyline points='238,145 240,145 275,145 275,180 277,180 ' stroke='rgb(0%,0%,0%)' stroke-width='1' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' fill = 'none'/>
+</g>
+</g>
+</g>
+<g transform='translate(0,0)' >
+<g transform='scale(1,1)' >
+</g>
+</g>
+<defs>
+  <clipPath id='clip_rect_0'><rect x='4' y='4' width='198' height='539' /></clipPath>
+  <clipPath id='clip_rect_1'><rect x='535' y='148' width='30' height='14' /></clipPath>
+  <clipPath id='clip_rect_2'><rect x='330' y='110' width='20' height='20' /></clipPath>
+  <clipPath id='clip_rect_3'><rect x='535' y='204' width='30' height='32' /></clipPath>
+  <clipPath id='clip_rect_4'><rect x='290' y='172' width='30' height='31' /></clipPath>
+  <clipPath id='clip_rect_5'><rect x='205' y='192' width='30' height='31' /></clipPath>
+  <clipPath id='clip_rect_6'><rect x='415' y='139' width='40' height='32' /></clipPath>
+  <clipPath id='clip_rect_7'><rect x='190' y='130' width='45' height='30' /></clipPath>
+  <clipPath id='clip_rect_8'><rect x='175' y='54' width='45' height='32' /></clipPath>
+  <clipPath id='clip_rect_9'><rect x='30' y='127' width='50' height='36' /></clipPath>
+</defs>
+</svg>
