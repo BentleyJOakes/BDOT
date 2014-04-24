@@ -21,6 +21,9 @@ for f in fileList:
     if os.path.isdir(f):
         continue
         
+    if not "HConstfolding_hier" in f:
+        continue
+        
     command = time_command + " ./" + f + " 2> " + f + "_timing.txt"
     do_command(command)
     

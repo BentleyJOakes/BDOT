@@ -3,9 +3,9 @@
  *
  * Code generation for model "HConstfolding_hier".
  *
- * Model version              : 1.9
+ * Model version              : 1.11
  * Simulink Coder version : 8.2 (R2012a) 29-Dec-2011
- * C source code generated on : Thu Apr 24 14:01:11 2014
+ * C source code generated on : Thu Apr 24 17:04:00 2014
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
