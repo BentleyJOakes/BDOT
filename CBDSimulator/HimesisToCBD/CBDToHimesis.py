@@ -6,6 +6,10 @@ from himesis_utils import graph_to_dot
 import os
 import sys
 
+#dumps a CBD model back into a himesis graph
+
+
+
 class CBDToHimesis:
 
     def __init__(self):
@@ -74,14 +78,14 @@ class CBDToHimesis:
     def get_attribs(self, h, vertex, block):
 
         try:
-            #copy details of Simulink block
+            #copy details of Simulink block if the block still has one
             if block.block:
                 for attrib in block.block.attributes():
                     if attrib == "GUID__":
                         continue
                         
                         
-                    #rename blocks with conflicting names
+                    #TODO: rename blocks with conflicting names
 #                    if attrib == "Name":
 #                    
 #                        #print("Block blockName: " + block.getBlockName())

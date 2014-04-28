@@ -2,6 +2,12 @@ import math
 
 from CBD import *
 
+#the old CBD formalism simulator
+#topological sorting needs to be extracted from this
+
+
+
+
 class CBDsimulator:
 
   def __init__(self, model, curIteration=0):

@@ -2,6 +2,8 @@ from CBDsimulator import *
 import numpy as np
 from Models.EulerSubsystemTest import *
 
+#obsolete code to load a CBD model and run it
+
 
 class SimulationExperiment:
 

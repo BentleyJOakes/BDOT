@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
 
 
+#Blocks for the old CBD formalism
+#Some parts are obsolete, while others need to be moved over to the SimulinkCBD formalism (especially flattening, strong components, and topological sorting)
+
+
+
 class BaseBlock:
 
   # A base class for all types of CBD blocks

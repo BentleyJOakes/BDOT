@@ -31,9 +31,13 @@ desirable for a modeller.
 
 Running
 
+Execute 'source run.sh' to set up the environment variables for the shared library. Only works on the ubuntu.cs.mcgill.ca server.
+
 The entry point for the code is optimizationExperiment.py. Simply run this file to perform a constant folding optimization on a model. Command-line arguments can also be taken to customize the optimization.
 
 Folders
+
+CBD - Obsolete. Code for models created in the CBD format.
 
 dot - dot files and svgs for the Himesis graphs produced during optimization. Note how the Simulink structure needs extra port nodes that must be accounted for in the analysis and transformation stages of an optimization.
 
@@ -44,8 +48,6 @@ FlowAnalyzer - A dataflow analyzer that can run over the model in Python
 himesis - The Himesis files created during optimization
 
 HimesisToCBD - Helper code to load models from Himesis into Python objects, and back again
-
-Models - Obsolete. Sample models in the CBD format.
 
 Optimizations - The actual optimizations written in Python code
 

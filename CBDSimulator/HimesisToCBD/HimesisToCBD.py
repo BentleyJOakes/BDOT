@@ -6,6 +6,8 @@ from himesis_utils import graph_to_dot
 import os
 import sys
 
+#converts a himesis file into a connected set of CBD/SimulinkCBD blocks
+
 class HimesisToCBD:
 
     def __init__(self):

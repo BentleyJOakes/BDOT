@@ -4,6 +4,11 @@ from FlowAnalyzer.FlowAnalyzer import *
 import time
 import os    
 import sys
+
+#super class for all optimizations
+
+
+
 class Optimization:
 
     def __init__(self, simulator, mh):

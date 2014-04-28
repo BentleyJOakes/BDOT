@@ -1,6 +1,10 @@
 from CBD import *
         
         
+#definition for the Simulink blocks
+#implemented as subclasses of CBD blocks        
+        
+        
 #generic type for when a corresponding type has not yet been created
 class Simulink_GenericBlock(BaseBlock):
     def __init__(self, block_name, block):
