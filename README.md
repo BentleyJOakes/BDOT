@@ -1,2 +1,2 @@
-BDOT
+BDOT - Block Diagram Optimization Transformations
 ====
