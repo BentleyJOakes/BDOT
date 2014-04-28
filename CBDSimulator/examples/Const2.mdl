@@ -11,7 +11,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.7"
+    ComputedModelVersion    "1.9"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -43,9 +43,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 24 13:16:43 2014"
-  RTWModifiedTimeStamp	  320246202
-  ModelVersionFormat	  "1.%<AutoIncrement:7>"
+  LastModifiedDate	  "Thu Apr 24 15:33:59 2014"
+  RTWModifiedTimeStamp	  320254415
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -227,19 +227,19 @@ Model {
 	    Cell		    "UseSpecifiedMinMax"
 	    PropName		    "DisabledProps"
 	  }
-	  BlockReduction	  on
+	  BlockReduction	  off
 	  BooleanDataType	  on
-	  ConditionallyExecuteInputs on
-	  InlineParams		  on
+	  ConditionallyExecuteInputs off
+	  InlineParams		  off
 	  UseIntDivNetSlope	  off
 	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
-	  InlineInvariantSignals  on
+	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
 	  EnhancedBackFolding	  on
 	  StrengthReduction	  off
-	  ExpressionFolding	  on
+	  ExpressionFolding	  off
 	  BooleansAsBitfields	  off
 	  BitfieldContainerType	  "uint_T"
 	  EnableMemcpy		  on
@@ -642,8 +642,8 @@ Model {
       }
       Name		      "Configuration"
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
-      CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 2389, 164, 3371, 1010 ] 
+      CurrentDlgPage	      "Optimization"
+      ConfigPrmDlgPosition     [ 2369, 92, 3391, 1030 ] 
     }
     Simulink.ConfigSetRef {
       $ObjectID		      15
@@ -770,7 +770,7 @@ Model {
   }
   System {
     Name		    "Const2"
-    Location		    [2919, 338, 3499, 598]
+    Location		    [2918, 310, 3498, 570]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200

@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.14"
+    ComputedModelVersion    "1.15"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -47,9 +47,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 24 14:24:47 2014"
-  RTWModifiedTimeStamp	  320250286
-  ModelVersionFormat	  "1.%<AutoIncrement:14>"
+  LastModifiedDate	  "Thu Apr 24 15:36:08 2014"
+  RTWModifiedTimeStamp	  320254567
+  ModelVersionFormat	  "1.%<AutoIncrement:15>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -87,7 +87,6 @@ Model {
     $ObjectID		    2
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Flatten2"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -232,19 +231,19 @@ Model {
 	    Cell		    "UseSpecifiedMinMax"
 	    PropName		    "DisabledProps"
 	  }
-	  BlockReduction	  on
+	  BlockReduction	  off
 	  BooleanDataType	  on
-	  ConditionallyExecuteInputs on
-	  InlineParams		  on
+	  ConditionallyExecuteInputs off
+	  InlineParams		  off
 	  UseIntDivNetSlope	  off
 	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
-	  InlineInvariantSignals  on
+	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
 	  EnhancedBackFolding	  on
 	  StrengthReduction	  off
-	  ExpressionFolding	  on
+	  ExpressionFolding	  off
 	  BooleansAsBitfields	  off
 	  BitfieldContainerType	  "uint_T"
 	  EnableMemcpy		  on
@@ -648,7 +647,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
       CurrentDlgPage	      "Optimization/Signals and Parameters"
-      ConfigPrmDlgPosition     [ 2735, 163, 3717, 1009 ] 
+      ConfigPrmDlgPosition     [ 2725, 127, 3727, 1019 ] 
     }
     Simulink.ConfigSetRef {
       $ObjectID		      15

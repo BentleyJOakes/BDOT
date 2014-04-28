@@ -8,7 +8,7 @@
 <rect x='335' y='38' width='30' height='14' rx='6.77419' ry='6.77419' stroke='rgb(0%,0%,0%)' stroke-width='1' fill='none' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
 <text stroke='none' x='338.5' y='64' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Out1</text>
 <text stroke='none' x='347' y='49.5' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_1)' font-family='Helvetica'>1</text>
-<rect x='260' y='24' width='45' height='42' stroke='none' fill='rgb(100%,100%,100%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
+<rect x='260' y='24' width='45' height='42' stroke='none' fill='rgb(90.9804%,81.9608%,32.1569%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' />
 <text stroke='none' x='256.5' y='78' font-size='10' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' font-family='Helvetica'>Subsystem</text>
 <text stroke='none' x='263' y='39' font-size='9' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_2)' font-family='Helvetica'>In1</text>
 <text stroke='none' x='263' y='59' font-size='9' fill='rgb(0%,0%,0%)' transform='matrix(6.12303e-17 -1 1 6.12303e-17 0 0 )' clip-path='url(#clip_rect_2)' font-family='Helvetica'>In2</text>

@@ -1,13 +1,2399 @@
-Time taken to connect to Simulink: 15.7724940777 seconds
-Time taken to import from Simulink: 9.19270896912 seconds
-
+Model: HConstfolding_hier
+Time taken to connect to Simulink: 13.0328428745 seconds
+[260.0, 24.0, 305.0, 66.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[335.0, 38.0, 365.0, 52.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[135.0, 65.0, 165.0, 95.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 92.0, 235.0, 123.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[250.0, 100.0, 270.0, 120.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[290.0, 93.0, 325.0, 127.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+UnitDelay
+[145.0, 118.0, 175.0, 132.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[170.0, 28.0, 200.0, 42.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[145.0, 88.0, 175.0, 102.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[200.0, 64.0, 240.0, 96.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[365.0, 103.0, 395.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+Time taken to import from Simulink: 3.58536696434 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: HConstfolding_hier - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 14
+in_block: 1 - Port_Input - 30
+out_block: In1 - Inport - 11
+IN block: 1 - Port_Input - 30
+CURR block: 1 - Port_Output - 19
+Relation block: None - __Relation__ - 50
+IN PARENT: None - __Relation__ - 57
+OUT CHILD: 1 - Port_Input - 33
+Removing: None - __Relation__ - 50
+Removing from child: 1 - Port_Input - 33
+in_block: 2 - Port_Input - 31
+out_block: In2 - Inport - 9
+IN block: 2 - Port_Input - 31
+CURR block: 1 - Port_Output - 17
+Relation block: None - __Relation__ - 51
+IN PARENT: None - __Relation__ - 56
+OUT CHILD: 2 - Port_Input - 34
+Removing: None - __Relation__ - 51
+Removing from child: 2 - Port_Input - 34
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.07 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Constant
+Simulink Full Name: Product
+Simulink Full Name: Sum
+Simulink Full Name: Unit Delay
+Simulink Full Name: Gain
+Simulink Full Name: Out1
+Simulink Full Name: HConstfolding_hier
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Gain/1
+1Product/1
+1Sum/1
+1Sum/1
+1Unit Delay/1
+1Unit Delay/1
+1Out1/1
+1Unit Delay/1
+1Sum/2
+1In1/1
+1Product/1
+1Gain/1
+1Product/2
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.5643768311 seconds
+[260.0, 24.0, 305.0, 66.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[335.0, 38.0, 365.0, 52.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[135.0, 65.0, 165.0, 95.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 92.0, 235.0, 123.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[250.0, 100.0, 270.0, 120.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[290.0, 93.0, 325.0, 127.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+UnitDelay
+[145.0, 118.0, 175.0, 132.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[170.0, 28.0, 200.0, 42.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[145.0, 88.0, 175.0, 102.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[200.0, 64.0, 240.0, 96.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[365.0, 103.0, 395.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+Time taken to import from Simulink: 3.56841492653 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: HConstfolding_hier - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 14
+in_block: 1 - Port_Input - 30
+out_block: In1 - Inport - 11
+IN block: 1 - Port_Input - 30
+CURR block: 1 - Port_Output - 19
+Relation block: None - __Relation__ - 50
+IN PARENT: None - __Relation__ - 57
+OUT CHILD: 1 - Port_Input - 33
+Removing: None - __Relation__ - 50
+Removing from child: 1 - Port_Input - 33
+in_block: 2 - Port_Input - 31
+out_block: In2 - Inport - 9
+IN block: 2 - Port_Input - 31
+CURR block: 1 - Port_Output - 17
+Relation block: None - __Relation__ - 51
+IN PARENT: None - __Relation__ - 56
+OUT CHILD: 2 - Port_Input - 34
+Removing: None - __Relation__ - 51
+Removing from child: 2 - Port_Input - 34
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.07 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Constant
+Simulink Full Name: Product
+Simulink Full Name: Sum
+Simulink Full Name: Unit Delay
+Simulink Full Name: Gain
+Simulink Full Name: Out1
+Simulink Full Name: HConstfolding_hier
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Gain/1
+1Product/1
+1Sum/1
+1Sum/1
+1Unit Delay/1
+1Unit Delay/1
+1Out1/1
+1Unit Delay/1
+1Sum/2
+1In1/1
+1Product/1
+1Gain/1
+1Product/2
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.3603799343 seconds
+[260.0, 24.0, 305.0, 66.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[335.0, 38.0, 365.0, 52.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[135.0, 65.0, 165.0, 95.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 92.0, 235.0, 123.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[250.0, 100.0, 270.0, 120.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[290.0, 93.0, 325.0, 127.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+UnitDelay
+[145.0, 118.0, 175.0, 132.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[170.0, 28.0, 200.0, 42.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[145.0, 88.0, 175.0, 102.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[200.0, 64.0, 240.0, 96.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[365.0, 103.0, 395.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+Time taken to import from Simulink: 3.56382513046 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: HConstfolding_hier - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 14
+in_block: 1 - Port_Input - 30
+out_block: In1 - Inport - 11
+IN block: 1 - Port_Input - 30
+CURR block: 1 - Port_Output - 19
+Relation block: None - __Relation__ - 50
+IN PARENT: None - __Relation__ - 57
+OUT CHILD: 1 - Port_Input - 33
+Removing: None - __Relation__ - 50
+Removing from child: 1 - Port_Input - 33
+in_block: 2 - Port_Input - 31
+out_block: In2 - Inport - 9
+IN block: 2 - Port_Input - 31
+CURR block: 1 - Port_Output - 17
+Relation block: None - __Relation__ - 51
+IN PARENT: None - __Relation__ - 56
+OUT CHILD: 2 - Port_Input - 34
+Removing: None - __Relation__ - 51
+Removing from child: 2 - Port_Input - 34
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Constant
+Simulink Full Name: Product
+Simulink Full Name: Sum
+Simulink Full Name: Unit Delay
+Simulink Full Name: Gain
+Simulink Full Name: Out1
+Simulink Full Name: HConstfolding_hier
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Gain/1
+1Product/1
+1Sum/1
+1Sum/1
+1Unit Delay/1
+1Unit Delay/1
+1Out1/1
+1Unit Delay/1
+1Sum/2
+1In1/1
+1Product/1
+1Gain/1
+1Product/2
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.5194489956 seconds
+[260.0, 24.0, 305.0, 66.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[335.0, 38.0, 365.0, 52.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[135.0, 65.0, 165.0, 95.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 92.0, 235.0, 123.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[250.0, 100.0, 270.0, 120.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[290.0, 93.0, 325.0, 127.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+UnitDelay
+[145.0, 118.0, 175.0, 132.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[170.0, 28.0, 200.0, 42.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[145.0, 88.0, 175.0, 102.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[200.0, 64.0, 240.0, 96.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[365.0, 103.0, 395.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+Time taken to import from Simulink: 3.61106204987 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: HConstfolding_hier - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 14
+in_block: 1 - Port_Input - 30
+out_block: In1 - Inport - 11
+IN block: 1 - Port_Input - 30
+CURR block: 1 - Port_Output - 19
+Relation block: None - __Relation__ - 50
+IN PARENT: None - __Relation__ - 57
+OUT CHILD: 1 - Port_Input - 33
+Removing: None - __Relation__ - 50
+Removing from child: 1 - Port_Input - 33
+in_block: 2 - Port_Input - 31
+out_block: In2 - Inport - 9
+IN block: 2 - Port_Input - 31
+CURR block: 1 - Port_Output - 17
+Relation block: None - __Relation__ - 51
+IN PARENT: None - __Relation__ - 56
+OUT CHILD: 2 - Port_Input - 34
+Removing: None - __Relation__ - 51
+Removing from child: 2 - Port_Input - 34
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Constant
+Simulink Full Name: Product
+Simulink Full Name: Sum
+Simulink Full Name: Unit Delay
+Simulink Full Name: Gain
+Simulink Full Name: Out1
+Simulink Full Name: HConstfolding_hier
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Gain/1
+1Product/1
+1Sum/1
+1Sum/1
+1Unit Delay/1
+1Unit Delay/1
+1Out1/1
+1Unit Delay/1
+1Sum/2
+1In1/1
+1Product/1
+1Gain/1
+1Product/2
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.2462880611 seconds
+[260.0, 24.0, 305.0, 66.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('HConstfolding_hier/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[335.0, 38.0, 365.0, 52.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[135.0, 65.0, 165.0, 95.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 92.0, 235.0, 123.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[250.0, 100.0, 270.0, 120.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[290.0, 93.0, 325.0, 127.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+UnitDelay
+[145.0, 118.0, 175.0, 132.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[170.0, 28.0, 200.0, 42.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[145.0, 88.0, 175.0, 102.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[200.0, 64.0, 240.0, 96.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[365.0, 103.0, 395.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+Time taken to import from Simulink: 3.63092112541 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: HConstfolding_hier - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 14
+in_block: 1 - Port_Input - 30
+out_block: In1 - Inport - 11
+IN block: 1 - Port_Input - 30
+CURR block: 1 - Port_Output - 19
+Relation block: None - __Relation__ - 50
+IN PARENT: None - __Relation__ - 57
+OUT CHILD: 1 - Port_Input - 33
+Removing: None - __Relation__ - 50
+Removing from child: 1 - Port_Input - 33
+in_block: 2 - Port_Input - 31
+out_block: In2 - Inport - 9
+IN block: 2 - Port_Input - 31
+CURR block: 1 - Port_Output - 17
+Relation block: None - __Relation__ - 51
+IN PARENT: None - __Relation__ - 56
+OUT CHILD: 2 - Port_Input - 34
+Removing: None - __Relation__ - 51
+Removing from child: 2 - Port_Input - 34
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.05 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Constant
+Simulink Full Name: Product
+Simulink Full Name: Sum
+Simulink Full Name: Unit Delay
+Simulink Full Name: Gain
+Simulink Full Name: Out1
+Simulink Full Name: HConstfolding_hier
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Gain/1
+1Product/1
+1Sum/1
+1Sum/1
+1Unit Delay/1
+1Unit Delay/1
+1Out1/1
+1Unit Delay/1
+1Sum/2
+1In1/1
+1Product/1
+1Gain/1
+1Product/2
+Time taken to export to Simulink: 0.02 seconds
+Model: Flatten1
+Time taken to connect to Simulink: 11.3621418476 seconds
+[255.0, 109.0, 355.0, 151.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[470.0, 123.0, 500.0, 137.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[155.0, 147.0, 185.0, 178.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[25.0, 102.0, 70.0, 138.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 170.0, 140.0, 200.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[410.0, 120.0, 430.0, 140.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[110.0, 133.0, 140.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[15.0, 183.0, 45.0, 197.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[115.0, 93.0, 145.0, 107.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[210.0, 117.0, 240.0, 148.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[360.0, 103.0, 390.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[275.0, 125.0, 295.0, 145.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+Time taken to import from Simulink: 3.08277702332 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten1 - SubSystem - 9 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 0 at depth: 14
+in_block: 1 - Port_Input - 33
+out_block: In1 - Inport - 12
+IN block: 1 - Port_Input - 33
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 70
+IN PARENT: None - __Relation__ - 78
+OUT CHILD: 1 - Port_Input - 43
+Removing: None - __Relation__ - 70
+Removing from child: 1 - Port_Input - 43
+in_block: 2 - Port_Input - 34
+out_block: In2 - Inport - 10
+IN block: 2 - Port_Input - 34
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 75
+OUT CHILD: 1 - Port_Input - 40
+Removing: None - __Relation__ - 72
+Removing from child: 1 - Port_Input - 40
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Out1
+Simulink Full Name: Product
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Sum
+Simulink Full Name: Product2
+Simulink Full Name: Sum2
+Simulink Full Name: Flatten1
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Product/1
+1Sum/2
+1Product/1
+1Product2/1
+1Constant/1
+1Product/1
+1Constant/1
+1Sum2/1
+1Constant2/1
+1Product2/2
+1Sum/1
+1Out1/1
+1In1/1
+1Product/2
+1Product2/1
+1Sum2/2
+1Sum2/1
+1Sum/1
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.5463938713 seconds
+[255.0, 109.0, 355.0, 151.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[470.0, 123.0, 500.0, 137.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[155.0, 147.0, 185.0, 178.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[25.0, 102.0, 70.0, 138.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 170.0, 140.0, 200.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[410.0, 120.0, 430.0, 140.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[110.0, 133.0, 140.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[15.0, 183.0, 45.0, 197.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[115.0, 93.0, 145.0, 107.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[210.0, 117.0, 240.0, 148.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[360.0, 103.0, 390.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[275.0, 125.0, 295.0, 145.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+Time taken to import from Simulink: 3.07227110863 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten1 - SubSystem - 9 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 0 at depth: 14
+in_block: 1 - Port_Input - 33
+out_block: In1 - Inport - 12
+IN block: 1 - Port_Input - 33
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 70
+IN PARENT: None - __Relation__ - 78
+OUT CHILD: 1 - Port_Input - 43
+Removing: None - __Relation__ - 70
+Removing from child: 1 - Port_Input - 43
+in_block: 2 - Port_Input - 34
+out_block: In2 - Inport - 10
+IN block: 2 - Port_Input - 34
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 75
+OUT CHILD: 1 - Port_Input - 40
+Removing: None - __Relation__ - 72
+Removing from child: 1 - Port_Input - 40
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Out1
+Simulink Full Name: Product
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Sum
+Simulink Full Name: Product2
+Simulink Full Name: Sum2
+Simulink Full Name: Flatten1
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Product/1
+1Sum/2
+1Product/1
+1Product2/1
+1Constant/1
+1Product/1
+1Constant/1
+1Sum2/1
+1Constant2/1
+1Product2/2
+1Sum/1
+1Out1/1
+1In1/1
+1Product/2
+1Product2/1
+1Sum2/2
+1Sum2/1
+1Sum/1
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.4112789631 seconds
+[255.0, 109.0, 355.0, 151.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[470.0, 123.0, 500.0, 137.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[155.0, 147.0, 185.0, 178.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[25.0, 102.0, 70.0, 138.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 170.0, 140.0, 200.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[410.0, 120.0, 430.0, 140.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[110.0, 133.0, 140.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[15.0, 183.0, 45.0, 197.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[115.0, 93.0, 145.0, 107.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[210.0, 117.0, 240.0, 148.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[360.0, 103.0, 390.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[275.0, 125.0, 295.0, 145.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+Time taken to import from Simulink: 3.05498504639 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten1 - SubSystem - 9 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 0 at depth: 14
+in_block: 1 - Port_Input - 33
+out_block: In1 - Inport - 12
+IN block: 1 - Port_Input - 33
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 70
+IN PARENT: None - __Relation__ - 78
+OUT CHILD: 1 - Port_Input - 43
+Removing: None - __Relation__ - 70
+Removing from child: 1 - Port_Input - 43
+in_block: 2 - Port_Input - 34
+out_block: In2 - Inport - 10
+IN block: 2 - Port_Input - 34
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 75
+OUT CHILD: 1 - Port_Input - 40
+Removing: None - __Relation__ - 72
+Removing from child: 1 - Port_Input - 40
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Out1
+Simulink Full Name: Product
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Sum
+Simulink Full Name: Product2
+Simulink Full Name: Sum2
+Simulink Full Name: Flatten1
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Product/1
+1Sum/2
+1Product/1
+1Product2/1
+1Constant/1
+1Product/1
+1Constant/1
+1Sum2/1
+1Constant2/1
+1Product2/2
+1Sum/1
+1Out1/1
+1In1/1
+1Product/2
+1Product2/1
+1Sum2/2
+1Sum2/1
+1Sum/1
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 12.3384680748 seconds
+[255.0, 109.0, 355.0, 151.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[470.0, 123.0, 500.0, 137.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[155.0, 147.0, 185.0, 178.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[25.0, 102.0, 70.0, 138.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 170.0, 140.0, 200.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[410.0, 120.0, 430.0, 140.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[110.0, 133.0, 140.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[15.0, 183.0, 45.0, 197.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[115.0, 93.0, 145.0, 107.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[210.0, 117.0, 240.0, 148.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[360.0, 103.0, 390.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[275.0, 125.0, 295.0, 145.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+Time taken to import from Simulink: 3.13367295265 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten1 - SubSystem - 9 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 0 at depth: 14
+in_block: 1 - Port_Input - 33
+out_block: In1 - Inport - 12
+IN block: 1 - Port_Input - 33
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 70
+IN PARENT: None - __Relation__ - 78
+OUT CHILD: 1 - Port_Input - 43
+Removing: None - __Relation__ - 70
+Removing from child: 1 - Port_Input - 43
+in_block: 2 - Port_Input - 34
+out_block: In2 - Inport - 10
+IN block: 2 - Port_Input - 34
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 75
+OUT CHILD: 1 - Port_Input - 40
+Removing: None - __Relation__ - 72
+Removing from child: 1 - Port_Input - 40
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.09 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Out1
+Simulink Full Name: Product
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Sum
+Simulink Full Name: Product2
+Simulink Full Name: Sum2
+Simulink Full Name: Flatten1
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Product/1
+1Sum/2
+1Product/1
+1Product2/1
+1Constant/1
+1Product/1
+1Constant/1
+1Sum2/1
+1Constant2/1
+1Product2/2
+1Sum/1
+1Out1/1
+1In1/1
+1Product/2
+1Product2/1
+1Sum2/2
+1Sum2/1
+1Sum/1
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.4771268368 seconds
+[255.0, 109.0, 355.0, 151.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten1/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten1/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten1/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[470.0, 123.0, 500.0, 137.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[155.0, 147.0, 185.0, 178.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[25.0, 102.0, 70.0, 138.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 170.0, 140.0, 200.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[410.0, 120.0, 430.0, 140.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[110.0, 133.0, 140.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[15.0, 183.0, 45.0, 197.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[115.0, 93.0, 145.0, 107.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[210.0, 117.0, 240.0, 148.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[360.0, 103.0, 390.0, 117.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[275.0, 125.0, 295.0, 145.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+Time taken to import from Simulink: 3.10573601723 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten1 - SubSystem - 9 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 0 at depth: 14
+in_block: 1 - Port_Input - 33
+out_block: In1 - Inport - 12
+IN block: 1 - Port_Input - 33
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 70
+IN PARENT: None - __Relation__ - 78
+OUT CHILD: 1 - Port_Input - 43
+Removing: None - __Relation__ - 70
+Removing from child: 1 - Port_Input - 43
+in_block: 2 - Port_Input - 34
+out_block: In2 - Inport - 10
+IN block: 2 - Port_Input - 34
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 75
+OUT CHILD: 1 - Port_Input - 40
+Removing: None - __Relation__ - 72
+Removing from child: 1 - Port_Input - 40
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.09 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Out1
+Simulink Full Name: Product
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Sum
+Simulink Full Name: Product2
+Simulink Full Name: Sum2
+Simulink Full Name: Flatten1
+Simulink Full Name: In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Product/1
+1Sum/2
+1Product/1
+1Product2/1
+1Constant/1
+1Product/1
+1Constant/1
+1Sum2/1
+1Constant2/1
+1Product2/2
+1Sum/1
+1Out1/1
+1In1/1
+1Product/2
+1Product2/1
+1Sum2/2
+1Sum2/1
+1Sum/1
+Time taken to export to Simulink: 0.01 seconds
+Model: Flatten2
+Time taken to connect to Simulink: 11.503674984 seconds
+[145.0, 89.0, 245.0, 131.0]
+[[2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[465.0, 188.0, 495.0, 202.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[40.0, 193.0, 70.0, 207.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 133.0, 70.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[475.0, 108.0, 505.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+Time taken to import from Simulink: 5.74118208885 seconds
+Time taken for Himesis to CBD: 0.09 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2 - SubSystem - 10 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 8
+in_block: 1 - Port_Input - 50
+out_block: In1 - Inport - 17
+IN block: 1 - Port_Input - 50
+CURR block: 1 - Port_Output - 27
+Relation block: None - __Relation__ - 87
+IN PARENT: None - __Relation__ - 89
+OUT CHILD: 1 - Port_Input - 55
+Removing: None - __Relation__ - 87
+Removing from child: 1 - Port_Input - 55
+in_block: 2 - Port_Input - 51
+out_block: In2 - Inport - 15
+IN block: 2 - Port_Input - 51
+CURR block: 1 - Port_Output - 25
+Relation block: None - __Relation__ - 86
+IN PARENT: None - __Relation__ - 88
+OUT CHILD: 2 - Port_Input - 56
+Removing: None - __Relation__ - 86
+Removing from child: 2 - Port_Input - 56
+Time taken for transformation: 0.01 seconds
+Time taken for CBD to Himesis: 0.13 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Subsystem2/Sum
+Simulink Full Name: Product2
+Simulink Full Name: Subsystem2/Product3
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Subsystem2/Constant
+Simulink Full Name: Subsystem2
+Simulink Full Name: Flatten2
+Simulink Full Name: Out1
+Simulink Full Name: Subsystem2/Out1
+Simulink Full Name: In1
+Simulink Full Name: Subsystem2/In2
+Simulink Full Name: Subsystem2/In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Product2/2
+1Constant2/1
+1Subsystem2/1
+1Subsystem2/Constant/1
+1Subsystem2/Sum/1
+1In1/1
+1Product2/1
+1Gain2/1
+1Out1/1
+1Gain2/1
+1Scope/1
+1Product2/1
+1Subsystem2/2
+1Subsystem2/Product3/1
+1Subsystem2/Sum/2
+1Subsystem2/1
+1Gain2/1
+1Subsystem2/Sum/1
+1Subsystem2/Out1/1
+1Subsystem2/In2/1
+1Subsystem2/Product3/2
+1Subsystem2/In1/1
+1Subsystem2/Product3/1
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.480807066 seconds
+[145.0, 89.0, 245.0, 131.0]
+[[2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[465.0, 188.0, 495.0, 202.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[40.0, 193.0, 70.0, 207.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 133.0, 70.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[475.0, 108.0, 505.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+Time taken to import from Simulink: 5.72761297226 seconds
 Time taken for Himesis to CBD: 0.08 seconds
 Time taken to build simulator: 0.0 seconds
-
-Time taken for analysis: 0.03 seconds
-
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2 - SubSystem - 10 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 8
+in_block: 1 - Port_Input - 50
+out_block: In1 - Inport - 17
+IN block: 1 - Port_Input - 50
+CURR block: 1 - Port_Output - 27
+Relation block: None - __Relation__ - 87
+IN PARENT: None - __Relation__ - 89
+OUT CHILD: 1 - Port_Input - 55
+Removing: None - __Relation__ - 87
+Removing from child: 1 - Port_Input - 55
+in_block: 2 - Port_Input - 51
+out_block: In2 - Inport - 15
+IN block: 2 - Port_Input - 51
+CURR block: 1 - Port_Output - 25
+Relation block: None - __Relation__ - 86
+IN PARENT: None - __Relation__ - 88
+OUT CHILD: 2 - Port_Input - 56
+Removing: None - __Relation__ - 86
+Removing from child: 2 - Port_Input - 56
 Time taken for transformation: 0.0 seconds
-
-Time taken for CBD to Himesis: 0.05 seconds
-
+Time taken for CBD to Himesis: 0.14 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Subsystem2/Sum
+Simulink Full Name: Product2
+Simulink Full Name: Subsystem2/Product3
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Subsystem2/Constant
+Simulink Full Name: Subsystem2
+Simulink Full Name: Flatten2
+Simulink Full Name: Out1
+Simulink Full Name: Subsystem2/Out1
+Simulink Full Name: In1
+Simulink Full Name: Subsystem2/In2
+Simulink Full Name: Subsystem2/In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Product2/2
+1Constant2/1
+1Subsystem2/1
+1Subsystem2/Constant/1
+1Subsystem2/Sum/1
+1In1/1
+1Product2/1
+1Gain2/1
+1Out1/1
+1Gain2/1
+1Scope/1
+1Product2/1
+1Subsystem2/2
+1Subsystem2/Product3/1
+1Subsystem2/Sum/2
+1Subsystem2/1
+1Gain2/1
+1Subsystem2/Sum/1
+1Subsystem2/Out1/1
+1Subsystem2/In2/1
+1Subsystem2/Product3/2
+1Subsystem2/In1/1
+1Subsystem2/Product3/1
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.3503639698 seconds
+[145.0, 89.0, 245.0, 131.0]
+[[2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[465.0, 188.0, 495.0, 202.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[40.0, 193.0, 70.0, 207.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 133.0, 70.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[475.0, 108.0, 505.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+Time taken to import from Simulink: 5.77924990654 seconds
+Time taken for Himesis to CBD: 0.08 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2 - SubSystem - 10 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 8
+in_block: 1 - Port_Input - 50
+out_block: In1 - Inport - 17
+IN block: 1 - Port_Input - 50
+CURR block: 1 - Port_Output - 27
+Relation block: None - __Relation__ - 87
+IN PARENT: None - __Relation__ - 89
+OUT CHILD: 1 - Port_Input - 55
+Removing: None - __Relation__ - 87
+Removing from child: 1 - Port_Input - 55
+in_block: 2 - Port_Input - 51
+out_block: In2 - Inport - 15
+IN block: 2 - Port_Input - 51
+CURR block: 1 - Port_Output - 25
+Relation block: None - __Relation__ - 86
+IN PARENT: None - __Relation__ - 88
+OUT CHILD: 2 - Port_Input - 56
+Removing: None - __Relation__ - 86
+Removing from child: 2 - Port_Input - 56
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.14 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Subsystem2/Sum
+Simulink Full Name: Product2
+Simulink Full Name: Subsystem2/Product3
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Subsystem2/Constant
+Simulink Full Name: Subsystem2
+Simulink Full Name: Flatten2
+Simulink Full Name: Out1
+Simulink Full Name: Subsystem2/Out1
+Simulink Full Name: In1
+Simulink Full Name: Subsystem2/In2
+Simulink Full Name: Subsystem2/In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Product2/2
+1Constant2/1
+1Subsystem2/1
+1Subsystem2/Constant/1
+1Subsystem2/Sum/1
+1In1/1
+1Product2/1
+1Gain2/1
+1Out1/1
+1Gain2/1
+1Scope/1
+1Product2/1
+1Subsystem2/2
+1Subsystem2/Product3/1
+1Subsystem2/Sum/2
+1Subsystem2/1
+1Gain2/1
+1Subsystem2/Sum/1
+1Subsystem2/Out1/1
+1Subsystem2/In2/1
+1Subsystem2/Product3/2
+1Subsystem2/In1/1
+1Subsystem2/Product3/1
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.5247340202 seconds
+[145.0, 89.0, 245.0, 131.0]
+[[2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[465.0, 188.0, 495.0, 202.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[40.0, 193.0, 70.0, 207.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 133.0, 70.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[475.0, 108.0, 505.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+Time taken to import from Simulink: 5.75233578682 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2 - SubSystem - 10 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 8
+in_block: 1 - Port_Input - 50
+out_block: In1 - Inport - 17
+IN block: 1 - Port_Input - 50
+CURR block: 1 - Port_Output - 27
+Relation block: None - __Relation__ - 87
+IN PARENT: None - __Relation__ - 89
+OUT CHILD: 1 - Port_Input - 55
+Removing: None - __Relation__ - 87
+Removing from child: 1 - Port_Input - 55
+in_block: 2 - Port_Input - 51
+out_block: In2 - Inport - 15
+IN block: 2 - Port_Input - 51
+CURR block: 1 - Port_Output - 25
+Relation block: None - __Relation__ - 86
+IN PARENT: None - __Relation__ - 88
+OUT CHILD: 2 - Port_Input - 56
+Removing: None - __Relation__ - 86
+Removing from child: 2 - Port_Input - 56
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.14 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Subsystem2/Sum
+Simulink Full Name: Product2
+Simulink Full Name: Subsystem2/Product3
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Subsystem2/Constant
+Simulink Full Name: Subsystem2
+Simulink Full Name: Flatten2
+Simulink Full Name: Out1
+Simulink Full Name: Subsystem2/Out1
+Simulink Full Name: In1
+Simulink Full Name: Subsystem2/In2
+Simulink Full Name: Subsystem2/In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Product2/2
+1Constant2/1
+1Subsystem2/1
+1Subsystem2/Constant/1
+1Subsystem2/Sum/1
+1In1/1
+1Product2/1
+1Gain2/1
+1Out1/1
+1Gain2/1
+1Scope/1
+1Product2/1
+1Subsystem2/2
+1Subsystem2/Product3/1
+1Subsystem2/Sum/2
+1Subsystem2/1
+1Gain2/1
+1Subsystem2/Sum/1
+1Subsystem2/Out1/1
+1Subsystem2/In2/1
+1Subsystem2/Product3/2
+1Subsystem2/In1/1
+1Subsystem2/Product3/1
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.4696269035 seconds
+[145.0, 89.0, 245.0, 131.0]
+[[2.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[465.0, 188.0, 495.0, 202.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[40.0, 193.0, 70.0, 207.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 133.0, 70.0, 147.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2/Subsystem/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[475.0, 108.0, 505.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+Time taken to import from Simulink: 5.73764705658 seconds
+Time taken for Himesis to CBD: 0.08 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2 - SubSystem - 10 at depth: 0
+Subsystem Name: Subsystem - SubSystem - 5 at depth: 8
+in_block: 1 - Port_Input - 50
+out_block: In1 - Inport - 17
+IN block: 1 - Port_Input - 50
+CURR block: 1 - Port_Output - 27
+Relation block: None - __Relation__ - 87
+IN PARENT: None - __Relation__ - 89
+OUT CHILD: 1 - Port_Input - 55
+Removing: None - __Relation__ - 87
+Removing from child: 1 - Port_Input - 55
+in_block: 2 - Port_Input - 51
+out_block: In2 - Inport - 15
+IN block: 2 - Port_Input - 51
+CURR block: 1 - Port_Output - 25
+Relation block: None - __Relation__ - 86
+IN PARENT: None - __Relation__ - 88
+OUT CHILD: 2 - Port_Input - 56
+Removing: None - __Relation__ - 86
+Removing from child: 2 - Port_Input - 56
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.15 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Subsystem2/Sum
+Simulink Full Name: Product2
+Simulink Full Name: Subsystem2/Product3
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+Simulink Full Name: Subsystem2/Constant
+Simulink Full Name: Subsystem2
+Simulink Full Name: Flatten2
+Simulink Full Name: Out1
+Simulink Full Name: Subsystem2/Out1
+Simulink Full Name: In1
+Simulink Full Name: Subsystem2/In2
+Simulink Full Name: Subsystem2/In1
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+1Constant/1
+1Product2/2
+1Constant2/1
+1Subsystem2/1
+1Subsystem2/Constant/1
+1Subsystem2/Sum/1
+1In1/1
+1Product2/1
+1Gain2/1
+1Out1/1
+1Gain2/1
+1Scope/1
+1Product2/1
+1Subsystem2/2
+1Subsystem2/Product3/1
+1Subsystem2/Sum/2
+1Subsystem2/1
+1Gain2/1
+1Subsystem2/Sum/1
+1Subsystem2/Out1/1
+1Subsystem2/In2/1
+1Subsystem2/Product3/2
+1Subsystem2/In1/1
+1Subsystem2/Product3/1
+Time taken to export to Simulink: 0.02 seconds
+Model: Flatten2_export
+Time taken to connect to Simulink: 11.4785439968 seconds
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+Time taken to import from Simulink: 5.18224787712 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2_export - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem2 - SubSystem - 4 at depth: 14
+in_block: 1 - Port_Input - 38
+out_block: In1 - Inport - 10
+IN block: 1 - Port_Input - 38
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 71
+IN PARENT: None - __Relation__ - 69
+OUT CHILD: 1 - Port_Input - 42
+Removing: None - __Relation__ - 71
+Removing from child: 1 - Port_Input - 42
+in_block: 2 - Port_Input - 39
+out_block: In2 - Inport - 12
+IN block: 2 - Port_Input - 39
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 65
+OUT CHILD: 2 - Port_Input - 43
+Removing: None - __Relation__ - 72
+Removing from child: 2 - Port_Input - 43
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Sum
+Simulink Full Name: Out1
+Simulink Full Name: Product3
+Simulink Full Name: Product2
+Simulink Full Name: Flatten2_export
+Simulink Full Name: Constant
+Simulink Full Name: In1
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: newblock = add_block('Simulink/Commonly Used Blocks/Constant', 'Flatten2_export_export/Constant')
+A new block named 'Flatten2_export_export/Constant' cannot be added
+Wrong command: set_param(newblock, 'value', '134.67')
+Inport block does not have a parameter named 'value'
+1Gain2/1
+1Scope/1
+1Gain2/1
+1Out1/1
+1Constant/1
+1Sum/1
+1In1/1
+1Product2/1
+1Product3/1
+1Sum/2
+1Product2/1
+1Product3/2
+1Constant/1
+1Product2/2
+1Sum/1
+1Gain2/1
+1Constant2/1
+1Product3/1
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 12.2625238895 seconds
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+Time taken to import from Simulink: 5.19546604156 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2_export - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem2 - SubSystem - 4 at depth: 14
+in_block: 1 - Port_Input - 38
+out_block: In1 - Inport - 10
+IN block: 1 - Port_Input - 38
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 71
+IN PARENT: None - __Relation__ - 69
+OUT CHILD: 1 - Port_Input - 42
+Removing: None - __Relation__ - 71
+Removing from child: 1 - Port_Input - 42
+in_block: 2 - Port_Input - 39
+out_block: In2 - Inport - 12
+IN block: 2 - Port_Input - 39
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 65
+OUT CHILD: 2 - Port_Input - 43
+Removing: None - __Relation__ - 72
+Removing from child: 2 - Port_Input - 43
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Sum
+Simulink Full Name: Out1
+Simulink Full Name: Product3
+Simulink Full Name: Product2
+Simulink Full Name: Flatten2_export
+Simulink Full Name: Constant
+Simulink Full Name: In1
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: newblock = add_block('Simulink/Commonly Used Blocks/Constant', 'Flatten2_export_export/Constant')
+A new block named 'Flatten2_export_export/Constant' cannot be added
+Wrong command: set_param(newblock, 'value', '134.67')
+Inport block does not have a parameter named 'value'
+1Gain2/1
+1Scope/1
+1Gain2/1
+1Out1/1
+1Constant/1
+1Sum/1
+1In1/1
+1Product2/1
+1Product3/1
+1Sum/2
+1Product2/1
+1Product3/2
+1Constant/1
+1Product2/2
+1Sum/1
+1Gain2/1
+1Constant2/1
+1Product3/1
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.6027419567 seconds
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+Time taken to import from Simulink: 5.19745397568 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2_export - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem2 - SubSystem - 4 at depth: 14
+in_block: 1 - Port_Input - 38
+out_block: In1 - Inport - 10
+IN block: 1 - Port_Input - 38
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 71
+IN PARENT: None - __Relation__ - 69
+OUT CHILD: 1 - Port_Input - 42
+Removing: None - __Relation__ - 71
+Removing from child: 1 - Port_Input - 42
+in_block: 2 - Port_Input - 39
+out_block: In2 - Inport - 12
+IN block: 2 - Port_Input - 39
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 65
+OUT CHILD: 2 - Port_Input - 43
+Removing: None - __Relation__ - 72
+Removing from child: 2 - Port_Input - 43
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Sum
+Simulink Full Name: Out1
+Simulink Full Name: Product3
+Simulink Full Name: Product2
+Simulink Full Name: Flatten2_export
+Simulink Full Name: Constant
+Simulink Full Name: In1
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: newblock = add_block('Simulink/Commonly Used Blocks/Constant', 'Flatten2_export_export/Constant')
+A new block named 'Flatten2_export_export/Constant' cannot be added
+Wrong command: set_param(newblock, 'value', '134.67')
+Inport block does not have a parameter named 'value'
+1Gain2/1
+1Scope/1
+1Gain2/1
+1Out1/1
+1Constant/1
+1Sum/1
+1In1/1
+1Product2/1
+1Product3/1
+1Sum/2
+1Product2/1
+1Product3/2
+1Constant/1
+1Product2/2
+1Sum/1
+1Gain2/1
+1Constant2/1
+1Product3/1
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.556622982 seconds
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+Time taken to import from Simulink: 5.1536860466 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2_export - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem2 - SubSystem - 4 at depth: 14
+in_block: 1 - Port_Input - 38
+out_block: In1 - Inport - 10
+IN block: 1 - Port_Input - 38
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 71
+IN PARENT: None - __Relation__ - 69
+OUT CHILD: 1 - Port_Input - 42
+Removing: None - __Relation__ - 71
+Removing from child: 1 - Port_Input - 42
+in_block: 2 - Port_Input - 39
+out_block: In2 - Inport - 12
+IN block: 2 - Port_Input - 39
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 65
+OUT CHILD: 2 - Port_Input - 43
+Removing: None - __Relation__ - 72
+Removing from child: 2 - Port_Input - 43
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Sum
+Simulink Full Name: Out1
+Simulink Full Name: Product3
+Simulink Full Name: Product2
+Simulink Full Name: Flatten2_export
+Simulink Full Name: Constant
+Simulink Full Name: In1
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: newblock = add_block('Simulink/Commonly Used Blocks/Constant', 'Flatten2_export_export/Constant')
+A new block named 'Flatten2_export_export/Constant' cannot be added
+Wrong command: set_param(newblock, 'value', '134.67')
+Inport block does not have a parameter named 'value'
+1Gain2/1
+1Scope/1
+1Gain2/1
+1Out1/1
+1Constant/1
+1Sum/1
+1In1/1
+1Product2/1
+1Product3/1
+1Sum/2
+1Product2/1
+1Product3/2
+1Constant/1
+1Product2/2
+1Sum/1
+1Gain2/1
+1Constant2/1
+1Product3/1
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.8503348827 seconds
+[355.0, 98.0, 385.0, 112.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[270.0, 134.0, 370.0, 176.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Name')
+SubSystem block does not have a parameter named 'pre_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Name')
+SubSystem block does not have a parameter named 'post_Name'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'p_label')
+SubSystem block does not have a parameter named 'p_label'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'pre_Position')
+SubSystem block does not have a parameter named 'pre_Position'
+Wrong command: val = get_param('Flatten2_export/Subsystem2', 'post_Position')
+SubSystem block does not have a parameter named 'post_Position'
+SubSystem
+[405.0, 99.0, 445.0, 131.0]
+[[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Gain
+[205.0, 69.0, 250.0, 101.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[110.0, 103.0, 140.0, 117.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[40.0, 48.0, 70.0, 62.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[355.0, 108.0, 385.0, 122.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Outport
+[115.0, 158.0, 145.0, 172.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Inport
+[225.0, 127.0, 255.0, 158.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[185.0, 177.0, 215.0, 208.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Product
+[345.0, 129.0, 375.0, 161.0]
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Scope
+[30.0, 127.0, 80.0, 163.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+[280.0, 90.0, 300.0, 110.0]
+[[2.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Sum
+[175.0, 120.0, 220.0, 150.0]
+[[0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0]]
+Constant
+Time taken to import from Simulink: 5.15485215187 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Start Flattening
+Time taken for analysis: 0.0 seconds
+Subsystem Name: Flatten2_export - SubSystem - 8 at depth: 0
+Subsystem Name: Subsystem2 - SubSystem - 4 at depth: 14
+in_block: 1 - Port_Input - 38
+out_block: In1 - Inport - 10
+IN block: 1 - Port_Input - 38
+CURR block: 1 - Port_Output - 18
+Relation block: None - __Relation__ - 71
+IN PARENT: None - __Relation__ - 69
+OUT CHILD: 1 - Port_Input - 42
+Removing: None - __Relation__ - 71
+Removing from child: 1 - Port_Input - 42
+in_block: 2 - Port_Input - 39
+out_block: In2 - Inport - 12
+IN block: 2 - Port_Input - 39
+CURR block: 1 - Port_Output - 20
+Relation block: None - __Relation__ - 72
+IN PARENT: None - __Relation__ - 65
+OUT CHILD: 2 - Port_Input - 43
+Removing: None - __Relation__ - 72
+Removing from child: 2 - Port_Input - 43
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Starting export to Simulink MDL
+Simulink Full Name: Gain2
+Simulink Full Name: Scope
+Simulink Full Name: Sum
+Simulink Full Name: Out1
+Simulink Full Name: Product3
+Simulink Full Name: Product2
+Simulink Full Name: Flatten2_export
+Simulink Full Name: Constant
+Simulink Full Name: In1
+Simulink Full Name: Constant
+Simulink Full Name: Constant2
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: chdir 'None'
+Error using chdir
+Cannot CD to None (Name is nonexistent or not a directory).
+/home/2011/boakes/Projects/BDOT/CBDSimulator/examples
+Wrong command: newblock = add_block('Simulink/Commonly Used Blocks/Constant', 'Flatten2_export_export/Constant')
+A new block named 'Flatten2_export_export/Constant' cannot be added
+Wrong command: set_param(newblock, 'value', '134.67')
+Inport block does not have a parameter named 'value'
+1Gain2/1
+1Scope/1
+1Gain2/1
+1Out1/1
+1Constant/1
+1Sum/1
+1In1/1
+1Product2/1
+1Product3/1
+1Sum/2
+1Product2/1
+1Product3/2
+1Constant/1
+1Product2/2
+1Sum/1
+1Gain2/1
+1Constant2/1
+1Product3/1
 Time taken to export to Simulink: 0.01 seconds

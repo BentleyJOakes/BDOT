@@ -17,6 +17,8 @@ from Server.TCore.core.himesis import Himesis
 from Server.TCore.t_core.messages import Packet
 import time
 
+import sys
+
 class OptimizationExperiment:
 
     def __init__(self, skip_simulink = False):
@@ -89,9 +91,11 @@ class OptimizationExperiment:
             simulinkExport.exportSimulink()
             end = time.clock()
             print("Time taken to export to Simulink: " + str(end - start) + " seconds")
+            
+            self.mh.endLib()
  
 
- 
+        
  
     #CBD functions
     def run2(self, num_steps=10): # one step = {NOW}
@@ -109,16 +113,28 @@ class OptimizationExperiment:
   
 if __name__=="__main__":
 
-    path = "./examples/"
-    model = "autopilot"
+
     
+
+    args = sys.argv
     
-        
+    if len(args) == 0:
+        path = "./examples/"
+        model = "HSimpleConst"
+        opt = "ConstantFolding"
+    else:
+        path = "./examples/"
+        model = sys.argv[1]
+        opt = sys.argv[2]
+ 
     experiment = OptimizationExperiment(skip_simulink=False)
     
-    #opt = ConstantFoldingOptimization
-    opt = FlatteningOptimization
-    #opt = DeadBlockRemovalOptimization
+    if opt == "ConstantFolding":
+        opt = ConstantFoldingOptimization
+    elif opt == "Flattening":
+        opt = FlatteningOptimization
+    elif opt == "DeadBlock":
+        opt = DeadBlockRemovalOptimization
     
     
     experiment.run(path, model, opt)

@@ -58,7 +58,7 @@ class InvokeSharedObject:
         """
         fun = self.libeng.engClose
         fun.argtypes = [c_void_p]
-        fun.restype = [c_int]
+        fun.restype = c_int
         return fun(pointer)
 
     def engEvalString(self, engine, cmd):

@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.9"
+    ComputedModelVersion    "1.12"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -47,9 +47,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 24 14:01:07 2014"
-  RTWModifiedTimeStamp	  320248865
-  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  LastModifiedDate	  "Fri Apr 25 17:41:20 2014"
+  RTWModifiedTimeStamp	  320348477
+  ModelVersionFormat	  "1.%<AutoIncrement:12>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -87,6 +87,7 @@ Model {
     $ObjectID		    2
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "HConstfolding_hier_export"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -645,8 +646,8 @@ Model {
       }
       Name		      "Configuration"
       ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
-      CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 2389, 164, 3371, 1010 ] 
+      CurrentDlgPage	      "Optimization/Signals and Parameters"
+      ConfigPrmDlgPosition     [ 2369, 92, 3391, 1030 ] 
     }
     Simulink.ConfigSetRef {
       $ObjectID		      15
@@ -824,7 +825,7 @@ Model {
   }
   System {
     Name		    "HConstfolding_hier"
-    Location		    [2175, 338, 3724, 1171]
+    Location		    [2173, 282, 3722, 1115]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -883,8 +884,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem"
-	Location		[2174, 79, 3620, 726]
-	Open			off
+	Location		[2173, 51, 3619, 698]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -900,7 +901,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "In1"
 	  SID			  "13"
-	  Position		  [150, 88, 180, 102]
+	  Position		  [145, 88, 175, 102]
 	  ZOrder		  6
 	  BackgroundColor	  "yellow"
 	  IconDisplay		  "Port number"
@@ -909,7 +910,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "In2"
 	  SID			  "12"
-	  Position		  [150, 118, 180, 132]
+	  Position		  [145, 118, 175, 132]
 	  ZOrder		  5
 	  BackgroundColor	  "yellow"
 	  Port			  "2"
@@ -920,7 +921,7 @@ Model {
 	  Name			  "Product"
 	  SID			  "8"
 	  Ports			  [2, 1]
-	  Position		  [210, 92, 240, 123]
+	  Position		  [205, 92, 235, 123]
 	  ZOrder		  1
 	  BackgroundColor	  "yellow"
 	  InputSameDT		  off
@@ -932,7 +933,7 @@ Model {
 	  Name			  "Sum"
 	  SID			  "9"
 	  Ports			  [2, 1]
-	  Position		  [260, 100, 280, 120]
+	  Position		  [250, 100, 270, 120]
 	  ZOrder		  2
 	  BackgroundColor	  "yellow"
 	  ShowName		  off
@@ -980,7 +981,7 @@ Model {
 	  Points		  [0, -10; 20, 0]
 	  Branch {
 	    Labels		    [2, 0]
-	    Points		    [-10, 0; 0, 55; -70, 0]
+	    Points		    [-10, 0; 0, 55; -80, 0]
 	    DstBlock		    "Sum"
 	    DstPort		    2
 	  }
@@ -997,10 +998,10 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  Labels		  [2, 0]
+	  Labels		  [1, 0]
 	  SrcBlock		  "In1"
 	  SrcPort		  1
-	  Points		  [5, 0; 0, 5]
+	  Points		  [0, 5]
 	  DstBlock		  "Product"
 	  DstPort		  1
 	}

@@ -15,7 +15,7 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.4"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,15 +30,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Mon Apr 21 16:19:36 2014"
+  Created		  "Sun Apr 27 15:26:54 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 24 13:29:00 2014"
-  RTWModifiedTimeStamp	  320245365
-  ModelVersionFormat	  "1.%<AutoIncrement:4>"
+  LastModifiedDate	  "Sun Apr 27 15:26:55 2014"
+  RTWModifiedTimeStamp	  320513215
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -129,7 +129,7 @@ Model {
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
-    Dimension		    2
+    Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      2
       Version		      "1.12.0"
@@ -140,9 +140,9 @@ Model {
 	  $ObjectID		  3
 	  Version		  "1.12.0"
 	  StartTime		  "0.0"
-	  StopTime		  "1000000000.0"
+	  StopTime		  "10.0"
 	  AbsTol		  "auto"
-	  FixedStep		  "1"
+	  FixedStep		  "auto"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -158,8 +158,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "FixedStepDiscrete"
-	  SolverName		  "FixedStepDiscrete"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -222,14 +222,14 @@ Model {
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
-	  InlineParams		  on
+	  InlineParams		  off
 	  UseIntDivNetSlope	  off
 	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
-	  InlineInvariantSignals  on
+	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
-	  EnhancedBackFolding	  on
+	  EnhancedBackFolding	  off
 	  StrengthReduction	  off
 	  ExpressionFolding	  on
 	  BooleansAsBitfields	  off
@@ -432,7 +432,7 @@ Model {
 	    PropName		    "DisabledProps"
 	  }
 	  SystemTargetFile	  "grt.tlc"
-	  GenCodeOnly		  on
+	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  TemplateMakefile	  "grt_default_tmf"
@@ -633,23 +633,14 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
-      CurrentDlgPage	      "Optimization"
-      ConfigPrmDlgPosition     [ -7, 147, 1013, 1099 ] 
-    }
-    Simulink.ConfigSetRef {
-      $ObjectID		      14
-      Version		      "1.12.0"
-      Name		      "Reference"
-      WSVarName		      "configSetObj"
-      SourceName	      ""
-      SourceLocation	      "Base Workspace"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
     }
     PropName		    "ConfigurationSets"
   }
-  Simulink.ConfigSetRef {
+  Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    14
+    $ObjectID		    2
   }
   ExplicitPartitioning	  off
   BlockDefaults {
@@ -751,8 +742,8 @@ Model {
   }
   System {
     Name		    "Const1_export"
-    Location		    [2657, 745, 3237, 1005]
-    Open		    on
+    Location		    [70, 200, 650, 460]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -770,7 +761,7 @@ Model {
       BlockType		      Inport
       Name		      "In1"
       SID		      "3"
-      Position		      [150, 58, 180, 72]
+      Position		      [90, 48, 120, 62]
       ZOrder		      3
       IconDisplay	      "Port number"
     }
@@ -778,7 +769,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant23"
       SID		      "4"
-      Position		      [140, 118, 190, 152]
+      Position		      [255, 50, 285, 80]
       ZOrder		      4
       Value		      "439.304"
     }
@@ -807,7 +798,7 @@ Model {
     Line {
       SrcBlock		      "Constant23"
       SrcPort		      1
-      Points		      [0, -5]
+      Points		      [0, 65]
       DstBlock		      "Sum"
       DstPort		      2
     }
@@ -821,7 +812,7 @@ Model {
     Line {
       SrcBlock		      "In1"
       SrcPort		      1
-      Points		      [20, 0; 0, 40]
+      Points		      [80, 0; 0, 50]
       DstBlock		      "Sum"
       DstPort		      1
     }

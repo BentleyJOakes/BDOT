@@ -1,5 +1,410 @@
+Model: HSimpleConst
+Time taken to connect to Simulink: 12.8274209499 seconds
+Time taken to import from Simulink: 1.89573001862 seconds
 Time taken for Himesis to CBD: 0.04 seconds
 Time taken to build simulator: 0.0 seconds
-Start Flattening
-Hello
-IN block: 1 - Port_Input - 37
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.03 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.8410019875 seconds
+Time taken to import from Simulink: 1.91268205643 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.8009030819 seconds
+Time taken to import from Simulink: 1.90444087982 seconds
+Time taken for Himesis to CBD: 0.02 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.06 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.7707650661 seconds
+Time taken to import from Simulink: 1.89748477936 seconds
+Time taken for Himesis to CBD: 0.02 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.05 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.2642309666 seconds
+Time taken to import from Simulink: 1.88590502739 seconds
+Time taken for Himesis to CBD: 0.02 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.0 seconds
+Model: Const1
+Time taken to connect to Simulink: 11.9043130875 seconds
+Time taken to import from Simulink: 2.05288887024 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.01 seconds
+Time taken for CBD to Himesis: 0.03 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.6634471416 seconds
+Time taken to import from Simulink: 2.26808786392 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.03 seconds
+Time taken to export to Simulink: 0.0 seconds
+Time taken to connect to Simulink: 11.7787928581 seconds
+Time taken to import from Simulink: 2.11469507217 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.03 seconds
+Time taken to export to Simulink: 0.0 seconds
+Time taken to connect to Simulink: 12.11429286 seconds
+Time taken to import from Simulink: 2.08292722702 seconds
+Time taken for Himesis to CBD: 0.03 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.6097579002 seconds
+Time taken to import from Simulink: 2.07142305374 seconds
+Time taken for Himesis to CBD: 0.02 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.02 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.01 seconds
+Model: Const2
+Time taken to connect to Simulink: 11.7228798866 seconds
+Time taken to import from Simulink: 3.2953350544 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.0 seconds
+Time taken to connect to Simulink: 11.5256559849 seconds
+Time taken to import from Simulink: 3.26827502251 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.02 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.0528800488 seconds
+Time taken to import from Simulink: 3.24931788445 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.02 seconds
+Time taken to export to Simulink: 0.0 seconds
+Time taken to connect to Simulink: 11.6573779583 seconds
+Time taken to import from Simulink: 3.19377803802 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.01 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.6340689659 seconds
+Time taken to import from Simulink: 3.20588612556 seconds
+Time taken for Himesis to CBD: 0.03 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.0 seconds
+Model: HConstfolding
+Time taken to connect to Simulink: 11.4999439716 seconds
+Time taken to import from Simulink: 5.00176715851 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.02 seconds
+Time taken for transformation: 0.01 seconds
+Time taken for CBD to Himesis: 0.09 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.1293919086 seconds
+Time taken to import from Simulink: 4.91872191429 seconds
+Time taken for Himesis to CBD: 0.09 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.02 seconds
+Time taken for transformation: 0.01 seconds
+Time taken for CBD to Himesis: 0.07 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.7918848991 seconds
+Time taken to import from Simulink: 4.96464586258 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.03 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.09 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.6476900578 seconds
+Time taken to import from Simulink: 4.93737888336 seconds
+Time taken for Himesis to CBD: 0.09 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.02 seconds
+Time taken for transformation: 0.01 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Time taken to export to Simulink: 0.0 seconds
+Time taken to connect to Simulink: 11.4679760933 seconds
+Time taken to import from Simulink: 4.89573287964 seconds
+Time taken for Himesis to CBD: 0.08 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.03 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.09 seconds
+Time taken to export to Simulink: 0.01 seconds
+Model: HSimpleConstDead
+Time taken to connect to Simulink: 12.0931580067 seconds
+Time taken to import from Simulink: 2.4420747757 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.0 seconds
+Time taken to connect to Simulink: 16.509510994 seconds
+Time taken to import from Simulink: 2.42710018158 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.6579442024 seconds
+Time taken to import from Simulink: 2.40270781517 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.6421861649 seconds
+Time taken to import from Simulink: 2.40442800522 seconds
+Time taken for Himesis to CBD: 0.01 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.06 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.0770139694 seconds
+Time taken to import from Simulink: 2.41628098488 seconds
+Time taken for Himesis to CBD: 0.03 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.05 seconds
+Time taken to export to Simulink: 0.02 seconds
+Model: HSimpleConstDead
+Time taken to connect to Simulink: 12.6737389565 seconds
+Time taken to import from Simulink: 2.44427800179 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.03 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.5001869202 seconds
+Time taken to import from Simulink: 2.40093493462 seconds
+Time taken for Himesis to CBD: 0.03 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.02 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.575191021 seconds
+Time taken to import from Simulink: 2.42116999626 seconds
+Time taken for Himesis to CBD: 0.01 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.01 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.04 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.5545370579 seconds
+Time taken to import from Simulink: 2.42978405952 seconds
+Time taken for Himesis to CBD: 0.03 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.05 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.4096519947 seconds
+Time taken to import from Simulink: 2.42700910568 seconds
+Time taken for Himesis to CBD: 0.02 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.01 seconds
+Time taken for CBD to Himesis: 0.03 seconds
+Time taken to export to Simulink: 0.0 seconds
+Model: HConstfolding_hier
+Time taken to connect to Simulink: 13.0328428745 seconds
+Time taken to import from Simulink: 3.58536696434 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.07 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.5643768311 seconds
+Time taken to import from Simulink: 3.56841492653 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.07 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.3603799343 seconds
+Time taken to import from Simulink: 3.56382513046 seconds
+Time taken for Himesis to CBD: 0.04 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.5194489956 seconds
+Time taken to import from Simulink: 3.61106204987 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.2462880611 seconds
+Time taken to import from Simulink: 3.63092112541 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.05 seconds
+Time taken to export to Simulink: 0.02 seconds
+Model: Flatten1
+Time taken to connect to Simulink: 11.3621418476 seconds
+Time taken to import from Simulink: 3.08277702332 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.5463938713 seconds
+Time taken to import from Simulink: 3.07227110863 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.4112789631 seconds
+Time taken to import from Simulink: 3.05498504639 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.08 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 12.3384680748 seconds
+Time taken to import from Simulink: 3.13367295265 seconds
+Time taken for Himesis to CBD: 0.05 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.09 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.4771268368 seconds
+Time taken to import from Simulink: 3.10573601723 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.09 seconds
+Time taken to export to Simulink: 0.01 seconds
+Model: Flatten2
+Time taken to connect to Simulink: 11.503674984 seconds
+Time taken to import from Simulink: 5.74118208885 seconds
+Time taken for Himesis to CBD: 0.09 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.01 seconds
+Time taken for CBD to Himesis: 0.13 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.480807066 seconds
+Time taken to import from Simulink: 5.72761297226 seconds
+Time taken for Himesis to CBD: 0.08 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.14 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 12.3503639698 seconds
+Time taken to import from Simulink: 5.77924990654 seconds
+Time taken for Himesis to CBD: 0.08 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.14 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.5247340202 seconds
+Time taken to import from Simulink: 5.75233578682 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.14 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.4696269035 seconds
+Time taken to import from Simulink: 5.73764705658 seconds
+Time taken for Himesis to CBD: 0.08 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.15 seconds
+Time taken to export to Simulink: 0.02 seconds
+Model: Flatten2_export
+Time taken to connect to Simulink: 11.4785439968 seconds
+Time taken to import from Simulink: 5.18224787712 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 12.2625238895 seconds
+Time taken to import from Simulink: 5.19546604156 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Time taken to export to Simulink: 0.02 seconds
+Time taken to connect to Simulink: 11.6027419567 seconds
+Time taken to import from Simulink: 5.19745397568 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.556622982 seconds
+Time taken to import from Simulink: 5.1536860466 seconds
+Time taken for Himesis to CBD: 0.06 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Time taken to export to Simulink: 0.01 seconds
+Time taken to connect to Simulink: 11.8503348827 seconds
+Time taken to import from Simulink: 5.15485215187 seconds
+Time taken for Himesis to CBD: 0.07 seconds
+Time taken to build simulator: 0.0 seconds
+Time taken for analysis: 0.0 seconds
+Time taken for transformation: 0.0 seconds
+Time taken for CBD to Himesis: 0.1 seconds
+Time taken to export to Simulink: 0.01 seconds

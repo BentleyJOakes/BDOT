@@ -15,22 +15,11 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.5"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
   SavedCharacterEncoding  "UTF-8"
-  slprops.hdlmdlprops {
-    $PropName		    "HDLParams"
-    $ObjectID		    1
-    Array {
-      Type		      "Cell"
-      Dimension		      2
-      Cell		      "HDLSubsystem"
-      Cell		      "Flatten2_export_export"
-      PropName		      "mdlProps"
-    }
-  }
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -41,15 +30,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Tue Apr 22 22:23:52 2014"
+  Created		  "Sun Apr 27 16:33:42 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 24 14:26:35 2014"
-  RTWModifiedTimeStamp	  320250393
-  ModelVersionFormat	  "1.%<AutoIncrement:5>"
+  LastModifiedDate	  "Sun Apr 27 16:33:43 2014"
+  RTWModifiedTimeStamp	  320517223
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -84,7 +73,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    2
+    $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Flatten2_export_export"
     overrideMode_	    [0.0]
@@ -140,20 +129,20 @@ Model {
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
-    Dimension		    2
+    Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      3
+      $ObjectID		      2
       Version		      "1.12.0"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  4
+	  $ObjectID		  3
 	  Version		  "1.12.0"
 	  StartTime		  "0.0"
-	  StopTime		  "100000000.0"
+	  StopTime		  "10.0"
 	  AbsTol		  "auto"
-	  FixedStep		  "1"
+	  FixedStep		  "auto"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -169,8 +158,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "FixedStepDiscrete"
-	  SolverName		  "FixedStepDiscrete"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -183,7 +172,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  5
+	  $ObjectID		  4
 	  Version		  "1.12.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -215,7 +204,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  6
+	  $ObjectID		  5
 	  Version		  "1.12.0"
 	  Array {
 	    Type		    "Cell"
@@ -233,14 +222,14 @@ Model {
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
-	  InlineParams		  on
+	  InlineParams		  off
 	  UseIntDivNetSlope	  off
 	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
-	  InlineInvariantSignals  on
+	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
-	  EnhancedBackFolding	  on
+	  EnhancedBackFolding	  off
 	  StrengthReduction	  off
 	  ExpressionFolding	  on
 	  BooleansAsBitfields	  off
@@ -271,7 +260,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  7
+	  $ObjectID		  6
 	  Version		  "1.12.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -359,7 +348,7 @@ Model {
 	  SFUnconditionalTransitionShadowingDiag "warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  8
+	  $ObjectID		  7
 	  Version		  "1.12.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -396,7 +385,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  9
+	  $ObjectID		  8
 	  Version		  "1.12.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -411,7 +400,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.12.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -426,7 +415,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.12.0"
 	  Array {
 	    Type		    "Cell"
@@ -481,7 +470,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      12
+	      $ObjectID		      11
 	      Version		      "1.12.0"
 	      Array {
 		Type			"Cell"
@@ -546,7 +535,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      13
+	      $ObjectID		      12
 	      Version		      "1.12.0"
 	      Array {
 		Type			"Cell"
@@ -629,7 +618,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.12.0"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -644,23 +633,14 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 59, 338, 1041, 1184 ] 
-    }
-    Simulink.ConfigSetRef {
-      $ObjectID		      15
-      Version		      "1.12.0"
-      Name		      "Reference"
-      WSVarName		      "configSetObj"
-      SourceName	      ""
-      SourceLocation	      "Base Workspace"
+      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    3
+    $ObjectID		    2
   }
   ExplicitPartitioning	  off
   BlockDefaults {
@@ -810,8 +790,8 @@ Model {
   }
   System {
     Name		    "Flatten2_export_export"
-    Location		    [68, 144, 1291, 673]
-    Open		    on
+    Location		    [70, 200, 650, 460]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -837,7 +817,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "7"
-      Position		      [175, 54, 220, 86]
+      Position		      [205, 69, 250, 101]
       ZOrder		      7
       BackgroundColor	      "lightBlue"
       Value		      "66598.0"
@@ -846,7 +826,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "9"
-      Position		      [190, 130, 235, 160]
+      Position		      [175, 120, 220, 150]
       ZOrder		      9
       BackgroundColor	      "yellow"
       Value		      "12.34"
@@ -855,7 +835,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain2"
       SID		      "1"
-      Position		      [415, 139, 455, 171]
+      Position		      [405, 99, 445, 131]
       ZOrder		      1
       BackgroundColor	      "yellow"
       Gain		      "5.4"
@@ -868,7 +848,7 @@ Model {
       Name		      "Product2"
       SID		      "6"
       Ports		      [2, 1]
-      Position		      [205, 192, 235, 223]
+      Position		      [185, 177, 215, 208]
       ZOrder		      6
       BackgroundColor	      "yellow"
       InputSameDT	      off
@@ -880,7 +860,7 @@ Model {
       Name		      "Product3"
       SID		      "5"
       Ports		      [2, 1]
-      Position		      [290, 172, 320, 203]
+      Position		      [225, 127, 255, 158]
       ZOrder		      5
       BackgroundColor	      "lightBlue"
       InputSameDT	      off
@@ -892,7 +872,7 @@ Model {
       Name		      "Scope"
       SID		      "2"
       Ports		      [1]
-      Position		      [535, 204, 565, 236]
+      Position		      [345, 129, 375, 161]
       ZOrder		      2
       Floating		      off
       Location		      [188, 390, 512, 629]
@@ -912,7 +892,7 @@ Model {
       Name		      "Sum"
       SID		      "3"
       Ports		      [2, 1]
-      Position		      [330, 110, 350, 130]
+      Position		      [280, 90, 300, 110]
       ZOrder		      3
       BackgroundColor	      "lightBlue"
       ShowName		      off
@@ -926,20 +906,21 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "4"
-      Position		      [535, 148, 565, 162]
+      Position		      [355, 98, 385, 112]
       ZOrder		      4
       IconDisplay	      "Port number"
     }
     Line {
       SrcBlock		      "Gain2"
       SrcPort		      1
-      Points		      [-5, 0]
+      Points		      [0, 0]
       Branch {
-	Points			[30, 0; 0, 65]
+	Points			[0, 25; -70, 0; 0, -15; -50, 0]
 	DstBlock		"Scope"
 	DstPort			1
       }
       Branch {
+	Points			[0, -20; -110, 0]
 	DstBlock		"Out1"
 	DstPort			1
       }
@@ -947,14 +928,14 @@ Model {
     Line {
       SrcBlock		      "Constant"
       SrcPort		      1
-      Points		      [0, 15; 30, 0]
+      Points		      [0, 0]
       Branch {
-	Points			[5, 0; 0, 35]
+	Points			[5, 0; 0, 15]
 	DstBlock		"Sum"
 	DstPort			1
       }
       Branch {
-	Points			[0, 30; -90, 0; 0, 100]
+	Points			[0, 30; -90, 0; 0, 85]
 	DstBlock		"Product2"
 	DstPort			2
       }
@@ -962,35 +943,34 @@ Model {
     Line {
       SrcBlock		      "In1"
       SrcPort		      1
-      Points		      [40, 0; 0, 55]
+      Points		      [40, 0; 0, 40]
       DstBlock		      "Product2"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Product3"
       SrcPort		      1
-      Points		      [0, -45]
+      Points		      [30, 0]
       DstBlock		      "Sum"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Product2"
       SrcPort		      1
-      Points		      [0, -15]
+      Points		      [0, -40; -10, 0]
       DstBlock		      "Product3"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Sum"
       SrcPort		      1
-      Points		      [0, 35]
+      Points		      [25, 0; 0, 15; 20, 0; 0, 5; 40, 0]
       DstBlock		      "Gain2"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Constant2"
       SrcPort		      1
-      Points		      [35, 0]
       DstBlock		      "Product3"
       DstPort		      1
     }

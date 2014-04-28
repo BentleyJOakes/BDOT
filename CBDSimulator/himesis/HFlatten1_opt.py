@@ -24,7 +24,7 @@ S'Simulink'
 p2
 a.""")
         self["name"] = """HFlatten1_opt"""
-        self["GUID__"] = UUID('090caaad-1264-4836-a837-9a4e27169148')
+        self["GUID__"] = UUID('689971ac-c1c8-4237-989c-dc6223e1dbe2')
         
         # Set the node attributes
         self.vs[0]["Name"] = """Out1"""
@@ -37,12 +37,12 @@ aF500
 aF137
 a.""")
         self.vs[0]["Port"] = 1
-        self.vs[0]["GUID__"] = UUID('cf886619-57b1-4ffd-974d-186e924f8ebd')
+        self.vs[0]["GUID__"] = UUID('e035fdf1-1829-4eca-b20f-8f35bdc99201')
         self.vs[1]["Name"] = """Flatten1"""
         self.vs[1]["mm__"] = """SubSystem"""
         self.vs[1]["Position"] = pickle.loads("""(lp1
 .""")
-        self.vs[1]["GUID__"] = UUID('8334f64b-d882-4c73-98d0-893a3f5c1e54')
+        self.vs[1]["GUID__"] = UUID('ecc29dc9-3340-42b4-a957-b8932b2729c4')
         self.vs[2]["Name"] = """In1"""
         self.vs[2]["BackgroundColor"] = """white"""
         self.vs[2]["mm__"] = """Inport"""
@@ -53,7 +53,7 @@ aF45
 aF197
 a.""")
         self.vs[2]["Port"] = 1
-        self.vs[2]["GUID__"] = UUID('ab0535f2-5dcc-4fa4-8f97-2872c930b91b')
+        self.vs[2]["GUID__"] = UUID('729666d0-5bbb-4341-83cb-e7bbf6efd358')
         self.vs[3]["Name"] = """Product"""
         self.vs[3]["SampleTime"] = -1.0
         self.vs[3]["BackgroundColor"] = """white"""
@@ -64,7 +64,7 @@ aF147
 aF185
 aF178
 a.""")
-        self.vs[3]["GUID__"] = UUID('f60e2f7e-0ea7-4ae7-b50e-9532e235f601')
+        self.vs[3]["GUID__"] = UUID('a4082af0-92f8-49d5-b113-786973c4621c')
         self.vs[4]["Name"] = """Constant"""
         self.vs[4]["SampleTime"] = """inf"""
         self.vs[4]["value"] = 12.34
@@ -76,11 +76,11 @@ aF102
 aF70
 aF138
 a.""")
-        self.vs[4]["GUID__"] = UUID('867e3f1b-366c-40b5-91d4-697be27b9139')
+        self.vs[4]["GUID__"] = UUID('17245301-68dd-480c-90fb-62ae38f3cf69')
         self.vs[5]["Name"] = """Constant2"""
         self.vs[5]["SampleTime"] = """inf"""
         self.vs[5]["value"] = 1.0
-        self.vs[5]["BackgroundColor"] = """white"""
+        self.vs[5]["BackgroundColor"] = """yellow"""
         self.vs[5]["mm__"] = """Constant"""
         self.vs[5]["Position"] = pickle.loads("""(lp1
 F110
@@ -88,7 +88,7 @@ aF170
 aF140
 aF200
 a.""")
-        self.vs[5]["GUID__"] = UUID('294785b6-ae75-472d-89ad-5d9401c5b5f1')
+        self.vs[5]["GUID__"] = UUID('1ba4700c-be4c-45ff-91ab-7930962658d9')
         self.vs[6]["Inputs"] = """|++"""
         self.vs[6]["Name"] = """Sum"""
         self.vs[6]["SampleTime"] = -1.0
@@ -101,10 +101,10 @@ aF430
 aF140
 a.""")
         self.vs[6]["IconShape"] = """round"""
-        self.vs[6]["GUID__"] = UUID('7657871f-439d-4f77-93d2-86527536eeb1')
+        self.vs[6]["GUID__"] = UUID('4be000c8-a2ab-41b9-b650-248fd9753a40')
         self.vs[7]["Name"] = """Product2"""
         self.vs[7]["SampleTime"] = -1.0
-        self.vs[7]["BackgroundColor"] = """white"""
+        self.vs[7]["BackgroundColor"] = """yellow"""
         self.vs[7]["mm__"] = """Product"""
         self.vs[7]["Position"] = pickle.loads("""(lp1
 F210
@@ -112,11 +112,11 @@ aF117
 aF240
 aF148
 a.""")
-        self.vs[7]["GUID__"] = UUID('9462e8ca-31d2-42e4-9793-8c981d90d908')
+        self.vs[7]["GUID__"] = UUID('e813af19-0098-47af-b1f7-96f032757c14')
         self.vs[8]["Inputs"] = """++|"""
         self.vs[8]["Name"] = """Sum2"""
         self.vs[8]["SampleTime"] = -1.0
-        self.vs[8]["BackgroundColor"] = """white"""
+        self.vs[8]["BackgroundColor"] = """yellow"""
         self.vs[8]["mm__"] = """Sum"""
         self.vs[8]["Position"] = pickle.loads("""(lp1
 F275
@@ -125,127 +125,127 @@ aF295
 aF145
 a.""")
         self.vs[8]["IconShape"] = """round"""
-        self.vs[8]["GUID__"] = UUID('f78e061e-fc30-4bcd-8b4c-532dcec9ae86')
+        self.vs[8]["GUID__"] = UUID('798bc78f-e3cb-4433-b248-3cf98b055dbb')
         self.vs[9]["Name"] = """1"""
         self.vs[9]["mm__"] = """Port_Output"""
-        self.vs[9]["GUID__"] = UUID('a6f66d22-2473-4deb-84cc-c8e075287ce9')
+        self.vs[9]["GUID__"] = UUID('5356dd06-4848-4b34-97d7-59055df3965e')
         self.vs[10]["Name"] = """1"""
         self.vs[10]["mm__"] = """Port_Output"""
-        self.vs[10]["GUID__"] = UUID('1140fea2-a98e-4c37-baaa-f0ea68b24078')
+        self.vs[10]["GUID__"] = UUID('de60b927-56c7-4e7e-a4ef-43f239d7b441')
         self.vs[11]["Name"] = """1"""
         self.vs[11]["mm__"] = """Port_Output"""
-        self.vs[11]["GUID__"] = UUID('de325c95-8d13-44af-ab00-c03712bab023')
+        self.vs[11]["GUID__"] = UUID('cdb8dc92-3eb7-4965-81b1-9de7d93b057f')
         self.vs[12]["Name"] = """1"""
         self.vs[12]["mm__"] = """Port_Output"""
-        self.vs[12]["GUID__"] = UUID('05b5a80c-53eb-42cc-8cb7-9a6474995056')
+        self.vs[12]["GUID__"] = UUID('606a77cb-5c02-4d74-85a2-b812fe61acfb')
         self.vs[13]["Name"] = """1"""
         self.vs[13]["mm__"] = """Port_Output"""
-        self.vs[13]["GUID__"] = UUID('d922e292-6fd6-4b97-bb5b-bfb812578dc2')
+        self.vs[13]["GUID__"] = UUID('3456d812-8d2e-44f4-99d8-a47e99c78800')
         self.vs[14]["Name"] = """1"""
         self.vs[14]["mm__"] = """Port_Output"""
-        self.vs[14]["GUID__"] = UUID('6335291e-1f52-4ce3-829f-24b750937bbc')
+        self.vs[14]["GUID__"] = UUID('b620f085-3534-4bf7-b5b6-2ca242253851')
         self.vs[15]["Name"] = """1"""
         self.vs[15]["mm__"] = """Port_Output"""
-        self.vs[15]["GUID__"] = UUID('15686c17-c3d7-4ebb-a596-99f144bd6ed0')
+        self.vs[15]["GUID__"] = UUID('9c2e5e4e-16d7-4633-a10c-4685a7e3412c')
         self.vs[16]["mm__"] = """__Block_Outport__"""
-        self.vs[16]["GUID__"] = UUID('6e28377a-397a-4d6f-807c-21075696a07a')
+        self.vs[16]["GUID__"] = UUID('147ff0d5-a6db-4dfc-8f5e-6d4e930e7cce')
         self.vs[17]["mm__"] = """__Block_Outport__"""
-        self.vs[17]["GUID__"] = UUID('3576aacb-6763-496c-bbde-04f4ba7cf15c')
+        self.vs[17]["GUID__"] = UUID('f501c4e8-5f33-47ac-9278-1965b43f3a24')
         self.vs[18]["mm__"] = """__Block_Outport__"""
-        self.vs[18]["GUID__"] = UUID('16db8b85-85ea-48d5-8a86-05c1eae6db73')
+        self.vs[18]["GUID__"] = UUID('4490e6ee-a8b2-43e9-be1a-92c5b3f90ae8')
         self.vs[19]["mm__"] = """__Block_Outport__"""
-        self.vs[19]["GUID__"] = UUID('3e5749ce-9921-448e-a002-196af3f47930')
+        self.vs[19]["GUID__"] = UUID('87d90e1b-1aa9-4f1a-825a-618c911527e1')
         self.vs[20]["mm__"] = """__Block_Outport__"""
-        self.vs[20]["GUID__"] = UUID('c6893ad6-9c3d-400f-bcea-aac434d17f2f')
+        self.vs[20]["GUID__"] = UUID('c2c64d80-a194-4691-a869-5f45566c0ffb')
         self.vs[21]["mm__"] = """__Block_Outport__"""
-        self.vs[21]["GUID__"] = UUID('4f72928c-a1f6-4ca5-9607-8ac0c7d6914a')
+        self.vs[21]["GUID__"] = UUID('ce381f93-874a-49d7-bcac-ea44917b7497')
         self.vs[22]["mm__"] = """__Block_Outport__"""
-        self.vs[22]["GUID__"] = UUID('30a403e5-40be-4936-a66d-173e12f02660')
+        self.vs[22]["GUID__"] = UUID('2d85f7f9-25b2-4011-adcd-5e883ab85dd5')
         self.vs[23]["Name"] = """None"""
         self.vs[23]["mm__"] = """__Contains__"""
-        self.vs[23]["GUID__"] = UUID('49427837-ca44-4497-9fe2-2978f1ed06f5')
+        self.vs[23]["GUID__"] = UUID('f450db1b-5c80-4cbb-af41-1954171b6692')
         self.vs[24]["Name"] = """None"""
         self.vs[24]["mm__"] = """__Contains__"""
-        self.vs[24]["GUID__"] = UUID('d4ccc768-2de4-4ce9-bbcf-fbc451d0346a')
+        self.vs[24]["GUID__"] = UUID('e496c138-993e-4b25-a178-40ab8f11900f')
         self.vs[25]["Name"] = """None"""
         self.vs[25]["mm__"] = """__Contains__"""
-        self.vs[25]["GUID__"] = UUID('47906554-9c32-463c-a262-d4bc242f5938')
+        self.vs[25]["GUID__"] = UUID('69c1a3a6-45da-432e-9883-8fb259a9db42')
         self.vs[26]["Name"] = """None"""
         self.vs[26]["mm__"] = """__Contains__"""
-        self.vs[26]["GUID__"] = UUID('95555f74-2549-42f9-a35f-9a294aeaed45')
+        self.vs[26]["GUID__"] = UUID('55e63940-c4e3-458a-a09f-2a055cd24494')
         self.vs[27]["Name"] = """None"""
         self.vs[27]["mm__"] = """__Contains__"""
-        self.vs[27]["GUID__"] = UUID('fe112df3-529e-480f-b982-89c7a32a1610')
+        self.vs[27]["GUID__"] = UUID('93099a03-58c1-4e28-a983-5fd99069b2e7')
         self.vs[28]["Name"] = """None"""
         self.vs[28]["mm__"] = """__Contains__"""
-        self.vs[28]["GUID__"] = UUID('2b8c79f1-3848-47b9-b2dc-cbd76bb3df63')
+        self.vs[28]["GUID__"] = UUID('a0984eef-21bc-4e31-a46a-b7aedc4677af')
         self.vs[29]["Name"] = """None"""
         self.vs[29]["mm__"] = """__Contains__"""
-        self.vs[29]["GUID__"] = UUID('eec95365-6b37-4d0a-af41-1b03a7d8d518')
+        self.vs[29]["GUID__"] = UUID('7157c7bc-d7e4-4711-8179-25a2ec4259ba')
         self.vs[30]["Name"] = """None"""
         self.vs[30]["mm__"] = """__Contains__"""
-        self.vs[30]["GUID__"] = UUID('24e3e6e3-7923-48cb-8f34-79a1b2629288')
+        self.vs[30]["GUID__"] = UUID('76eb0db1-13bc-4491-8f8f-da7810be7e4a')
         self.vs[31]["Name"] = """1"""
         self.vs[31]["mm__"] = """Port_Input"""
-        self.vs[31]["GUID__"] = UUID('33246905-a20c-431f-ad3d-60d3c9fd7f55')
+        self.vs[31]["GUID__"] = UUID('29647ee2-6c19-4fd0-b145-900363e5684e')
         self.vs[32]["Name"] = """1"""
         self.vs[32]["mm__"] = """Port_Input"""
-        self.vs[32]["GUID__"] = UUID('39f096c7-9fc3-4b19-9c50-e17dc31d919a')
+        self.vs[32]["GUID__"] = UUID('2a593fa3-dcee-49e9-b45f-34ba3d3282a4')
         self.vs[33]["Name"] = """2"""
         self.vs[33]["mm__"] = """Port_Input"""
-        self.vs[33]["GUID__"] = UUID('f0fb0d30-dac5-48f4-b084-1561a3ebbac0')
+        self.vs[33]["GUID__"] = UUID('6a9c2bca-d4db-4285-a163-85d78c9a1144')
         self.vs[34]["Name"] = """1"""
         self.vs[34]["mm__"] = """Port_Input"""
-        self.vs[34]["GUID__"] = UUID('86be1234-b38f-45f6-9b1e-d823cab7b38d')
+        self.vs[34]["GUID__"] = UUID('6f769b10-3a7a-45dc-aac1-04cc58f60f84')
         self.vs[35]["Name"] = """2"""
         self.vs[35]["mm__"] = """Port_Input"""
-        self.vs[35]["GUID__"] = UUID('3545bfa4-2282-4666-8d47-42e33f7d8b66')
+        self.vs[35]["GUID__"] = UUID('ab0aed84-11c9-415e-9c8f-d6bd47c61c24')
         self.vs[36]["Name"] = """1"""
         self.vs[36]["mm__"] = """Port_Input"""
-        self.vs[36]["GUID__"] = UUID('ca618eb9-2d5d-4628-9211-353b7f3b503e')
+        self.vs[36]["GUID__"] = UUID('a53227c8-012d-4187-99e9-495b55a99d27')
         self.vs[37]["Name"] = """2"""
         self.vs[37]["mm__"] = """Port_Input"""
-        self.vs[37]["GUID__"] = UUID('a79205cb-4c7e-419b-97a8-58389df70e6b')
+        self.vs[37]["GUID__"] = UUID('db7133ca-1ed5-40d7-bff4-68c382ae461b')
         self.vs[38]["Name"] = """1"""
         self.vs[38]["mm__"] = """Port_Input"""
-        self.vs[38]["GUID__"] = UUID('8b6a516c-21c2-4778-88de-3d46a3ec1678')
+        self.vs[38]["GUID__"] = UUID('f51c6973-4015-4d2b-9bd1-6467d61d90f6')
         self.vs[39]["Name"] = """2"""
         self.vs[39]["mm__"] = """Port_Input"""
-        self.vs[39]["GUID__"] = UUID('f6524db5-21b6-4fe7-92f6-ecdac8febac2')
+        self.vs[39]["GUID__"] = UUID('c0ff0ac6-e8c2-4690-816d-53962bdd3bda')
         self.vs[40]["mm__"] = """__Block_Inport__"""
-        self.vs[40]["GUID__"] = UUID('d0296be5-80d0-4860-aca8-a201ba183ffd')
+        self.vs[40]["GUID__"] = UUID('5c528c23-1c6b-49f1-b634-e181feb15a57')
         self.vs[41]["mm__"] = """__Block_Inport__"""
-        self.vs[41]["GUID__"] = UUID('0d641750-719e-4361-b6ad-cc03b9807d3e')
+        self.vs[41]["GUID__"] = UUID('92d8abfa-e821-4cab-b900-819899614888')
         self.vs[42]["mm__"] = """__Block_Inport__"""
-        self.vs[42]["GUID__"] = UUID('cb589a40-ab41-457e-ba6e-bd832ee72e8f')
+        self.vs[42]["GUID__"] = UUID('505030bf-94c0-4c05-8cd7-b36054765646')
         self.vs[43]["mm__"] = """__Block_Inport__"""
-        self.vs[43]["GUID__"] = UUID('edab673f-e3d9-41ae-8e66-9c677565c4e8')
+        self.vs[43]["GUID__"] = UUID('a927573b-22a6-494a-b3f1-70bef5bc35e5')
         self.vs[44]["mm__"] = """__Block_Inport__"""
-        self.vs[44]["GUID__"] = UUID('6b05585e-481c-4db8-aa02-ce813340e396')
+        self.vs[44]["GUID__"] = UUID('84e616ee-2f25-4938-8cc9-06620ae9fc88')
         self.vs[45]["mm__"] = """__Block_Inport__"""
-        self.vs[45]["GUID__"] = UUID('067372cb-418c-4425-afd5-380c6930d3a5')
+        self.vs[45]["GUID__"] = UUID('e3377a74-40cc-4cf0-94d5-72b61033ea50')
         self.vs[46]["mm__"] = """__Block_Inport__"""
-        self.vs[46]["GUID__"] = UUID('a22fe3ab-b91b-4e87-a901-5af210faf224')
+        self.vs[46]["GUID__"] = UUID('095f5b58-9454-4cc7-aa64-0519ca7d6223')
         self.vs[47]["mm__"] = """__Block_Inport__"""
-        self.vs[47]["GUID__"] = UUID('e66d40c0-a8f9-4e45-80fb-ec01dc8ed630')
+        self.vs[47]["GUID__"] = UUID('6894ad17-e574-472a-9457-d2b4354e35c7')
         self.vs[48]["mm__"] = """__Block_Inport__"""
-        self.vs[48]["GUID__"] = UUID('a21ca5b9-d6a3-4ca2-a306-59c02be62531')
+        self.vs[48]["GUID__"] = UUID('3cebaccc-a4a4-43cb-b881-185bc428297f')
         self.vs[49]["mm__"] = """__Relation__"""
-        self.vs[49]["GUID__"] = UUID('94bcd7a0-cf32-46fd-9b29-c482eaa17311')
+        self.vs[49]["GUID__"] = UUID('90d4f6ee-5834-4b5d-99b6-749926128ef3')
         self.vs[50]["mm__"] = """__Relation__"""
-        self.vs[50]["GUID__"] = UUID('7218e45e-bd9e-45db-bd09-ffb5eac187a0')
+        self.vs[50]["GUID__"] = UUID('dcc29043-8c74-441c-9b95-5c098890da01')
         self.vs[51]["mm__"] = """__Relation__"""
-        self.vs[51]["GUID__"] = UUID('86e204d6-61c2-4024-bc09-d2fe7869cee2')
+        self.vs[51]["GUID__"] = UUID('1ecbc834-ad89-46c9-8af8-55e5a6ceb735')
         self.vs[52]["mm__"] = """__Relation__"""
-        self.vs[52]["GUID__"] = UUID('93c2bac8-77df-4a3b-a254-2614537015f7')
+        self.vs[52]["GUID__"] = UUID('3c8ee934-589e-4fcc-8145-2cf3b514313e')
         self.vs[53]["mm__"] = """__Relation__"""
-        self.vs[53]["GUID__"] = UUID('ace1bd36-7c61-43f7-805e-2a5b908ffb9d')
+        self.vs[53]["GUID__"] = UUID('1093e1e7-2747-4b73-b135-cf584c00fc8f')
         self.vs[54]["mm__"] = """__Relation__"""
-        self.vs[54]["GUID__"] = UUID('3dcc2f91-aa94-4869-853c-2a595916c537')
+        self.vs[54]["GUID__"] = UUID('03edf849-e0f9-4a80-89a2-b9eb2f1d75b4')
         self.vs[55]["mm__"] = """__Relation__"""
-        self.vs[55]["GUID__"] = UUID('f1bfdf43-26f0-4054-8e15-3a71c8e5ce64')
+        self.vs[55]["GUID__"] = UUID('9251901a-88f9-49e6-b5c4-ec19d4098af6')
         self.vs[56]["mm__"] = """__Relation__"""
-        self.vs[56]["GUID__"] = UUID('df9d19ca-b372-467b-acb6-3252c728e1b0')
+        self.vs[56]["GUID__"] = UUID('fe3730a1-3ca4-4ff4-b86a-4dc387ae3e50')
         self.vs[57]["mm__"] = """__Relation__"""
-        self.vs[57]["GUID__"] = UUID('30bd259b-8b17-4761-a65f-eb03f97c8392')
+        self.vs[57]["GUID__"] = UUID('325f6b30-8217-4eff-83cd-cb32cb7a8cfc')
 

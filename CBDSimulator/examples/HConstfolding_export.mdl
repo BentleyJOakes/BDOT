@@ -11,22 +11,11 @@ Model {
       Name		      "Out1"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.5"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
   SavedCharacterEncoding  "UTF-8"
-  slprops.hdlmdlprops {
-    $PropName		    "HDLParams"
-    $ObjectID		    1
-    Array {
-      Type		      "Cell"
-      Dimension		      2
-      Cell		      "HDLSubsystem"
-      Cell		      "HConstfolding_export"
-      PropName		      "mdlProps"
-    }
-  }
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -37,15 +26,15 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  Created		  "Tue Apr 08 18:11:08 2014"
+  Created		  "Sun Apr 27 15:29:53 2014"
   Creator		  "boakes"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "boakes"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 24 13:19:22 2014"
-  RTWModifiedTimeStamp	  320246362
-  ModelVersionFormat	  "1.%<AutoIncrement:5>"
+  LastModifiedDate	  "Sun Apr 27 15:29:54 2014"
+  RTWModifiedTimeStamp	  320513393
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -80,10 +69,9 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    2
+    $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "HConstfolding_export"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -137,20 +125,20 @@ Model {
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
-    Dimension		    2
+    Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      3
+      $ObjectID		      2
       Version		      "1.12.0"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  4
+	  $ObjectID		  3
 	  Version		  "1.12.0"
 	  StartTime		  "0.0"
-	  StopTime		  "100000000.0"
+	  StopTime		  "10.0"
 	  AbsTol		  "auto"
-	  FixedStep		  "1"
+	  FixedStep		  "auto"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -166,8 +154,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "FixedStepDiscrete"
-	  SolverName		  "FixedStepDiscrete"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -180,7 +168,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  5
+	  $ObjectID		  4
 	  Version		  "1.12.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -212,7 +200,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  6
+	  $ObjectID		  5
 	  Version		  "1.12.0"
 	  Array {
 	    Type		    "Cell"
@@ -230,14 +218,14 @@ Model {
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
-	  InlineParams		  on
+	  InlineParams		  off
 	  UseIntDivNetSlope	  off
 	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
-	  InlineInvariantSignals  on
+	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
-	  EnhancedBackFolding	  on
+	  EnhancedBackFolding	  off
 	  StrengthReduction	  off
 	  ExpressionFolding	  on
 	  BooleansAsBitfields	  off
@@ -268,7 +256,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  7
+	  $ObjectID		  6
 	  Version		  "1.12.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -356,7 +344,7 @@ Model {
 	  SFUnconditionalTransitionShadowingDiag "warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  8
+	  $ObjectID		  7
 	  Version		  "1.12.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -393,7 +381,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  9
+	  $ObjectID		  8
 	  Version		  "1.12.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -408,7 +396,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.12.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -423,7 +411,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.12.0"
 	  Array {
 	    Type		    "Cell"
@@ -478,7 +466,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      12
+	      $ObjectID		      11
 	      Version		      "1.12.0"
 	      Array {
 		Type			"Cell"
@@ -543,7 +531,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      13
+	      $ObjectID		      12
 	      Version		      "1.12.0"
 	      Array {
 		Type			"Cell"
@@ -626,7 +614,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.12.0"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -641,23 +629,14 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 469, 164, 1451, 1010 ] 
-    }
-    Simulink.ConfigSetRef {
-      $ObjectID		      15
-      Version		      "1.12.0"
-      Name		      "Reference"
-      WSVarName		      "configSetObj"
-      SourceName	      ""
-      SourceLocation	      "Base Workspace"
+      ConfigPrmDlgPosition     [ 0, 0, 880, 630 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    3
+    $ObjectID		    2
   }
   ExplicitPartitioning	  off
   BlockDefaults {
@@ -764,8 +743,8 @@ Model {
   }
   System {
     Name		    "HConstfolding_export"
-    Location		    [531, 259, 1469, 532]
-    Open		    on
+    Location		    [70, 200, 650, 460]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -783,7 +762,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant50"
       SID		      "7"
-      Position		      [445, 80, 475, 110]
+      Position		      [255, 50, 285, 80]
       ZOrder		      7
       Value		      "36.6"
     }
@@ -791,7 +770,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant51"
       SID		      "8"
-      Position		      [445, 15, 490, 45]
+      Position		      [255, 50, 285, 80]
       ZOrder		      8
       Value		      "16.253"
     }
@@ -799,7 +778,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain2"
       SID		      "5"
-      Position		      [715, 49, 755, 81]
+      Position		      [510, 50, 545, 80]
       ZOrder		      5
       Gain		      "1.0"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -810,7 +789,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain3"
       SID		      "6"
-      Position		      [785, 49, 825, 81]
+      Position		      [560, 50, 605, 80]
       ZOrder		      6
       Gain		      "1.0"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -822,7 +801,7 @@ Model {
       Name		      "Product"
       SID		      "2"
       Ports		      [2, 1]
-      Position		      [640, 47, 670, 78]
+      Position		      [435, 47, 465, 78]
       ZOrder		      2
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -832,7 +811,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay"
       SID		      "4"
-      Position		      [560, 13, 595, 47]
+      Position		      [355, 13, 390, 47]
       ZOrder		      4
       X0		      "0.0"
       InputProcessing	      "Elements as channels (sample based)"
@@ -842,7 +821,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay1"
       SID		      "3"
-      Position		      [560, 78, 595, 112]
+      Position		      [355, 78, 390, 112]
       ZOrder		      3
       X0		      "0.0"
       InputProcessing	      "Elements as channels (sample based)"
@@ -852,7 +831,7 @@ Model {
       BlockType		      Outport
       Name		      "Out1"
       SID		      "1"
-      Position		      [845, 58, 875, 72]
+      Position		      [620, 58, 650, 72]
       ZOrder		      1
       IconDisplay	      "Port number"
     }
@@ -877,6 +856,7 @@ Model {
     Line {
       SrcBlock		      "Constant50"
       SrcPort		      1
+      Points		      [50, 0]
       DstBlock		      "Unit Delay1"
       DstPort		      1
     }
@@ -890,6 +870,7 @@ Model {
     Line {
       SrcBlock		      "Constant51"
       SrcPort		      1
+      Points		      [0, -35]
       DstBlock		      "Unit Delay"
       DstPort		      1
     }

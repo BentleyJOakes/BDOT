@@ -19,8 +19,16 @@ class FlatteningOptimization(Optimization):
     
         print("Start Flattening")
         
+        start = time.clock()
+        
         analysis = self.analyze(model)
+        end = time.clock()
+        print("Time taken for analysis: " + str(end - start) + " seconds")
+        
+        start = time.clock()
         model = self.transform(model, analysis)
+        end = time.clock()
+        print("Time taken for transformation: " + str(end - start) + " seconds")
         
         
         return model
